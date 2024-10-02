@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../components/Shared/Button";
 import img1 from "../../assets/LandingPageImg/whatToDo1.png";
 import img2 from "../../assets/LandingPageImg/whatToDo2.png";
 import img3 from "../../assets/LandingPageImg/whatToDo3.png";
@@ -21,7 +20,7 @@ const WhatToDoWithLadbuySection = () => {
     {
       image: img3,
       title: "Deliver An Item",
-      text: " Join the ride! Become a LagBuy delivery partner,and start earning today.Flexible schedules, competitive pay.",
+      text: "Join the ride! Become a LagBuy delivery partner, and start earning today. Flexible schedules, competitive pay.",
       button: "Join Us",
     },
   ];
@@ -42,15 +41,22 @@ const WhatToDoWithLadbuySection = () => {
         {todos.map((todo, index) => (
           <div
             key={index}
-            className="flex-1 hover:bg-[#1A362B] text-white lg:text-black lg:bg-[#FFF9B7] text-left px-7 py-16 rounded-xl shadow-lg w-full lg:w-[30rem] h-auto lg:h-[30rem] border border-red-400"
+            className="flex-1 group relative overflow-hidden bg-[#FFF9B7] text-left px-7 py-16 rounded-xl shadow-lg w-full lg:w-[30rem] h-auto lg:h-[30rem] transition-all duration-300 hover:bg-[#1A362B] hover:text-white"
           >
-            <div className="flex justify-center lg:justify-end">
+            <div className="relative z-10 flex justify-center lg:justify-end">
               <img src={todo.image} alt={todo.title} className="h-40 mb-6" />
             </div>
-            <p className="text-3xl font-semibold mb-2">{todo.title}</p>
-            <p className="mb-6 text-xl font-light">{todo.text}</p>
-            <div className="text-center">
-                <Button title={todo.button} size="sm" variant="primary" />
+            <div className="relative z-10">
+              <p className="text-3xl font-semibold mb-2">{todo.title}</p>
+              <p className="mb-6 text-xl font-light">{todo.text}</p>
+              <div className="text-center">
+                <button className="py-2 px-10 text-sm w-auto font-medium shadow rounded-full bg-[#1A362B] text-[#FCE600] relative overflow-hidden transition-all duration-600">
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#FCE600] to-[#1A362B] transition-all duration-500 transform translate-x-full group-hover:translate-x-0"></span>
+                  <span className="relative z-10 group-hover:text-white">
+                    {todo.button}
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         ))}

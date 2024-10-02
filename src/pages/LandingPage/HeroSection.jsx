@@ -2,8 +2,6 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Button from "../../components/Shared/Button";
-
 import Hero1 from "../../assets/LandingPageImg/hero-img1.png";
 import Hero2 from "../../assets/LandingPageImg/hero-img2.png";;
 import Hero3 from "../../assets/LandingPageImg/hero-img3.png";
@@ -46,11 +44,11 @@ const HeroSection = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000,
   };
 
   return (
-    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 py-14 justify-between lg:gap-16 md:flex-row">
+    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 py-20 justify-between lg:gap-16 md:flex-row">
       <div className="w-full md:w-1/2  text-center space-y-4 lg:space-y-9">
         <h1 className="text-3xl xl:text-5xl font-bold lg:w-5/6  ">
           Bringing satisfaction and happiness, one delivery at a time.
@@ -59,7 +57,9 @@ const HeroSection = () => {
           Discover the convenience and speed of our delivery process. Get your
           items delivered right to your door step in no time.
         </p>
-        <Button title="Get Started" size="md" variant="primary" />
+        <button className="py-3 px-20 md:px-24 text-lg lg:text-xl font-medium rounded-full bg-[#1A362B] text-[#FCE600] hover:bg-[#FCE600] hover:text-[#1A362B] focus:outline-none disabled:opacity-50 transition-colors duration-300">
+          Get Started
+        </button>
       </div>
       <div className="w-full md:w-1/2">
         <Slider {...settings}>

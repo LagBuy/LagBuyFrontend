@@ -11,11 +11,14 @@ import Vendor from './Vendor'
 import ContactUs from './ContactUs'
 import MessageUs from './MessageUs'
 import Footer from '../../components/Shared/Footer'
+import Navbar from '../../components/Shared/Navbar'
+
 
 
 const LandingPage = () => {
   return (
     <div className='min-h-screen'>
+      <Navbar/>
         <HeroSection/>
         <WhatToDoWithLadbuySection/>
         <AboutUs/>
@@ -25,9 +28,8 @@ const LandingPage = () => {
         <Customer/>
         <TermAndCondition/>
         <Vendor/>
-  
         <ContactUs/>
-        <MessageUs/>
+        <MessageUs/>  
         <Footer/>
     </div>
   )
