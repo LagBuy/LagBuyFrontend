@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -20,6 +20,7 @@ import Hero15 from "../../assets/LandingPageImg/hero-img15.png";
 
 
 const HeroSection = () => {
+
   const images = [
     { img: Hero1 },
     { img: Hero2 },
@@ -48,12 +49,17 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 py-20 justify-between lg:gap-16 md:flex-row">
+    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 pt-32 justify-between lg:gap-16 md:flex-row">
+
       <div className="w-full md:w-1/2  text-center space-y-4 lg:space-y-9">
-        <h1 className="text-3xl xl:text-5xl font-bold lg:w-5/6  ">
-          Bringing satisfaction and happiness, one delivery at a time.
+        <h1 className="text-2xl xl:text-4xl font-bold lg:w-5/6  ">
+          <span className="text-[#1A362B]">
+            {" "}
+            Bringing satisfaction and happiness,
+          </span>{" "}
+          one delivery at a time.
         </h1>
-        <p className="text-lg lg:text-3xl font-light text-center ">
+        <p className="text-lg lg:text-2xl font-light text-center ">
           Discover the convenience and speed of our delivery process. Get your
           items delivered right to your door step in no time.
         </p>

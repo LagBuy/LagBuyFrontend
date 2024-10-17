@@ -9,17 +9,17 @@ const Customer = () => {
     const Customers = [
       {
         img: customer_img1,
-        text: "The customer service here is top-notch, they were so helpful with my other. Highly recomend this site",
+        text: "The customer service here is top-notch, they were so helpful with my order. Highly recommend this site",
         name: "Susan . A",
       },
       {
         img: customer_img2,
-        text: "The discount and promotion on this site are unbeatable Saved a lot on my recent purchase. Thank you.",
+        text: "The discount and promotions on this site are unbeatable I Saved a lot on my recent purchase. Thank you.",
         name: "Susan . A",
       },
       {
         img: customer_img3,
-        text: "Wow the delivering was fast, Got my ordering no time. Impressed with the service",
+        text: "Wow the delivery was fast, I Got my order in no time. Impressed with the service",
         name: "Susan . A",
       },
     ];

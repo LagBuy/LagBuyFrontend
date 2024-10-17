@@ -8,7 +8,7 @@ const ContactUs = () => {
   return (
     <section className="container mx-auto px-4 py-14">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-semibold mb-3">CONTACT US</h1>
+        <h1 className="text-2xl lg:text-4xl  font-semibold mb-3">CONTACT US</h1>
         <h3 className="text-xl text-gray-600">
           Get in touch and let us know how we can help you
         </h3>
@@ -19,7 +19,7 @@ const ContactUs = () => {
           <img
             src={mobileNumber}
             alt="Mobile Number"
-            className="w-auto h-72 mb-4"
+            className="w-auto h-80 mb-4"
           />
           <div className="p-5">
             <h3 className="text-2xl font-semibold">Mobile Number</h3>
@@ -33,7 +33,7 @@ const ContactUs = () => {
 
         {/* Social Media Section */}
         <div className="flex flex-col rounded-md rounded-br-[4rem]  border bg-white shadow-sm ">
-          <img src={social} alt="Social Media" className="w-auto h-72 mb-4" />
+          <img src={social} alt="Social Media" className="w-auto h-80 mb-4" />
           <div className="p-5">
             <h3 className="text-2xl font-semibold ">Social Media</h3>
             <p className="flex items-center gap-2 text-lg">
@@ -56,7 +56,7 @@ const ContactUs = () => {
 
         {/* E-mail Section */}
         <div className="flex flex-col rounded-md rounded-br-[4rem] border bg-white shadow-sm">
-          <img src={mail} alt="Email" className="w-auto h-72 mb-4" />
+          <img src={mail} alt="Email" className="w-auto h-80 mb-4" />
           <div className="p-5">
             <h3 className="text-2xl font-semibold">E-mail</h3>
             <p className="text-lg">help@lagbuy.com</p>

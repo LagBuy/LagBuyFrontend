@@ -28,7 +28,7 @@ const WhatToDoWithLadbuySection = () => {
   return (
     <section className="container mx-auto px-5 py-14">
       <div className="text-center">
-        <h1 className="text-3xl lg:text-6xl font-semibold mb-5">
+        <h1 className="text-xl lg:text-4xl font-semibold mb-5">
           What can you do with LagBuy?
         </h1>
         <div className="text-xl lg:text-2xl mb-4">

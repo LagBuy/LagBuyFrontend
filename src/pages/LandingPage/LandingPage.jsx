@@ -17,22 +17,22 @@ import Navbar from '../../components/Shared/Navbar'
 
 const LandingPage = () => {
   return (
-    <div className='min-h-screen'>
-      <Navbar/>
-        <HeroSection/>
-        <WhatToDoWithLadbuySection/>
-        <AboutUs/>
-        <Service/>
-        <Explore/>
-        <Process/>
-        <Customer/>
-        <TermAndCondition/>
-        <Vendor/>
-        <ContactUs/>
-        <MessageUs/>  
-        <Footer/>
+    <div className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <Vendor />
+      <Explore />
+      <AboutUs />
+      <WhatToDoWithLadbuySection />
+      <Service />
+      <Process />
+      <Customer />
+      <TermAndCondition />
+      <ContactUs />
+      <MessageUs />
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default LandingPage
