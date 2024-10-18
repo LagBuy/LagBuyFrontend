@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import vendorImg1 from "../../assets/LandingPageImg/vendor (1).png";
 import vendorImg2 from "../../assets/LandingPageImg/vendor (2).png";
 import vendorImg3 from "../../assets/LandingPageImg/vendor (3).png";
 import vendorImg4 from "../../assets/LandingPageImg/vendor (4).png";
 import vendorImg5 from "../../assets/LandingPageImg/vendor (5).png";
+import vendorImg6 from "../../assets/LandingPageImg/vendor (6).jpg";
+import vendorImg7 from "../../assets/LandingPageImg/vendor (7).jpg";
+import vendorImg8 from "../../assets/LandingPageImg/vendor (8).jpg";
+import vendorImg9 from "../../assets/LandingPageImg/vendor (9).jpg";
 import FashionImg1 from '../../assets/LandingPageImg/fashion1.jpg'
 import fashionImg2 from '../../assets/LandingPageImg/fashion2.jpg'
 import fashionImg3 from "../../assets/LandingPageImg/fashion3.jpg";
@@ -26,8 +31,8 @@ import electronicImg3 from "../../assets/LandingPageImg/electronic3.jpg";
 import electronicImg4 from "../../assets/LandingPageImg/electronic4.jpg";
 import electronicImg5 from "../../assets/LandingPageImg/electronic5.jpg";
 import electronicImg6 from "../../assets/LandingPageImg/electronic1.jpg";
-import beautyImg1 from '../../assets/LandingPageImg/beauty1.jpg'
-import beautyImg2 from "../../assets/LandingPageImg/beauty2.jpg";
+import beautyImg1 from '../../assets/LandingPageImg/beauty1.png'
+import beautyImg2 from "../../assets/LandingPageImg/beauty2.png";
 import beautyImg3 from "../../assets/LandingPageImg/beauty3.jpg";
 import beautyImg4 from "../../assets/LandingPageImg/beauty4.jpg";
 import beautyImg5 from "../../assets/LandingPageImg/beauty5.jpg";
@@ -38,14 +43,25 @@ import beautyImg8 from "../../assets/LandingPageImg/beauty8.jpg";
 
 const Vendor = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
 
-  const Vendors = [
-    { img: vendorImg1, name: "Bestronics" },
-    { img: vendorImg5, name: "Nike Lagos" },
-    { img: vendorImg4, name: "Next Store" },
-    { img: vendorImg3, name: "KiddyZone" },
-    { img: vendorImg2, name: "HealthPlus" },
-  ];
+
+const vendors = [
+  { img: vendorImg1 },
+  { img: vendorImg5 },
+  { img: vendorImg4 },
+  { img: vendorImg3 },
+  { img: vendorImg5 },
+  { img: vendorImg2 },
+  { img: vendorImg6 },
+  { img: vendorImg7 },
+  { img: vendorImg8 },
+  { img: vendorImg9 },
+  { img: vendorImg7 },
+  { img: vendorImg3 },
+  { img: vendorImg9 },
+  { img: vendorImg2 },
+];
 
   const items = [
     {
@@ -100,7 +116,21 @@ const Vendor = () => {
       ],
       name: "Beauty deals",
     },
+      
   ];
+
+  
+  const handleNext = () => {
+    setCurrentPage((prevPage) =>
+      prevPage === vendors.length ? 1 : prevPage + 1
+    );
+  };
+
+  const handlePrevious = () => {
+    setCurrentPage((prevPage) =>
+      prevPage === 1 ? vendors.length : prevPage - 1
+    );
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -111,33 +141,60 @@ const Vendor = () => {
   }, [items]);
 
   return (
-    <section className="container mx-auto px-4 py-14">
-      <h1 className="text-2xl font-semibold">Featured Vendors</h1>
-      <div className="mt-7 overflow-x-auto">
-        <div className="flex items-center lg:justify-between gap-8 min-w-full">
-          {Vendors.map((vendor, index) => (
-            <div key={index} className="flex-shrink-0 w-40">
-              <img src={vendor.img} alt={vendor.name} className="mb-5" />
-              <h4 className="text-center">{vendor.name}</h4>
+    <section className="container mx-auto px-4 py-14 ">
+      <div>
+              <h1 className="text-2xl font-semibold text-center"> Vendors on lagbuy</h1>
+      <h4 className="text-center mt-2 text-xl">
+        your favourite vendors are on lagbuy
+      </h4>
+      <div className="flex items-center justify-center mt-6 overflow-x-auto">
+        <div className="flex space-x-4 mx-4">
+          {vendors.slice(currentPage - 1, currentPage + 5).map((vendor) => (
+            <div
+              key={vendor.id}
+              className="w-16 h-16 flex items-center justify-center bg-white bordershadow"
+            >
+              <img
+                src={vendor.img}
+                alt={`Vendor ${vendor.id}`}
+                className="w-16 h-16  rounded-full "
+              />
             </div>
           ))}
         </div>
       </div>
+      {/* Pagination and Navigation Controls */}
+      <div className="mt-4 flex items-center justify-center text-gray-600">
+        <button
+          onClick={handlePrevious}
+          className="p-2 text-gray-500 hover:text-gray-800"
+        >
+          <FaChevronLeft size={24} />
+        </button>
+        <div className="mx-4">
+          <span>{currentPage}</span> / <span>{vendors.length}</span>
+        </div>
+        <button
+          onClick={handleNext}
+          className="p-2 text-gray-500 hover:text-gray-800"
+        >
+          <FaChevronRight size={24} />
+        </button>
+      </div>
+      </div>
       <div className="mt-10">
         <h1 className="text-2xl font-semibold">Explore Popular Categories</h1>
         <div className="mt-7">
-          <div className="flex flex-col md:flex-row flex-wrap items-center gap-5 justify-between min-w-full">
+          <div className="grid grid-cols-4 lg:grid-cols-4 gap-5 min-w-full">
             {items.map((item, index) => (
-              <div key={index} className="flex">
-                <h4 className="bg-[#FFF9B7] flex items-center p-5 rounded-l-[3.5rem]">
-                  {item.name}
-                </h4>
+              <div key={index} className="flex flex-col items-center">
                 {/* Rotate images based on currentIndex */}
                 <img
                   src={item.image[currentIndex]}
                   alt={`${item.name} ${currentIndex + 1}`}
-                  className=" w-52 h-64 rounded-r-[3.5rem]"
+                  className="w-24 h-24 lg:w-64 lg:h-64 rounded-lg"
                 />
+                <h4 className="text-center mt-2">{item.name}</h4>
               </div>
             ))}
           </div>

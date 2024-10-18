@@ -1,55 +1,165 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav
-      className="fixed w-full z-10 bg-white font-Capriola"
-    >
-      <div className="container mx-auto px-5 py-4 flex justify-between items-center">
-        <img src={logo} alt="Logo" className="h-8 w-auto" />
+    <>
+      <header className="fixed w-full z-50 bg-white shadow-sm font-Capriola">
+        <div className="container mx-auto px-5 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <img src={logo} alt="Logo" className="h-8" />
 
-        <button onClick={toggleMenu} className="md:hidden focus:outline-none">
-          {menuOpen ? <FaTimes size={35} /> : <GiHamburgerMenu size={35} />}
-        </button>
+          {/* Desktop Search Form */}
+          <form
+            action=""
+            className="hidden md:flex items-center gap-4 w-full lg:w-3/5"
+          >
+            <div className="w-full">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Search..."
+                className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+              />
+            </div>
+            <button type="submit" className="bg-[#fdeea6] px-4 py-2 rounded-md">
+              Search
+            </button>
+          </form>
 
-        <div
-          className={`${
-            menuOpen ? "block" : "hidden"
-          }  md:flex md:items-center gap-10  lg:gap-[30rem]  transition-all duration-300 ease-in-out`}
-        >
-          <ul className="flex flex-col md:flex-row md:gap-x-8 gap-y-4 md:gap-y-0 text-center text-2xl text-[#090A0A] font-semibold">
-            <li>
-              <a href="#" className="hover:text-gray-700">
-                Company
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-700">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-700">
-                Contact Us
-              </a>
-            </li>
-          </ul>
-
-          <button className="py-2 px-12  w-auto font-medium text-xl shadow rounded-full bg-[#1A362B] text-[#FCE600] hover:bg-[#154227] transition-all duration-300 ease-in-out">
-            SignUp
+          {/* Hamburger Menu for Mobile */}
+          <button onClick={toggleMenu} className="md:hidden text-gray-600 ">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              )}
+            </svg>
           </button>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex gap-x-8 text-center text-xl text-[#090A0A] font-semibold">
+              <li>
+                <a href="#" className="hover:text-gray-700">
+                  Company
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-700">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-700">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </div>
-    </nav>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="md:hidden absolute top-16 right-0 mx-4 bg-white shadow-lg rounded-lg p-4 w-64 z-50 text-2xl font-semibold">
+            <nav>
+              <ul className="flex flex-col space-y-4">
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    Term of use
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    privacy policy
+                  </a>
+                </li>
+                <li className="  border-gray-200 border-[0.5px]"></li>
+
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    vendor registration
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    vendor login
+                  </a>
+                </li>
+                <li className="  border-gray-200 border-[0.5px]"></li>
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    logistic Registration
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-gray-700">
+                    logistic Login
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
+        <form action="" className="block md:hidden">
+          <div className="flex gap-4 items-center px-5 pb-6 ">
+            <div className="w-full">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Search..."
+                className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+              />
+            </div>
+            <button type="submit" className="bg-[#fdeea6] px-4 py-2 rounded-md">
+              Search
+            </button>
+          </div>
+        </form>
+      </header>
+
+      {/* Mobile Search Form */}
+    </>
   );
 };
 
