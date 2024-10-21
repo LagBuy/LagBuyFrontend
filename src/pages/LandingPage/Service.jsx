@@ -24,7 +24,7 @@ const Service = () => {
     ];
   return (
     <section className="container mx-auto px-5 py-10 lg:py-14 ">
-      <h1 className="text-2xl lg:text-5xl font-semibold mb-9 ">OUR SERVICE</h1>
+      <h1 className="text-xl lg:text-3xl font-semibold mb-9 ">OUR SERVICE</h1>
       <div className="flex flex-col lg:flex-row   gap-4 ">
         {Services.map((Service, index) => (
           <div
@@ -38,10 +38,10 @@ const Service = () => {
                 className="h-16 w-16 object-contain "
               />
             </div>
-            <p className="text-[#1A362B] text-xl font-semibold">
+            <p className="text-[#1A362B] text-lg font-semibold">
               {Service.title}
             </p>
-            <p className="text-xl lg:text-2xl text-center">{Service.text}</p>
+            <p className="text-base lg:text-xl text-center">{Service.text}</p>
           </div>
         ))}
       </div>

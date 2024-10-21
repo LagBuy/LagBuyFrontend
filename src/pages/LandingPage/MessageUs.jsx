@@ -26,9 +26,9 @@ const MessageUs = () => {
   return (
     <div className="flex justify-center items-center py-1g">
       <div className="w-full max-w-lg p-8">
-        <h2 className="text-3xl font-semibold text-center mb-4">Message Us</h2>
+        <h2 className="text-2xl font-semibold text-center mb-4">Message Us</h2>
         <p className="text-center text-gray-600 mb-8">
-          We will get back to you within 24 hours
+          We will get back to you as soon as possible 
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">

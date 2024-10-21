@@ -42,11 +42,11 @@ const Explore = () => {
   return (
     <section className="container mx-auto px-5 py-14">
       <div className="flex items-center justify-between mb-8">
-        <p className="text-lg font-bold lg:text-3xl lg:font-semibold">
+        <p className="text-base font-bold lg:text-xl lg:font-semibold">
           EXPLORE OUR LATEST BLOG
         </p>
         <div className="flex items-center justify-center hover:underline cursor-pointer">
-          <a href="#" className="lg:text-lg">
+          <a href="#" className="lg:text-base">
             See more
           </a>
           <MdOutlineExpandMore className="-rotate-90 text-center" size={25} />
@@ -64,7 +64,7 @@ const Explore = () => {
               className="w-full h-72 object-cover md:h-80 mb-5"
             />
             <div className="p-4 space-y-3">
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-xs lg:text-sm">
                 <div className="flex items-center gap-2">
                   <p>{explore.comment} Comments</p>
                   <FaRegComment />
@@ -76,8 +76,8 @@ const Explore = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <p className="text-xl font-semibold">{explore.title}</p>
-                <p className="text-gray-600">{explore.text}</p>
+                <p className="text-base font-semibold">{explore.title}</p>
+                <p className="text-gray-600 text-sm">{explore.text}</p>
               </div>
             </div>
           </div>

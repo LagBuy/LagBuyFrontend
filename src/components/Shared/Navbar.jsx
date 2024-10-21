@@ -40,10 +40,9 @@ const Navbar = () => {
           </form>
 
           {/* Hamburger Menu for Mobile */}
-          <button onClick={toggleMenu} className="md:hidden text-gray-600 ">
+          <button onClick={toggleMenu} className="md:hidden ">
             <svg
-              className="w-6 h-6"
-              fill="none"
+              className="w-6 h-6 text-[#a6c833] fill-current"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -68,19 +67,19 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex gap-x-8 text-center text-xl text-[#090A0A] font-semibold">
+            <ul className="flex gap-x-8 text-center text-lg text-[#090A0A] font-semibold">
               <li>
-                <a href="#" className="hover:text-gray-700">
+                <a href="#" className="hover:text-green-500">
                   Company
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-700">
+                <a href="#" className="hover:text-green-500">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-700">
+                <a href="#" className="hover:text-green-500">
                   Contact Us
                 </a>
               </li>
@@ -90,49 +89,49 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden absolute top-16 right-0 mx-4 bg-white shadow-lg rounded-lg p-4 w-64 z-50 text-2xl font-semibold">
+          <div className="md:hidden w-full absolute top-16 right-0 mx-4 bg-white shadow-lg rounded-lg px-7 py-5 z-50 text-lg font-semibold">
             <nav>
-              <ul className="flex flex-col space-y-4">
+              <ul className="flex flex-col space-y-2">
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     Contact Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     Term of use
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     privacy policy
                   </a>
                 </li>
                 <li className="  border-gray-200 border-[0.5px]"></li>
 
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     vendor registration
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     vendor login
                   </a>
                 </li>
                 <li className="  border-gray-200 border-[0.5px]"></li>
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     logistic Registration
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-700">
+                  <a href="#" className="hover:text-green-500">
                     logistic Login
                   </a>
                 </li>

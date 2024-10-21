@@ -8,13 +8,13 @@ const WhatToDoWithLadbuySection = () => {
     {
       image: img1,
       title: "Buy An Item",
-      text: "Shop like a pro! Browse, compare, and buy with confidence. Get the best deals on your favorite products, delivered right to your door!",
+      text: "shop like an expert! Browse, compare, browse and buy confidently. Get top products delivered straight to your doorstep",
       button: "Buy Now",
     },
     {
       image: img2,
       title: "Sell An Item",
-      text: "Take your business to the next level! Sell on LagBuy and reach a vast audience. List your products, set your prices, and start growing your sales today!.",
+      text: "Elevate your business! sell on lagbuy,Reach a large audienc, list product, set prices and grow sales!.",
       button: "Sell Now",
     },
     {
@@ -28,10 +28,10 @@ const WhatToDoWithLadbuySection = () => {
   return (
     <section className="container mx-auto px-5 py-14">
       <div className="text-center">
-        <h1 className="text-xl lg:text-4xl font-semibold mb-5">
+        <h1 className="text-lg lg:text-2xl font-semibold mb-3">
           What can you do with LagBuy?
         </h1>
-        <div className="text-xl lg:text-2xl mb-4">
+        <div className="text-base lg:text-xl mb-4">
           <p>Unlock a world of convenience!</p>
           <p>LagBuy connects buyers, sellers, and riders for</p>
           <p>a seamless shopping experience. Discover the difference!</p>

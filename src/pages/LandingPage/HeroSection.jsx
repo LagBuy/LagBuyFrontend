@@ -52,18 +52,18 @@ const HeroSection = () => {
     <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 pt-32 justify-between lg:gap-16 md:flex-row">
 
       <div className="w-full md:w-1/2  text-center space-y-4 lg:space-y-9">
-        <h1 className="text-2xl xl:text-4xl font-bold lg:w-5/6  ">
+        <h1 className="text-lg xl:text-3xl font-bold lg:w-5/6  ">
           <span className="text-[#1A362B]">
             {" "}
             Bringing satisfaction and happiness,
           </span>{" "}
           one delivery at a time.
         </h1>
-        <p className="text-lg lg:text-2xl font-light text-center ">
+        <p className="text-base lg:text-xl font-light text-center ">
           Discover the convenience and speed of our delivery process. Get your
           items delivered right to your door step in no time.
         </p>
-        <button className="py-3 px-20 md:px-24 text-lg lg:text-xl font-medium rounded-full bg-[#1A362B] text-[#FCE600] hover:bg-[#FCE600] hover:text-[#1A362B] focus:outline-none disabled:opacity-50 transition-colors duration-300">
+        <button className="py-3 px-20 md:px-24 text-base lg:text-lg font-medium rounded-full bg-[#1A362B] text-[#FCE600] hover:bg-[#FCE600] hover:text-[#1A362B] focus:outline-none disabled:opacity-50 transition-colors duration-300">
           Get Started
         </button>
       </div>

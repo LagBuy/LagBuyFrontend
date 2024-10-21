@@ -25,7 +25,7 @@ const Customer = () => {
     ];
   return (
     <section className="container mx-auto px-5 py-14">
-      <h1 className='text-xl lg:text-3xl font-semibold '>WHAT OUR CUSTOMER SAYS</h1>
+      <h1 className='text-base lg:text-2xl font-semibold '>WHAT OUR CUSTOMER SAYS</h1>
       <div className="flex flex-col lg:flex-row gap-5  ">
         {Customers.map((Customer, index) => (
           <div
@@ -34,7 +34,7 @@ const Customer = () => {
           >
             <img src={Customer.img} alt="" className="rounded-l-2xl" />
             <div className="bg-[#FFF9B7] rounded-r-2xl  p-4 flex flex-col items-center justify-center">
-              <p className="text-sm lg:text-lg font-semibold mb-4">{Customer.text}</p>
+              <p className="text-sm lg:text-base font-semibold mb-4">{Customer.text}</p>
               <img src={line} alt="" />
               <p>{Customer.name}</p>
             </div>
