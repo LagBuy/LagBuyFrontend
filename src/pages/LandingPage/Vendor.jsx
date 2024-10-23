@@ -216,7 +216,7 @@ useEffect(() => {
       <h4 className="text-center mt-2 text-lg">
         your favourite vendors are on lagbuy
       </h4>
-      <div className="flex items-center justify-center mt-6 overflow-x-scroll">
+      <div className="flex items-center justify-center mt-6 overflow-x-clip">
         <div className="flex space-x-4 mx-4">
           {vendors.slice(currentPage - 1, currentPage + 5).map((vendor) => (
             <div

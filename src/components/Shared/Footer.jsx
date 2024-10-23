@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
+import { FooterModal } from "../../pages/LandingPage/Modal";
 import {
   FaInstagramSquare,
   FaTwitterSquare,
@@ -17,6 +18,16 @@ import {
 import { TiContacts } from "react-icons/ti";
 
 const Footer = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <footer className="bg-[#1A362B] py-14 px-5 font-Montserrat">
       <div className="container mx-auto flex flex-col">
@@ -96,13 +107,19 @@ const Footer = () => {
           <div className="hidden lg:block lg:w-1/2">
             <h2 className="text-[#FCE600] text-2xl">Our Apps</h2>
             <div className="flex gap-4 mt-6">
-              <div className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg">
+              <div
+                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
+                onClick={openModal}
+              >
                 <FaApple size={40} />
                 <p>
                   Download on the <span className="font-bold">App Store</span>
                 </p>
               </div>
-              <div className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg">
+              <div
+                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
+                onClick={openModal}
+              >
                 <IoLogoGooglePlaystore size={45} />
                 <p>
                   Download on the <span className="font-bold">Google Play</span>
@@ -115,17 +132,23 @@ const Footer = () => {
         <div className="border mt-5"></div>
 
         {/* Support Section */}
-        <div className="flex flex-col  md:flex-row items-center lg:justify-center gap-14 lg:gap-24 text-white mt-6">
+        <div className="flex flex-col md:flex-row items-center lg:justify-center gap-14 lg:gap-24 text-white mt-6">
           <div className="block lg:hidden text-black">
             <h2 className="text-white text-2xl">Our Apps</h2>
             <div className="flex flex-col gap-4 mt-6">
-              <div className="flex  items-center gap-3 bg-white p-5 w-52 rounded-lg">
+              <div
+                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
+                onClick={openModal}
+              >
                 <FaApple size={40} />
                 <p>
                   Download on the <span className="font-bold">App Store</span>
                 </p>
               </div>
-              <div className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg">
+              <div
+                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
+                onClick={openModal}
+              >
                 <IoLogoGooglePlaystore size={45} />
                 <p>
                   Download on the <span className="font-bold">Google Play</span>
@@ -204,41 +227,45 @@ const Footer = () => {
         <div className="mt-16 flex items-center justify-between">
           <img src={logo} alt="LagBuy Logo" className="hidden lg:block w-48" />
 
-          <div className="text-white space-y-7 mx-auto text-center">
-            <h1 className="text-2xl font-semibold">Connect with us</h1>
-            <div className="flex text-4xl items-center gap-8 justify-center">
-              <FaFacebook />
-              <FaTelegram />
-              <FaTwitterSquare />
-              <FaInstagramSquare />
-            </div>
+          <div className="flex gap-6">
+            <a href="#" className="text-white hover:text-[#FCE600]">
+              <FaInstagramSquare size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#FCE600]">
+              <FaTwitterSquare size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#FCE600]">
+              <FaTelegram size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#FCE600]">
+              <FaFacebook size={30} />
+            </a>
           </div>
-
-          <img src={logo} alt="LagBuy Logo" className="hidden lg:block w-48" />
         </div>
       </div>
+      <FooterModal isOpen={modalIsOpen} onClose={closeModal} />
     </footer>
   );
 };
 
-// Support Item Component
+// SupportItem Component
 const SupportItem = ({ icon, title, contact }) => (
-  <div className="flex flex-col items-center gap-1 md:gap-3">
+  <div className="flex flex-col items-center gap-3 text-center">
     {icon}
-    <div className="text-center text-sm md:text-lg">
-      <p className=" ">{title}</p>
-      <p>{contact}</p>
-    </div>
+    <h4 className="font-bold text-lg">{title}</h4>
+    <p>{contact}</p>
   </div>
 );
 
-// Footer Links Component
+// FooterLinks Component
 const FooterLinks = ({ title, links }) => (
-  <div className="space-y-10">
-    <h1 className="font-semibold text-lg  lg:text-xl">{title}</h1>
-    <ul className="space-y-4">
+  <div>
+    <h3 className="text-[#FCE600] text-lg">{title}</h3>
+    <ul className="mt-4 flex flex-col gap-2">
       {links.map((link, index) => (
-        <li key={index}  >{link}</li>
+        <li key={index} className="hover:text-[#FCE600]">
+          {link}
+        </li>
       ))}
     </ul>
   </div>
