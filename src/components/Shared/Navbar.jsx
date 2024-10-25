@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -19,10 +19,11 @@ const Navbar = () => {
       <header className="fixed w-full z-50 bg-white shadow-sm font-Capriola">
         <div className="container mx-auto px-5 py-4 flex justify-between items-center">
           {/* Logo */}
-          <Link to='/'>
+          <img src={logo} alt="Logo" className="h-8" />
+          {/* <Link to='/'>
             {" "}
             <img src={logo} alt="Logo" className="h-8" />
-          </Link>
+          </Link> */}
 
           {/* Desktop Search Form */}
           <form
