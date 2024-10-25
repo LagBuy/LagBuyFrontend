@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -18,7 +19,10 @@ const Navbar = () => {
       <header className="fixed w-full z-50 bg-white shadow-sm font-Capriola">
         <div className="container mx-auto px-5 py-4 flex justify-between items-center">
           {/* Logo */}
-          <img src={logo} alt="Logo" className="h-8" />
+          <Link to='/'>
+            {" "}
+            <img src={logo} alt="Logo" className="h-8" />
+          </Link>
 
           {/* Desktop Search Form */}
           <form
@@ -74,12 +78,12 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500">
+                <a href="#About-Us" className="hover:text-green-500">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500">
+                <a href="#Contact-Us" className="hover:text-green-500">
                   Contact Us
                 </a>
               </li>
@@ -93,12 +97,12 @@ const Navbar = () => {
             <nav>
               <ul className="flex flex-col space-y-2">
                 <li>
-                  <a href="#" className="hover:text-green-500">
+                  <a href="#About-Us" className="hover:text-green-500">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-500">
+                  <a href="#Contact-Us" className="hover:text-green-500">
                     Contact Us
                   </a>
                 </li>

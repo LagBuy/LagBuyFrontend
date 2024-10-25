@@ -3,7 +3,7 @@ import aboutUs from "../../assets/LandingPageImg/AboutUs.png";
 
 const AboutUs = () => {
   return (
-    <section className="container mx-auto flex flex-col-reverse lg:flex-row gap-9 px-5 py-8 lg:py-14">
+    <section className="container mx-auto flex flex-col-reverse lg:flex-row gap-9 px-5 py-8 lg:py-14" id='About-Us'>
       <div className="lg:w-1/2 w-full">
         <h1 className='text-xl lg:text-2xl font-semibold mb-6'>ABOUT US</h1>
         <p className='text-lg md:text-xl font-light leading-5 '>

@@ -6,7 +6,7 @@ import { FaInstagram, FaXTwitter, FaFacebook } from "react-icons/fa6";
 
 const ContactUs = () => {
   return (
-    <section className="container mx-auto px-4 py-14">
+    <section className="container mx-auto px-4 py-14" id="Contact-Us">
       <div className="text-center mb-8">
         <h1 className="text-lg lg:text-2xl  font-semibold mb-3">CONTACT US</h1>
         <h3 className="text-base text-gray-600">
