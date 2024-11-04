@@ -23,13 +23,13 @@ const Service = () => {
       },
     ];
   return (
-    <section className="container mx-auto px-5 py-10 lg:py-14 ">
+    <section className="container mx-auto px-5 py-5 lg:py-14 ">
       <h1 className="text-xl lg:text-3xl font-semibold mb-9 ">OUR SERVICE</h1>
-      <div className="flex flex-col lg:flex-row   gap-4 ">
+      <div className="flex flex-col lg:flex-row gap-4 ">
         {Services.map((Service, index) => (
           <div
             key={index}
-            className="flex flex-col items-center gap-5 px-9 py-10 "
+            className="flex flex-col items-center gap-3 px-6 py-4 lg:py-10 "
           >
             <div className="h-28 w-28 rounded-full flex items-center justify-center bg-[#1A362B]">
               <img
@@ -41,7 +41,7 @@ const Service = () => {
             <p className="text-[#1A362B] text-lg font-semibold">
               {Service.title}
             </p>
-            <p className="text-base lg:text-xl text-center">{Service.text}</p>
+            <p className="text-base lg:text-lg text-center">{Service.text}</p>
           </div>
         ))}
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -49,8 +50,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 pt-32 justify-between lg:gap-16 md:flex-row">
-
+    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 pt-16 justify-between lg:gap-16 md:flex-row">
       <div className="w-full md:w-1/2  text-center space-y-4 lg:space-y-9">
         <h1 className="text-lg xl:text-3xl font-bold lg:w-5/6  ">
           <span className="text-[#1A362B]">
@@ -71,10 +71,11 @@ const HeroSection = () => {
         <Slider {...settings}>
           {images.map((image, index) => (
             <div key={index} className="">
-              <img
+              <LazyLoadImage
                 src={image.img}
                 alt={`Slide ${index}`}
                 className="w-full lg:h-[35rem] object-cover  rounded-t-full   lg:p-8"
+                // effect="blur"
               />
             </div>
           ))}

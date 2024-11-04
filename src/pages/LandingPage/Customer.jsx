@@ -24,7 +24,7 @@ const Customer = () => {
       },
     ];
   return (
-    <section className="container mx-auto px-5 py-14">
+    <section className="container mx-auto px-5 py-5 lg:py-14">
       <h1 className='text-base lg:text-2xl font-semibold '>WHAT OUR CUSTOMER SAYS</h1>
       <div className="flex flex-col lg:flex-row gap-5  ">
         {Customers.map((Customer, index) => (

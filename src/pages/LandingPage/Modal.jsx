@@ -80,7 +80,7 @@ export const FooterModal = ({ isOpen, onClose }) => {
           <FaTimes size={18} />
         </button>
       </div>
-      <p className="text-center text-white">coming soon......</p>
+      <p className="text-center text-white">coming soon...</p>
     </Modal>
   );
 };

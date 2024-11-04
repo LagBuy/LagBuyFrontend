@@ -82,7 +82,7 @@ const Explore = () => {
   ];
 
   return (
-    <section className="container mx-auto px-5 py-14">
+    <section className="container mx-auto px-5 lg:py-14">
       <div className="flex items-center justify-between mb-8">
         <p className="text-sm font-bold lg:text-xl lg:font-semibold">
           EXPLORE OUR LATEST BLOG

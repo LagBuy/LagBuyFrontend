@@ -6,7 +6,7 @@ const AboutUs = () => {
     <section className="container mx-auto flex flex-col-reverse lg:flex-row gap-9 px-5 py-8 lg:py-14" id='About-Us'>
       <div className="lg:w-1/2 w-full">
         <h1 className='text-xl lg:text-2xl font-semibold mb-6'>ABOUT US</h1>
-        <p className='text-lg md:text-xl font-light leading-5 '>
+        <p className='text-base md:text-xl font-light  '>
           Welcome to Lagbuy, we are passionate about providing-high quality
           products that enhances your life style. Our journey begins with a
           vision to create a seamless shopping experience for our users,

@@ -55,7 +55,7 @@ const Process = () => {
   };
 
   return (
-    <section className="container mx-auto px-5 py-16">
+    <section className="container mx-auto px-5 py-6 lg:py-14">
       <h1 className="text-center font-semibold text-2xl mb-8">
         How Our Process Works
       </h1>

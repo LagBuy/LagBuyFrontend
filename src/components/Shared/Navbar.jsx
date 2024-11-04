@@ -12,6 +12,9 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    console.log(menuOpen);
+    
+   ;
   };
 
   return (
@@ -74,7 +77,11 @@ const Navbar = () => {
           <nav className="hidden md:block">
             <ul className="flex gap-x-8 text-center text-lg text-[#090A0A] font-semibold">
               <li>
-                <a href="#" className="hover:text-green-500">
+                <a
+                  href="#"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-green-500"
+                >
                   Company
                 </a>
               </li>
