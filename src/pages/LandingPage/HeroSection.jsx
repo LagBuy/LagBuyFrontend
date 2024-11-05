@@ -1,5 +1,6 @@
 import React from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -75,7 +76,7 @@ const HeroSection = () => {
                 src={image.img}
                 alt={`Slide ${index}`}
                 className="w-full lg:h-[35rem] object-cover  rounded-t-full   lg:p-8"
-                // effect="blur"
+                effect="blur"
               />
             </div>
           ))}

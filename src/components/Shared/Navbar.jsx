@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -13,9 +12,10 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     console.log(menuOpen);
-    
-   ;
   };
+
+  // Function to close menu when a link is clicked
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
@@ -23,10 +23,6 @@ const Navbar = () => {
         <div className="container mx-auto px-5 py-4 flex justify-between items-center">
           {/* Logo */}
           <img src={logo} alt="Logo" className="h-8" />
-          {/* <Link to='/'>
-            {" "}
-            <img src={logo} alt="Logo" className="h-8" />
-          </Link> */}
 
           {/* Desktop Search Form */}
           <form
@@ -48,7 +44,7 @@ const Navbar = () => {
           </form>
 
           {/* Hamburger Menu for Mobile */}
-          <button onClick={toggleMenu} className="md:hidden ">
+          <button onClick={toggleMenu} className="md:hidden">
             <svg
               className="w-6 h-6 text-[#a6c833] fill-current"
               stroke="currentColor"
@@ -79,7 +75,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={closeMenu}
                   className="hover:text-green-500"
                 >
                   Company
@@ -105,54 +101,87 @@ const Navbar = () => {
             <nav>
               <ul className="flex flex-col space-y-2">
                 <li>
-                  <a href="#About-Us" className="hover:text-green-500">
+                  <a
+                    href="#About-Us"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#Contact-Us" className="hover:text-green-500">
+                  <a
+                    href="#Contact-Us"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
                     Contact Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-500">
-                    Term of use
+                  <a
+                    href="#"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
+                    Terms of Use
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-500">
-                    privacy policy
+                  <a
+                    href="#"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
+                    Privacy Policy
                   </a>
                 </li>
-                <li className="  border-gray-200 border-[0.5px]"></li>
-
+                <li className="border-gray-200 border-[0.5px]"></li>
                 <li>
-                  <a href="#" className="hover:text-green-500">
-                    vendor registration
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-green-500">
-                    vendor login
-                  </a>
-                </li>
-                <li className="  border-gray-200 border-[0.5px]"></li>
-                <li>
-                  <a href="#" className="hover:text-green-500">
-                    logistic Registration
+                  <a
+                    href="#"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
+                    Vendor Registration
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-500">
-                    logistic Login
+                  <a
+                    href="#"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
+                    Vendor Login
+                  </a>
+                </li>
+                <li className="border-gray-200 border-[0.5px]"></li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
+                    Logistic Registration
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={closeMenu}
+                    className="hover:text-green-500"
+                  >
+                    Logistic Login
                   </a>
                 </li>
               </ul>
             </nav>
           </div>
         )}
+
+        {/* Mobile Search Form */}
         <form action="" className="block md:hidden">
-          <div className="flex gap-4 items-center px-5 pb-6 ">
+          <div className="flex gap-4 items-center px-5 pb-6">
             <div className="w-full">
               <input
                 type="text"
@@ -168,8 +197,6 @@ const Navbar = () => {
           </div>
         </form>
       </header>
-
-      {/* Mobile Search Form */}
     </>
   );
 };
