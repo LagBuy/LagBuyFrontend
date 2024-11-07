@@ -77,6 +77,10 @@ const HeroSection = () => {
                 alt={`Slide ${index}`}
                 className="w-full lg:h-[35rem] object-cover  rounded-t-full   lg:p-8"
                 effect="blur"
+                wrapperProps={{
+                  // If you need to, you can tweak the effect transition using the wrapper style.
+                  style: { transitionDelay: "1s" },
+                }}
               />
             </div>
           ))}

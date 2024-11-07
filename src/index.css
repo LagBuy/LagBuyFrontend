@@ -57,13 +57,13 @@
     --chart-5: 340 75% 55%
   }
 }
-@layer base {
+  /* Base Styles */
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
-}
