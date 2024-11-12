@@ -60,10 +60,10 @@
   /* Base Styles */
   * {
     @apply border-border;
+    /* overflow-x: hidden */
   }
 
   body {
     @apply bg-background text-foreground;
-    /* overflow-x: hidden;
-    scroll-behavior: smooth; */
+   
   }
