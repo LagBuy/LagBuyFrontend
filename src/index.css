@@ -64,6 +64,6 @@
 
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    /* overflow-x: hidden;
+    scroll-behavior: smooth; */
   }

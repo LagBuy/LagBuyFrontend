@@ -7,7 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 const AboutUs = () => {
   return (
     <section
-      className="container mx-auto flex flex-col-reverse lg:flex-row gap-9 px-5 py-8 lg:py-14"
+      className="container mx-auto flex flex-col-reverse lg:flex-row gap-9 px-5 py-8 lg:py-16"
       id="About-Us"
     >
       <div className="lg:w-1/2 w-full">
