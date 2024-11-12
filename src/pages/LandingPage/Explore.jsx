@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -106,19 +108,29 @@ const Explore = () => {
               <Slider {...sliderSettings}>
                 {explore.sliderImages.map((img, imgIndex) => (
                   <div key={imgIndex}>
-                    <img
+                    <LazyLoadImage
                       src={img}
                       alt={`${explore.title} ${imgIndex + 1}`}
                       className="w-full h-72 object-cover md:h-80 mb-5 rounded-lg"
+                      effect="blur"
+                      wrapperProps={{
+                        // If you need to, you can tweak the effect transition using the wrapper style.
+                        style: { transitionDelay: "1s" },
+                      }}
                     />
                   </div>
                 ))}
               </Slider>
             ) : (
-              <img
+              <LazyLoadImage
                 src={explore.image}
                 alt={explore.title}
                 className="w-full h-72 object-cover md:h-80 mb-5 rounded-lg"
+                effect="blur"
+                wrapperProps={{
+                  // If you need to, you can tweak the effect transition using the wrapper style.
+                  style: { transitionDelay: "1s" },
+                }}
               />
             )}
 

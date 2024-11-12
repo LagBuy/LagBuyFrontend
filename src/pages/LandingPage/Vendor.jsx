@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import vendorImg1 from "../../assets/LandingPageImg/vendor (1).png";
 import vendorImg2 from "../../assets/LandingPageImg/vendor (2).png";
@@ -212,44 +214,47 @@ useEffect(() => {
   return (
     <section className="container mx-auto px-4 py-14 ">
       <div>
-              <h1 className="text-xl font-semibold text-center"> Vendors on lagbuy</h1>
-      <h4 className="text-center mt-2 text-lg">
-        your favourite vendors are on lagbuy
-      </h4>
-      <div className="flex items-center justify-center mt-6 overflow-x-clip">
-        <div className="flex space-x-4 mx-4">
-          {vendors.slice(currentPage - 1, currentPage + 5).map((vendor) => (
-            <div
-              key={vendor.id}
-              className="w-16 h-16 flex items-center justify-center bg-white bordershadow"
-            >
-              <img
-                src={vendor.img}
-                alt={`Vendor ${vendor.id}`}
-                className="w-16 h-16  rounded-full "
-              />
-            </div>
-          ))}
+        <h1 className="text-xl font-semibold text-center">
+          {" "}
+          Vendors on lagbuy
+        </h1>
+        <h4 className="text-center mt-2 text-lg">
+          your favourite vendors are on lagbuy
+        </h4>
+        <div className="flex items-center justify-center mt-6 overflow-x-clip">
+          <div className="flex space-x-4 mx-4">
+            {vendors.slice(currentPage - 1, currentPage + 5).map((vendor) => (
+              <div
+                key={vendor.id}
+                className="w-16 h-16 flex items-center justify-center bg-white bordershadow"
+              >
+                <img
+                  src={vendor.img}
+                  alt={`Vendor ${vendor.id}`}
+                  className="w-16 h-16  rounded-full "
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      {/* Pagination and Navigation Controls */}
-      <div className="mt-4 flex items-center justify-center text-gray-600">
-        <button
-          onClick={handlePrevious}
-          className="p-2 text-gray-500 hover:text-gray-800"
-        >
-          <FaChevronLeft size={24} />
-        </button>
-        <div className="mx-4">
-          <span>{currentPage}</span> / <span>{vendors.length}</span>
+        {/* Pagination and Navigation Controls */}
+        <div className="mt-4 flex items-center justify-center text-gray-600">
+          <button
+            onClick={handlePrevious}
+            className="p-2 text-gray-500 hover:text-gray-800"
+          >
+            <FaChevronLeft size={24} />
+          </button>
+          <div className="mx-4">
+            <span>{currentPage}</span> / <span>{vendors.length}</span>
+          </div>
+          <button
+            onClick={handleNext}
+            className="p-2 text-gray-500 hover:text-gray-800"
+          >
+            <FaChevronRight size={24} />
+          </button>
         </div>
-        <button
-          onClick={handleNext}
-          className="p-2 text-gray-500 hover:text-gray-800"
-        >
-          <FaChevronRight size={24} />
-        </button>
-      </div>
       </div>
       <div className="mt-10">
         <h1 className="text-xl font-semibold">Explore Popular Categories</h1>
@@ -258,10 +263,15 @@ useEffect(() => {
             {items.map((item, index) => (
               <div key={index} className="flex flex-col items-center">
                 {/* Rotate images based on currentIndex */}
-                <img
+                <LazyLoadImage
                   src={item.image[currentIndex]}
                   alt={`${item.name} ${currentIndex + 1}`}
                   className="w-24 h-24 lg:w-64 lg:h-64 rounded-lg"
+                  effect="blur"
+                  wrapperProps={{
+                    // If you need to, you can tweak the effect transition using the wrapper style.
+                    style: { transitionDelay: "1s" },
+                  }}
                 />
                 <h4 className="text-center mt-2">{item.name}</h4>
               </div>

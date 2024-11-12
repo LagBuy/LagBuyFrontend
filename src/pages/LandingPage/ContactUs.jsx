@@ -1,4 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import mobileNumber from "../../assets/LandingPageImg/mobileNumber.png";
 import social from "../../assets/LandingPageImg/social.png";
 import mail from "../../assets/LandingPageImg/mail.png";
@@ -16,10 +18,15 @@ const ContactUs = () => {
       <div className="flex flex-col md:flex-row  justify-between gap-6 ">
         {/* Mobile Number Section */}
         <div className="flex flex-col rounded-md rounded-br-[4rem]  border bg-white shadow-sm">
-          <img
+          <LazyLoadImage
             src={mobileNumber}
             alt="Mobile Number"
             className="w-auto h-80 mb-4"
+            effect="blur"
+            wrapperProps={{
+              // If you need to, you can tweak the effect transition using the wrapper style.
+              style: { transitionDelay: "1s" },
+            }}
           />
           <div className="p-5">
             <h3 className="text-lg font-semibold">Mobile Number</h3>
@@ -33,7 +40,16 @@ const ContactUs = () => {
 
         {/* Social Media Section */}
         <div className="flex flex-col rounded-md rounded-br-[4rem]  border bg-white shadow-sm ">
-          <img src={social} alt="Social Media" className="w-auto h-80 mb-4" />
+          <LazyLoadImage
+            src={social}
+            alt="Social Media"
+            className="w-auto h-80 mb-4"
+            effect="blur"
+            wrapperProps={{
+              // If you need to, you can tweak the effect transition using the wrapper style.
+              style: { transitionDelay: "1s" },
+            }}
+          />
           <div className="p-5">
             <h3 className="text-lg font-semibold ">Social Media</h3>
             <p className="flex items-center gap-2 text-base">
@@ -56,7 +72,16 @@ const ContactUs = () => {
 
         {/* E-mail Section */}
         <div className="flex flex-col rounded-md rounded-br-[4rem] border bg-white shadow-sm">
-          <img src={mail} alt="Email" className="w-auto h-80 mb-4" />
+          <LazyLoadImage
+            src={mail}
+            alt="Email"
+            className="w-auto h-80 mb-4"
+            effect="blur"
+            wrapperProps={{
+              // If you need to, you can tweak the effect transition using the wrapper style.
+              style: { transitionDelay: "1s" },
+            }}
+          />
           <div className="p-5">
             <h3 className="text-lg font-semibold">E-mail</h3>
             <p className="text-base">help@lagbuy.com</p>
