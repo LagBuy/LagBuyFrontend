@@ -97,7 +97,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden w-full absolute top-16 right-0 mx-4 bg-white shadow-lg rounded-lg px-7 py-5 z-50 text-lg font-semibold">
+          <div className="md:hidden w-72 absolute top-16 right-0 mx-4 bg-white shadow-lg rounded-lg px-7 py-5 z-50 text-lg font-semibold">
             <nav>
               <ul className="flex flex-col space-y-2">
                 <li>
