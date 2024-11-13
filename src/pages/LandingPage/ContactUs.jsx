@@ -50,9 +50,14 @@ const ContactUs = () => {
               style: { transitionDelay: "1s" },
             }}
           />
-          <div className="p-5">
+          <div className="p-5 space-y-4">
             <h3 className="text-lg font-semibold ">Social Media</h3>
-            <p className="flex items-center gap-2 text-base">
+            <div className="flex text-2xl gap-3">
+              <FaInstagram className="text-pink-600" />
+              <FaXTwitter className="text-blue-500" />
+              <FaFacebook className="text-blue-700" />
+            </div>
+            {/* <p className="flex items-center gap-2 text-base">
               <FaInstagram className="text-pink-600" />
               <span>@LAG-BUY</span>
             </p>
@@ -63,7 +68,7 @@ const ContactUs = () => {
             <p className="flex items-center  gap-2 text-base">
               <FaFacebook className="text-blue-700" />
               <span>@LAG-BUY</span>
-            </p>
+            </p> */}
             <p className="text-sm text-gray-500">
               Contact us through our social media pages above.
             </p>

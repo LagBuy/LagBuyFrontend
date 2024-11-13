@@ -41,7 +41,7 @@ const WhatToDoWithLadbuySection = () => {
         {todos.map((todo, index) => (
           <div
             key={index}
-            className="flex-1 group relative overflow-hidden bg-[#FFF9B7] text-left px-7 py-16 rounded-xl shadow-lg w-full lg:w-[30rem] h-auto lg:h-[30rem] transition-all duration-300 hover:bg-[#1A362B] hover:text-white"
+            className="flex-1 group relative overflow-hidden bg-[#FFF9B7] text-left px-7 py-10 rounded-xl shadow-lg w-full lg:w-[25rem] h-auto lg:h-[30rem] transition-all duration-300 hover:bg-[#1A362B] hover:text-white"
           >
             <div className="relative z-10 flex justify-center lg:justify-end">
               <img src={todo.image} alt={todo.title} className="h-40 mb-6" />
