@@ -17,7 +17,7 @@ import Navbar from '../../components/Shared/Navbar'
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden ">
+    <div className="min-h-screen">
       <Navbar />
       <HeroSection />
       <Vendor />
