@@ -12,7 +12,7 @@ const AboutUs = () => {
     >
       <div className="lg:w-1/2 w-full">
         <h1 className="text-xl lg:text-2xl font-semibold mb-6">ABOUT US</h1>
-        <p className="text-base md:text-xl font-light  ">
+        <p className="text-base md:text-xl  ">
           Welcome to Lagbuy, we are passionate about providing-high quality
           products that enhances your life style. Our journey begins with a
           vision to create a seamless shopping experience for our users,

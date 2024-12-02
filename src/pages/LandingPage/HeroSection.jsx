@@ -51,7 +51,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 pt-16 justify-between lg:gap-16 md:flex-row">
+    <section className="container mx-auto flex flex-col gap-11 md:items-center px-5 pt-36 lg:py-12 justify-between lg:gap-16 md:flex-row">
       <div className="w-full md:w-1/2  text-center space-y-4 lg:space-y-9">
         <h1 className="text-lg xl:text-3xl font-bold lg:w-5/6  ">
           <span className="text-[#1A362B]">
@@ -60,7 +60,7 @@ const HeroSection = () => {
           </span>{" "}
           one delivery at a time.
         </h1>
-        <p className="text-base lg:text-xl font-light text-center ">
+        <p className="text-base lg:text-xl  text-center ">
           Discover the convenience and speed of our delivery process. Get your
           items delivered right to your door step in no time.
         </p>
