@@ -28,7 +28,8 @@ const FooterButtons = () => {
 
         <div className='space-y-1 cursor-pointer ' onClick={()=>{navigate("/rider/orders")}}>
         <BsFilterSquare className='text-2xl ' />
-        <p className='font-medium text-[13px]'>Orders</p>
+        <p className='font-medium text-[13px]'>Orders</p> 
+      
 
         </div>
 
