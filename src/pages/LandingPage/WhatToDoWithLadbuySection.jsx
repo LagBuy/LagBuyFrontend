@@ -3,27 +3,41 @@ import img1 from "../../assets/LandingPageImg/whatToDo1.png";
 import img2 from "../../assets/LandingPageImg/whatToDo2.png";
 import img3 from "../../assets/LandingPageImg/whatToDo3.png";
 
+import { useNavigate } from "react-router-dom";
+
+
 const WhatToDoWithLadbuySection = () => {
+
+  
+  
   const todos = [
     {
       image: img1,
       title: "Buy An Item",
       text: "shop like an expert! Browse, compare, browse and buy confidently. Get top products delivered straight to your doorstep",
       button: "Buy Now",
+      id:1,
+      path:''
     },
     {
       image: img2,
       title: "Sell An Item",
       text: "Elevate your business! sell on lagbuy,Reach a large audienc, list product, set prices and grow sales!.",
       button: "Sell Now",
+      id:2,
+      path: ''
     },
     {
       image: img3,
       title: "Deliver An Item",
       text: "Join the ride! Become a LagBuy delivery partner, and start earning today. Flexible schedules, competitive pay.",
       button: "Join Us",
+      id:3,
+      path:"/rider/home"
     },
   ];
+
+  const navigate = useNavigate();
 
   return (
     <section className="container mx-auto px-5 py-14">
@@ -50,7 +64,8 @@ const WhatToDoWithLadbuySection = () => {
               <p className="text-3xl font-semibold mb-2">{todo.title}</p>
               <p className="mb-6 text-xl font-light">{todo.text}</p>
               <div className="text-center">
-                <button className="py-2 px-10 text-sm w-auto font-medium shadow rounded-full bg-[#1A362B] text-[#FCE600] relative overflow-hidden transition-all duration-600">
+                <button className="py-2 px-10 text-sm w-auto font-medium shadow rounded-full bg-[#1A362B] text-[#FCE600] 
+                relative overflow-hidden transition-all duration-600" onClick={()=>{navigate(todo.path)}}>
                   <span className="absolute inset-0 bg-gradient-to-r from-[#FCE600] to-[#1A362B] transition-all duration-500 transform translate-x-full group-hover:translate-x-0"></span>
                   <span className="relative z-10 group-hover:text-white">
                     {todo.button}
