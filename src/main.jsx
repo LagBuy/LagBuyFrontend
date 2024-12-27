@@ -21,6 +21,7 @@ import MeetingSpot from './pages/RidersPage/MeetingSpot.jsx';
 import PickUp from './pages/RidersPage/PickUp.jsx';
 import DeliveryLocation from './pages/RidersPage/DeliveryLocation.jsx';
 import DeliveryDone from './pages/RidersPage/DeliveryDone.jsx';
+import PaymentPage from './pages/RidersPage/PaymentPage.jsx';
 
 const router = createBrowserRouter([
   // Public routes with LandingPage as a layout component
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
       { path: "/rider/pickup", element: <PickUp/>},
       { path: "/rider/deliverylocation", element: <DeliveryLocation/>},
       { path: "/rider/deliverydone", element: <DeliveryDone/>},
+      { path: "/rider/payment", element: <PaymentPage/>},
       
 
       
