@@ -1,9 +1,8 @@
-
 import  { useContext, useState ,useRef} from 'react'
 import {RegContext} from "./RegisterProvider"
 import { IoIosCamera } from "react-icons/io";
 
-const Facedetails = () => {
+const FaceDetails = () => {
     const fileInputRef = useRef(null); 
     const [photo, setPhoto] = useState(null)
 
@@ -65,4 +64,4 @@ const Facedetails = () => {
   )
 }
 
-export default Facedetails
+export default FaceDetails

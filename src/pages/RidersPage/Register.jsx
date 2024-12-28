@@ -1,15 +1,15 @@
 import React from 'react'
 import PersonalDetails from "../../components/Riders/PersonalDetails"
 import VehicleDetails from '../../components/Riders/VehicleDetails'
-import { useState,useEffect,createContext } from 'react'
+import { useState } from 'react'
 import {RegisterProvider} from '../../components/Riders/RegisterProvider'
  import BankDetails from '../../components/Riders/BankDetails'
- import Facedetails from '../../components/Riders/Facedetails'
+ import FaceDetails from '../../components/Riders/FaceDetails'
  import { IoChevronBackSharp } from "react-icons/io5";
  import { useNavigate } from 'react-router-dom';
 
 
-
+ 
 
 const RegConsume=()=>{
 
@@ -75,7 +75,7 @@ const RegConsume=()=>{
           {Currentform==1 &&<PersonalDetails/>}
           {Currentform==2 &&<VehicleDetails/>}
           {Currentform==3 &&<BankDetails/>}
-          {Currentform==4 &&<Facedetails/>}
+          {Currentform==4 &&<FaceDetails/>}
 
             <button className='bg-[#1A362B] w-full py-3  text-white rounded-3xl text-xl font-bold' onClick={NextPage}>Next</button>
             </div>
