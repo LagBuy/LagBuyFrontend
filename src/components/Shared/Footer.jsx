@@ -22,9 +22,9 @@ const Footer = () => {
     <footer className="bg-[#1A362B] py-14 px-5 font-Montserrat">
       <div className="container mx-auto flex flex-col">
         {/* Subscription and Apps Section */}
-        <div className="flex flex-row justify-between gap-x-10">
+        <div className="flex flex-row justify-center items-center ">
           {/* Subscription Section */}
-          <div className="flex flex-col gap-y-5 w-full lg:w-1/2 text-center lg:text-start">
+          <div className="flex flex-col gap-y-5  text-center  ">
             <img
               src={logo}
               alt="LagBuy Logo"

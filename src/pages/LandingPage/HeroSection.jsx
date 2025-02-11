@@ -50,7 +50,7 @@ const HeroSection = () => {
     <section className="bg-[#1A362B] relative h-screen flex flex-col lg:flex-row text-center lg:text-start">
       <div className="absolute bottom-0 bg-hero-bg bg-no-repeat bg-cover h-1/5 lg:h-1/2 w-full"></div>
       <div className="container z-20 mx-auto px-4  py-8 lg:py-12 ">
-        <div className="text-white w-full  lg:w-1/2 space-y-2 lg:space-y-6 text-base md:text-4xl">
+        <div className="text-white w-full  lg:w-1/2 space-y-5 md:space-y-3 lg:space-y-6 text-base md:text-4xl">
           <p className="">Bridging the tap between</p>
           {/* ReactTyped components in a column */}
           <div className="lg:space-y-2 flex flex-col">
@@ -81,10 +81,10 @@ const HeroSection = () => {
             Discover the convenience and speed of our delivery process. Get your
             items delivered right to your doorstep in no time.
           </p>
-          <div className=" text-xl flex justify-center items-center ">
-            <div className="flex-col lg:flex lg:flex-row gap-4 ">   
+          <div className=" text-lg flex justify-center items-center ">
+            <div className="flex-col lg:flex lg:flex-row gap-3 ">
               <div
-                className="flex items-center  gap-3 bg-black  p-3  w-60 md:w-auto  rounded-lg cursor-pointer"
+                className="flex items-center gap-2 bg-black p-3 w-60 md:w-auto rounded-lg cursor-pointer"
                 onClick={openModal}
               >
                 <FaApple size={40} />
@@ -93,7 +93,7 @@ const HeroSection = () => {
                 </p>
               </div>
               <div
-                className="flex items-center gap-3 mt-3 bg-black p-3 w-60  md:w-auto rounded-lg cursor-pointer"
+                className="mt-3 lg:mt-0 flex items-center gap-2  bg-black p-3 w-60  md:w-auto rounded-lg cursor-pointer"
                 onClick={openModal}
               >
                 <IoLogoGooglePlaystore size={45} />
@@ -105,7 +105,7 @@ const HeroSection = () => {
             <FooterModal isOpen={modalIsOpen} onClose={closeModal} />
           </div>
 
-          <div className="flex items-center justify-center lg:items-start lg:justify-start">
+          <div className=" flex items-center justify-center lg:items-start lg:justify-start">
             {images.map((image) => (
               <img
                 src={image.img}
@@ -126,7 +126,7 @@ const HeroSection = () => {
                 value={inputValue}
                 onChange={handleInputChange}
                 placeholder="Enter your email"
-                className=" py-2 px-4  text-base lg:text-xl w-full lg:w-96 border placeholder-black  rounded-full focus:outline-none focus:ring-2 focus:ring-black"
+                className=" py-2 px-4  text-base lg:text-xl w-full lg:w-96 border text-black placeholder:text-black  rounded-full focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
             <div>
@@ -144,7 +144,7 @@ const HeroSection = () => {
           <img
             src={holder}
             alt="Holder Image"
-            className="hidden md:block absolute bottom-0 md:right-44 lg:right-24 right-20 md:w-[21rem]  lg:w-[30rem]"
+            className=" hidden md:block absolute bottom-0 md:right-44 lg:right-24 right-20 md:w-[21rem] lg:w-[30rem]"
           />
           <img
             src={mobile}
