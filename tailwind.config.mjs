@@ -55,6 +55,9 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
+      backgroundImage:{
+      'hero-bg':"url('/src/assets/LandingPageImg/hero-bg.png')"
+      },
     },
   },
   plugins: [animate],

@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import vendorImg1 from "../../assets/LandingPageImg/vendor (1).png";
-import vendorImg2 from "../../assets/LandingPageImg/vendor (2).png";
-import vendorImg3 from "../../assets/LandingPageImg/vendor (3).png";
-import vendorImg4 from "../../assets/LandingPageImg/vendor (4).png";
-import vendorImg5 from "../../assets/LandingPageImg/vendor (5).png";
-import vendorImg6 from "../../assets/LandingPageImg/vendor (6).jpg";
-import vendorImg7 from "../../assets/LandingPageImg/vendor (7).jpg";
-import vendorImg8 from "../../assets/LandingPageImg/vendor (8).jpg";
-import vendorImg9 from "../../assets/LandingPageImg/vendor (9).jpg";
 import FashionImg1 from '../../assets/LandingPageImg/fashion1.jpg'
 import fashionImg2 from '../../assets/LandingPageImg/fashion2.jpg'
 import fashionImg3 from "../../assets/LandingPageImg/fashion3.jpg";
@@ -80,22 +70,6 @@ const Vendor = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
 
-const vendors = [
-  { img: vendorImg1 },
-  { img: vendorImg5 },
-  { img: vendorImg4 },
-  { img: vendorImg3 },
-  { img: vendorImg5 },
-  { img: vendorImg2 },
-  { img: vendorImg6 },
-  { img: vendorImg7 },
-  { img: vendorImg8 },
-  { img: vendorImg9 },
-  { img: vendorImg7 },
-  { img: vendorImg3 },
-  { img: vendorImg9 },
-  { img: vendorImg2 },
-];
 
   const items = [
     {
@@ -186,18 +160,7 @@ const vendors = [
     },
   ];
 
-  
-  const handleNext = () => {
-    setCurrentPage((prevPage) =>
-      prevPage === vendors.length ? 1 : prevPage + 1
-    );
-  };
 
-  const handlePrevious = () => {
-    setCurrentPage((prevPage) =>
-      prevPage === 1 ? vendors.length : prevPage - 1
-    );
-  };
 
 useEffect(() => {
   if (items.length > 0 && items[0].image) {
@@ -213,49 +176,6 @@ useEffect(() => {
 
   return (
     <section className="container mx-auto px-4 py-14 ">
-      <div>
-        <h1 className="text-xl font-semibold text-center">
-          {" "}
-          Vendors on lagbuy
-        </h1>
-        <h4 className="text-center mt-2 text-lg">
-          your favourite vendors are on lagbuy
-        </h4>
-        <div className="flex items-center justify-center mt-6 overflow-x-clip">
-          <div className="flex space-x-4 mx-4">
-            {vendors.slice(currentPage - 1, currentPage + 5).map((vendor) => (
-              <div
-                key={vendor.id}
-                className="w-16 h-16 flex items-center justify-center bg-white bordershadow"
-              >
-                <img
-                  src={vendor.img}
-                  alt={`Vendor ${vendor.id}`}
-                  className="w-16 h-16  rounded-full "
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* Pagination and Navigation Controls */}
-        <div className="mt-4 flex items-center justify-center text-gray-600">
-          <button
-            onClick={handlePrevious}
-            className="p-2 text-gray-500 hover:text-gray-800"
-          >
-            <FaChevronLeft size={24} />
-          </button>
-          <div className="mx-4">
-            <span>{currentPage}</span> / <span>{vendors.length}</span>
-          </div>
-          <button
-            onClick={handleNext}
-            className="p-2 text-gray-500 hover:text-gray-800"
-          >
-            <FaChevronRight size={24} />
-          </button>
-        </div>
-      </div>
       <div className="mt-10">
         <h1 className="text-xl font-semibold">Explore Popular Categories</h1>
         <div className="mt-7">

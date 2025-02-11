@@ -1,32 +1,22 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { FooterModal } from "../../pages/LandingPage/Modal";
+// import { FooterModal } from "../../pages/LandingPage/Modal";
 import {
   FaInstagramSquare,
   FaTwitterSquare,
   FaTelegram,
   FaFacebook,
-  FaApple,
+
 } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
-import { MdOutlineMan, MdEmail } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
 import {
-  IoWoman,
-  IoLogoGooglePlaystore,
   IoLogoWhatsapp,
 } from "react-icons/io5";
 import { TiContacts } from "react-icons/ti";
 
 const Footer = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
 
   return (
     <footer className="bg-[#1A362B] py-14 px-5 font-Montserrat">
@@ -50,43 +40,22 @@ const Footer = () => {
                 <div className="relative">
                   <CiMail
                     size={20}
-                    color="#FCE6008A"
+                    color="#ffff "
                     className="absolute top-4 left-2"
                   />
                   <input
                     type="text"
                     placeholder="Email Address"
                     aria-label="Email Address"
-                    className="bg-[#1A362B] border border-white placeholder:text-[#FCE6008A] px-8 py-3 w-full lg:w-[20rem]"
+                    className="bg-[#1A362B] border border-white placeholder:text-[#ffff] px-8 py-3 w-full lg:w-[20rem]"
                   />
                 </div>
-                {/* Gender Inputs */}
-                <div className="relative">
-                  <MdOutlineMan
-                    size={30}
-                    color="white"
-                    className="absolute top-3 left-1"
-                  />
-                  <input
-                    type="gender"
-                    placeholder="Male"
-                    aria-label="Male"
-                    className="bg-[#1A362B] border border-white text-white px-7 py-3 w-full lg:w-28 placeholder:text-white"
-                  />
-                </div>
-                <div className="relative">
-                  <IoWoman
-                    size={30}
-                    color="white"
-                    className="absolute top-3 left-1"
-                  />
-                  <input
-                    type="gender"
-                    placeholder="Female"
-                    aria-label="Female"
-                    className="bg-[#1A362B] border border-white text-white px-7 py-3 w-full lg:w-28 placeholder:text-white"
-                  />
-                </div>
+                <button
+                  type="submit"
+                  className="text-[#ffff] px-4 py-2 rounded-lg text-lg bg-[#4CAF50]  "
+                >
+                  send
+                </button>
               </div>
               {/* Agreement Checkbox */}
               <div className="mt-5 flex items-center gap-2 text-start">
@@ -103,59 +72,12 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          {/* App Download Section */}
-          <div className="hidden lg:block lg:w-1/2">
-            <h2 className="text-[#FCE600] text-2xl">Our Apps</h2>
-            <div className="flex gap-4 mt-6">
-              <div
-                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
-                onClick={openModal}
-              >
-                <FaApple size={40} />
-                <p>
-                  Download on the <span className="font-bold">App Store</span>
-                </p>
-              </div>
-              <div
-                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
-                onClick={openModal}
-              >
-                <IoLogoGooglePlaystore size={45} />
-                <p>
-                  Download on the <span className="font-bold">Google Play</span>
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="border mt-5"></div>
 
         {/* Support Section */}
         <div className="flex flex-col md:flex-row items-center lg:justify-center gap-14 lg:gap-24 text-white mt-6">
-          <div className="block lg:hidden text-black">
-            <h2 className="text-white text-2xl">Our Apps</h2>
-            <div className="flex flex-col gap-4 mt-6">
-              <div
-                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
-                onClick={openModal}
-              >
-                <FaApple size={40} />
-                <p>
-                  Download on the <span className="font-bold">App Store</span>
-                </p>
-              </div>
-              <div
-                className="flex items-center gap-3 bg-white p-5 w-52 rounded-lg cursor-pointer"
-                onClick={openModal}
-              >
-                <IoLogoGooglePlaystore size={45} />
-                <p>
-                  Download on the <span className="font-bold">Google Play</span>
-                </p>
-              </div>
-            </div>
-          </div>
           <SupportItem
             icon={<MdEmail size={50} />}
             title="Email Support"
@@ -243,7 +165,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <FooterModal isOpen={modalIsOpen} onClose={closeModal} />
+      {/* <FooterModal isOpen={modalIsOpen} onClose={closeModal} /> */}
     </footer>
   );
 };

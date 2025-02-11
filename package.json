@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
+    "@react-icons/all-files": "^4.1.0",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
@@ -23,6 +24,7 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.27.0",
     "react-slick": "^0.30.2",
+    "react-typed": "^2.0.12",
     "slick-carousel": "^1.8.1",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"

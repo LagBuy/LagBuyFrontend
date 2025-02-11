@@ -12,7 +12,7 @@ const AboutUs = () => {
     >
       <div className="lg:w-1/2 w-full">
         <h1 className="text-xl lg:text-2xl font-semibold mb-6">ABOUT US</h1>
-        <p className="text-base md:text-xl  ">
+        <p className="text-base md:text-2xl  ">
           Welcome to Lagbuy, we are passionate about providing-high quality
           products that enhances your life style. Our journey begins with a
           vision to create a seamless shopping experience for our users,
@@ -29,7 +29,7 @@ const AboutUs = () => {
           className="w-full h-auto rounded-2xl"
           effect="blur"
           wrapperProps={{
-            // If you need to, you can tweak the effect transition using the wrapper style.
+          
             style: { transitionDelay: "1s" },
           }}
         />

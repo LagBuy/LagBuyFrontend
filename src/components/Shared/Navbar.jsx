@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/LandingPageImg/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,34 +19,17 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed w-full z-50 bg-white shadow-sm font-Capriola">
+      <header className=" w-full bg-[#1A362B] shadow-sm font-Capriola">
         <div className="container mx-auto px-5 py-4 flex justify-between items-center">
           {/* Logo */}
-          <img src={logo} alt="Logo" className="h-8" />
-
-          {/* Desktop Search Form */}
-          <form
-            action=""
-            className="hidden md:flex items-center gap-4 w-full lg:w-3/5"
-          >
-            <div className="w-full">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder="Search..."
-                className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-              />
-            </div>
-            <button type="submit" className="bg-[#fdeea6] px-4 py-2 rounded-md">
-              Search
-            </button>
-          </form>
+          <div className="w-40 h-12  lg:w-44 lg:h-14 bg-[#4CAF50]  rounded-full flex items-center justify-center">
+            <img src={logo} alt="Logo" className="h-8  " />
+          </div>
 
           {/* Hamburger Menu for Mobile */}
           <button onClick={toggleMenu} className="md:hidden">
             <svg
-              className="w-6 h-6 text-[#a6c833] fill-current"
+              className="w-10 h-10 text-[#4CAF50] fill-current"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -70,29 +53,49 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex gap-x-8 text-center text-lg text-[#090A0A] font-semibold">
+          <nav className="hidden md:block bg-white rounded-full p-5">
+            <ul className="flex gap-x-8 text-center md:text-base lg:text-xl text-black font-semibold">
               <li>
                 <a
                   href="#"
                   onClick={closeMenu}
-                  className="hover:text-green-500"
+                  className="hover:text-[#4CAF50]"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={closeMenu}
+                  className="hover:text-[#4CAF50]"
+                >
+                  About us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#About-Us"
+                  onClick={closeMenu}
+                  className="hover:text-[#4CAF50]"
                 >
                   Company
                 </a>
               </li>
               <li>
-                <a href="#About-Us" className="hover:text-green-500">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#Contact-Us" className="hover:text-green-500">
+                <a
+                  href="#Contact-Us"
+                  onClick={closeMenu}
+                  className="hover:text-[#4CAF50]"
+                >
                   Contact Us
                 </a>
               </li>
             </ul>
           </nav>
+          <button className="hidden md:block bg-[#4CAF50]  text-white px-5 py-3 rounded-full">
+            Sign Up
+          </button>
         </div>
 
         {/* Mobile Menu */}
@@ -174,28 +177,20 @@ const Navbar = () => {
                     Logistic Login
                   </a>
                 </li>
+                <li>
+                  <li>
+                    <button
+                      onClick={closeMenu}
+                      className="hidden md:block text-gray-600 hover:text-green-500"
+                    >
+                      Sign Up
+                    </button>
+                  </li>
+                </li>
               </ul>
             </nav>
           </div>
         )}
-
-        {/* Mobile Search Form */}
-        <form action="" className="block md:hidden">
-          <div className="flex gap-4 items-center px-5 pb-6">
-            <div className="w-full">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder="Search..."
-                className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-              />
-            </div>
-            <button type="submit" className="bg-[#fdeea6] px-4 py-2 rounded-md">
-              Search
-            </button>
-          </div>
-        </form>
       </header>
     </>
   );
