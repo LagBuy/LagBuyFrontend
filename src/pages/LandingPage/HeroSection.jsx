@@ -56,24 +56,13 @@ const HeroSection = () => {
           <div className="lg:space-y-2 flex flex-col">
             <ReactTyped
               loop={true}
-              backSpeed={270}
-              typeSpeed={270}
-              className="text-[#FCE600] "
-              strings={["Buyers and sellers on for a"]}
-            />
-            <ReactTyped
-              loop={true}
-              backSpeed={250}
-              typeSpeed={250}
-              className="text-[#FCE600] "
-              strings={["Seamless shopping"]}
-            />
-            <ReactTyped
-              loop={true}
-              backSpeed={300}
-              typeSpeed={300}
-              className="text-white md:text-3xl"
-              strings={["Experience"]}
+              backSpeed={200}
+              typeSpeed={200}
+              className="text-[#FCE600]"
+              strings={[
+                "Buyers and sellers on for a \n Seamless shopping \n Experience",
+              ]}
+              showCursor={false}
             />
           </div>
 

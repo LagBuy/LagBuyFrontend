@@ -14,7 +14,8 @@ export const ExploreModal = ({ isOpen, onClose }) => {
       contentLabel="Explore More Modal"
       style={{
         overlay: {
-          backgroundColor: "rgba(0, 0, 0, 0.5)", // Add a dimmed background
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 1000,
         },
         content: {
           top: "50%",
