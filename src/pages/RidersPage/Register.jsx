@@ -79,6 +79,22 @@ const RegConsume=()=>{
 
             <button className='bg-[#1A362B] w-full py-3  text-white rounded-3xl text-xl font-bold' onClick={NextPage}>Next</button>
             </div>
+
+
+     <div>
+      
+      <div></div>
+
+      <div></div>
+
+
+
+     </div>
+    
+
+
+
+
        
      </div> )
 }
