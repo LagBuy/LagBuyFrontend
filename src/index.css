@@ -60,12 +60,18 @@
   /* Base Styles */
   * {
     @apply border-border;
-
-  
   }
 
   body {
     @apply bg-background text-foreground;
-   @apply w-screen overflow-x-hidden
- 
+    @apply w-screen overflow-x-hidden;
   }
+
+  /* Hide the scrollbar */
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hidden-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

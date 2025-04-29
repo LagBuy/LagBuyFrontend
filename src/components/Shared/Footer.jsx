@@ -19,7 +19,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-[#1A362B] py-14 px-5 font-Montserrat">
+    <footer className="bg-[#1A362B] font-Montserrat container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
       <div className="container mx-auto flex flex-col">
         {/* Subscription and Apps Section */}
         <div className="flex flex-row justify-center items-center ">

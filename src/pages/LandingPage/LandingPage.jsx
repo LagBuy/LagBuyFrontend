@@ -4,14 +4,16 @@ import WhatToDoWithLadbuySection from './WhatToDoWithLadbuySection'
 import AboutUs from './AboutUs'
 import Service from './Service'
 import Explore from './Explore'
-import Process from './Process'
 import Customer from './Customer'
-import TermAndCondition from './TermAndCondition'
+// import Process from './Process'
+// import TermAndCondition from './TermAndCondition'
 import Vendor from './Vendor'
 import ContactUs from './ContactUs'
 import MessageUs from './MessageUs'
 import Footer from '../../components/Shared/Footer'
 import Navbar from '../../components/Shared/Navbar'
+import FeaturedVendors from '../FeaturedVendors'
+import BenefitSection from './BenefitSection'
 
 
 
@@ -21,15 +23,17 @@ const LandingPage = () => {
       <Navbar />
       <HeroSection />
       <Vendor />
-      <Explore />
       <AboutUs />
-      <WhatToDoWithLadbuySection />
       <Service />
-      <Process />
+      <FeaturedVendors/>
+      <Explore />
       <Customer />
-      <TermAndCondition />
-      <ContactUs />
-      <MessageUs />
+      <WhatToDoWithLadbuySection />
+      <BenefitSection/>
+      {/* <Process />
+      <TermAndCondition /> */}
+      {/* <ContactUs />
+      <MessageUs /> */}
       <Footer />
     </div>
   );

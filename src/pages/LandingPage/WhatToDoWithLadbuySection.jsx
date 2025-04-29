@@ -1,63 +1,71 @@
 import React from "react";
-import img1 from "../../assets/LandingPageImg/whatToDo1.png";
-import img2 from "../../assets/LandingPageImg/whatToDo2.png";
-import img3 from "../../assets/LandingPageImg/whatToDo3.png";
+import { FiShoppingBag, FiShoppingCart, FiTruck, FiUsers } from "react-icons/fi";
 
-const WhatToDoWithLadbuySection = () => {
-  const todos = [
-    {
-      image: img1,
-      title: "Buy An Item",
-      text: "shop like an expert! Browse, compare, browse and buy confidently. Get top products delivered straight to your doorstep",
-      button: "Buy Now",
-    },
-    {
-      image: img2,
-      title: "Sell An Item",
-      text: "Elevate your business! sell on lagbuy,Reach a large audienc, list product, set prices and grow sales!.",
-      button: "Sell Now",
-    },
-    {
-      image: img3,
-      title: "Deliver An Item",
-      text: "Join the ride! Become a LagBuy delivery partner, and start earning today. Flexible schedules, competitive pay.",
-      button: "Join Us",
-    },
-  ];
+const todos = [
+  {
+    icon: <FiShoppingBag size={48} className="text-green-700 mb-6" />,
+    title: "Buy An Item",
+    text: "Shop like an expert! Browse, compare, and buy confidently.",
+    bgColor: "bg-[rgba(49,159,67,0.08)]",
+    textColor: "text-black",
+    btn: "Buy Now",
+  },
+  {
+    icon: <FiShoppingCart size={48} className="text-green-700 mb-6" />,
+    title: "Sell An Item",
+    text: "Elevate your business! Sell on LagBuy, reach a large audience, list products, set prices, and grow sales!",
+    bgColor: "bg-[rgba(49,159,67,0.08)]",
+    textColor: "text-black",
+    btn: "Sell Now",
+  },
+  {
+    icon: <FiTruck size={48} className="text-green-700 mb-6" />,
+    title: "Deliver An Item",
+    text: "Join the ride! Become a LagBuy delivery partner, and start earning today.",
+    bgColor: "bg-[rgba(49,159,67,0.08)]",
+    textColor: "text-black",
+    btn: "Join Now",
+  },
+  {
+    icon: <FiUsers size={48} className="text-white mb-6" />,
+    title: "Service Providers",
+    text: "Offer your services on LagBuy and connect with customers looking for reliable help.",
+    bgColor: "bg-green-900",
+    textColor: "text-white",
+    btn: "Get Started",
+  },
+];
 
+const WhatToDoWithLagbuySection = () => {
   return (
-    <section className="container mx-auto px-5 py-14">
-      <div className="text-center">
-        <h1 className="text-lg lg:text-2xl font-semibold mb-3">
-          What can you do with LagBuy?
-        </h1>
-        <div className="text-base lg:text-xl mb-4">
-          <p>Unlock a world of convenience!</p>
-          <p>LagBuy connects buyers, sellers, and riders for</p>
-          <p>a seamless shopping experience. Discover the difference!</p>
-        </div>
+    <section className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-12" style={{ marginTop: "-40px" }}>
+      <div className="text-center max-w-3xl mx-auto mb-10">
+        <h2 className="text-3xl font-bold mb-3">What You Can Do On Lagbuy</h2>
+        <p className="text-gray-500 text-lg leading-relaxed">
+          LagBuy connects buyers, sellers, and riders for a seamless shopping experience. Discover the difference!
+        </p>
       </div>
-      <div className="flex flex-col lg:flex-row gap-5">
-        {todos.map((todo, index) => (
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {todos.map(({ icon, title, text, bgColor, textColor, btn }, index) => (
           <div
             key={index}
-            className="flex-1 group relative overflow-hidden bg-[#FFF9B7] text-left px-7 py-10 rounded-xl shadow-lg w-full lg:w-[25rem] h-auto lg:h-[30rem] transition-all duration-300 hover:bg-[#1A362B] hover:text-white"
+            className={`${bgColor} ${textColor} rounded-xl p-8 flex flex-col items-center text-center min-h-[320px]`}
           >
-            <div className="relative z-10 flex justify-center lg:justify-end">
-              <img src={todo.image} alt={todo.title} className="h-40 mb-6" />
+            <div>
+              {icon}
             </div>
-            <div className="relative z-10">
-              <p className="text-3xl font-semibold mb-2">{todo.title}</p>
-              <p className="mb-6 text-xl font-light">{todo.text}</p>
-              <div className="text-center">
-                <button className="py-2 px-10 text-sm w-auto font-medium shadow rounded-full bg-[#1A362B] text-[#FCE600] relative overflow-hidden transition-all duration-600">
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#FCE600] to-[#1A362B] transition-all duration-500 transform translate-x-full group-hover:translate-x-0"></span>
-                  <span className="relative z-10 group-hover:text-white">
-                    {todo.button}
-                  </span>
-                </button>
-              </div>
-            </div>
+            <h3 className="text-xl font-semibold mb-2">{title}</h3>
+            <p className="text-base mb-6">{text}</p>
+            <button
+              className={`mt-auto px-6 py-2 rounded-full font-semibold transition 
+                ${ index === 3
+                  ? "bg-white text-green-900 hover:bg-green-800 hover:text-white"
+                  : "bg-green-900 text-white hover:bg-green-800"}
+              `}
+            >
+              {btn}
+            </button>
           </div>
         ))}
       </div>
@@ -65,4 +73,4 @@ const WhatToDoWithLadbuySection = () => {
   );
 };
 
-export default WhatToDoWithLadbuySection;
+export default WhatToDoWithLagbuySection;

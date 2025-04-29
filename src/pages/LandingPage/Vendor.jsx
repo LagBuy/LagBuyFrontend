@@ -1,199 +1,135 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import FashionImg1 from '../../assets/LandingPageImg/fashion1.jpg'
-import fashionImg2 from '../../assets/LandingPageImg/fashion2.jpg'
-import fashionImg3 from "../../assets/LandingPageImg/fashion3.jpg";
-import fashionImg4 from "../../assets/LandingPageImg/fashion4.jpg";
-import fashionImg5 from "../../assets/LandingPageImg/fashion5.jpg";
-import fashionImg6 from "../../assets/LandingPageImg/fashion6.jpg";
-import fashionImg7 from "../../assets/LandingPageImg/fashion7.jpg";
-import fashionImg8 from "../../assets/LandingPageImg/fashion8.jpg";
-import beverageImg1 from "../../assets/LandingPageImg/beverage1.jpg";
-import beverageImg2 from "../../assets/LandingPageImg/beverage2.jpg";
-import beverageImg3 from "../../assets/LandingPageImg/beverage3.jpg";
-import beverageImg4 from "../../assets/LandingPageImg/beverage4.jpg";
-import beverageImg5 from "../../assets/LandingPageImg/beverage5.jpg";
-import beverageImg6 from "../../assets/LandingPageImg/beverage6.jpg";
-import beverageImg7 from "../../assets/LandingPageImg/beverage7.jpg";
-import beverageImg8 from "../../assets/LandingPageImg/beverage8.jpg";
-import electronicImg1 from '../../assets/LandingPageImg/electronic1.jpg'
-import electronicImg2 from "../../assets/LandingPageImg/electronic2.jpg";
-import electronicImg3 from "../../assets/LandingPageImg/electronic3.jpg";
-import electronicImg4 from "../../assets/LandingPageImg/electronic4.jpg";
-import electronicImg5 from "../../assets/LandingPageImg/electronic5.jpg";
-import electronicImg6 from "../../assets/LandingPageImg/electronic6.jpg";
-import electronicImg7 from "../../assets/LandingPageImg/electronic7.jpg";
-import beautyImg1 from '../../assets/LandingPageImg/beauty1.png'
-import beautyImg2 from "../../assets/LandingPageImg/beauty2.png";
-import beautyImg3 from "../../assets/LandingPageImg/beauty3.jpg";
-import beautyImg4 from "../../assets/LandingPageImg/beauty4.jpg";
-import beautyImg5 from "../../assets/LandingPageImg/beauty5.jpg";
-import beautyImg6 from "../../assets/LandingPageImg/beauty6.jpg";
-import beautyImg7 from "../../assets/LandingPageImg/beauty7.jpg";
-import beautyImg8 from "../../assets/LandingPageImg/beauty8.jpg";
-import men1 from '../../assets/LandingPageImg/men1.jpg'
-import men2 from "../../assets/LandingPageImg/men2.jpg";
-import men3 from "../../assets/LandingPageImg/men3.jpg";
-import men4 from "../../assets/LandingPageImg/men4.jpg";
-import men5 from "../../assets/LandingPageImg/men5.jpg";
-import men6 from "../../assets/LandingPageImg/men6.jpg";
-import men7 from "../../assets/LandingPageImg/men7.jpg";
-import men8 from "../../assets/LandingPageImg/men8.jpg";
-import women1 from '../../assets/LandingPageImg/women1.jpg'
-import women2 from "../../assets/LandingPageImg/women2.jpg";
-import women3 from "../../assets/LandingPageImg/women3.jpg";
-import women4 from "../../assets/LandingPageImg/women4.jpg";
-import women5 from "../../assets/LandingPageImg/women5.jpg";
-import women6 from "../../assets/LandingPageImg/women6.jpg";
-import women7 from '../../assets/LandingPageImg/women7.jpg';
-import women8 from "../../assets/LandingPageImg/women8.jpg";
-import jewery1 from '../../assets/LandingPageImg/jewery1.jpg'
-import jewery2 from "../../assets/LandingPageImg/jewery2.jpg";
-import jewery3 from "../../assets/LandingPageImg/jewery3.jpg";
-import jewery4 from "../../assets/LandingPageImg/jewery4.jpg";
-import jewery5 from "../../assets/LandingPageImg/jewery5.jpg";
-import jewery6 from "../../assets/LandingPageImg/jewery6.jpg";
-import jewery7 from "../../assets/LandingPageImg/jewery7.jpg";
-import jewery8 from "../../assets/LandingPageImg/jewery8.jpg";
-import footwear1 from '../../assets/LandingPageImg/footwear1.jpg'
-import footwear2 from "../../assets/LandingPageImg/footwear2.jpg";
-import footwear3 from "../../assets/LandingPageImg/footwear3.jpg";
-import footwear4 from "../../assets/LandingPageImg/footwear4.jpg";
-import footwear5 from "../../assets/LandingPageImg/footwear5.jpg";
-import footwear6 from "../../assets/LandingPageImg/footwear6.jpg";
-import footwear7 from "../../assets/LandingPageImg/footwear7.jpg";
-import footwear8 from "../../assets/LandingPageImg/footwear8.jpg";
+import Beverages from "../../assets/LandingPageImg/Beverages.png";
+import Gadgets from "../../assets/LandingPageImg/Gadgets.png";
+import HealthandBeauty from "../../assets/LandingPageImg/HealthandBeauty.png";
+import Supermarket from "../../assets/LandingPageImg/Supermarket.png";
+import Gaming from "../../assets/LandingPageImg/Gaming.png";
+import Fashion from "../../assets/LandingPageImg/Fashion.png";
+import HomeandOffice from "../../assets/LandingPageImg/HomeandOffice.png";
+import ElectronicsandAppliance from "../../assets/LandingPageImg/ElectronicsandAppliance.png";
+
+import NailTech from "../../assets/LandingPageImg/nailtech.jpg";
+import HairStylist from "../../assets/LandingPageImg/hairstylist.jpg";
+import MakeUp from "../../assets/LandingPageImg/makeup.jpg";
+import Tailoring from "../../assets/LandingPageImg/tailoring.jpg";
+import Electrician from "../../assets/LandingPageImg/electrician.jpg";
+import FashionConsult from "../../assets/LandingPageImg/fashionconsult.jpg";
+import EventBart from "../../assets/LandingPageImg/event.jpg";
+import Caterer from "../../assets/LandingPageImg/caterer.png";
+import Mixology from "../../assets/LandingPageImg/mixology.jpg";
 
 const Vendor = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-    const [currentPage, setCurrentPage] = useState(1);
+  const [selectedType, setSelectedType] = useState("Products");
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const clonedItemsRef = useRef(3); // Clone items 3x for buffer
 
-
-
-  const items = [
-    {
-      image: [
-        FashionImg1,
-        fashionImg6,
-        fashionImg2,
-        fashionImg4,
-        fashionImg7,
-        fashionImg3,
-        fashionImg5,
-        fashionImg8,
-      ],
-      name: "Fashion",
-    },
-    {
-      image: [
-        beverageImg1,
-        beverageImg3,
-        beverageImg6,
-        beverageImg2,
-        beverageImg8,
-        beverageImg4,
-        beverageImg7,
-        beverageImg5,
-      ],
-      name: "Beverages",
-    },
-    {
-      image: [
-        electronicImg6,
-        electronicImg1,
-        electronicImg2,
-        electronicImg5,
-        electronicImg3,
-        electronicImg4,
-        electronicImg6,
-        electronicImg7,
-      ],
-      name: "Electronics",
-    },
-    {
-      image: [
-        beautyImg1,
-        beautyImg4,
-        beautyImg8,
-        beautyImg3,
-        beautyImg2,
-        beautyImg5,
-        beautyImg7,
-        beautyImg6,
-      ],
-      name: "Beauty deals",
-    },
-    {
-      image: [men1, men2, men3, men4, men5, men6, men7, men8],
-      name: "Men Wears",
-    },
-    {
-      image: [women1, women2, women3, women4, women5, women6, women7, women8],
-      name: "women Wears",
-    },
-    {
-      image: [
-        jewery1,
-        jewery2,
-        jewery3,
-        jewery4,
-        jewery5,
-        jewery6,
-        jewery7,
-        jewery8,
-      ],
-      name: "jewery",
-    },
-    {
-      image: [
-        footwear1,
-        footwear2,
-        footwear3,
-        footwear4,
-        footwear5,
-        footwear6,
-        footwear7,
-        footwear8,
-      ],
-      name: "footwear",
-    },
+  const products = [
+    { image: Beverages, name: "Beverages" },
+    { image: Gadgets, name: "Gadgets" },
+    { image: HealthandBeauty, name: "Health & Beauty" },
+    { image: Supermarket, name: "Supermarket" },
+    { image: Gaming, name: "Gaming" },
+    { image: Fashion, name: "Fashion" },
+    { image: HomeandOffice, name: "Home & Office" },
+    { image: ElectronicsandAppliance, name: "Electronics & Appliances" },
   ];
 
+  const services = [
+   { image: NailTech, name: "Nail Tech" },
+      { image: HairStylist, name: "Hair Stylist" },
+      { image: Electrician, name: "Electrician" },
+      { image: MakeUp, name: "Makeup Artist" },
+      { image: Tailoring, name: "Tailoring Services" },
+      { image: FashionConsult, name: "Fashion Consulting" },
+      { image: EventBart, name: "Event Bartending" },
+      { image: Caterer, name: "Catering Services" },
+      { image: Mixology, name: "Mixology Classes" },
+  ];
+  const displayedItems = selectedType === "Products" ? products : services;
 
+  // Create extended item array for seamless looping
+  const extendedItems = Array(clonedItemsRef.current).fill().flatMap(() => displayedItems);
 
-useEffect(() => {
-  if (items.length > 0 && items[0].image) {
-    // Add defensive check
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % items[0].image.length);
-    }, 2000);
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || displayedItems.length === 0) return;
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }
-}, [items]);
+    let scrollAmount = 0;
+    const scrollSpeed = 0.5; // pixels per frame
 
+    const animateScroll = () => {
+      scrollAmount += scrollSpeed;
+      scrollContainer.scrollLeft = scrollAmount;
+
+      // Reset scroll position when reaching the end of the cloned content
+      if (scrollAmount >= scrollContainer.scrollWidth / clonedItemsRef.current) {
+        scrollAmount = 0;
+        scrollContainer.scrollLeft = 0;
+      }
+
+      animationRef.current = requestAnimationFrame(animateScroll);
+    };
+
+    animationRef.current = requestAnimationFrame(animateScroll);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [displayedItems]);
 
   return (
-    <section className="container mx-auto px-4 py-14 ">
-      <div className="mt-10">
-        <h1 className="text-xl font-semibold">Explore Popular Categories</h1>
-        <div className="mt-7">
-          <div className="grid grid-cols-4 lg:grid-cols-4 gap-5 min-w-full">
-            {items.map((item, index) => (
-              <div key={index} className="flex flex-col items-center">
-                {/* Rotate images based on currentIndex */}
+    <section className="container mx-auto py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-20">
+      <div className="mt-2 sm:mt-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">Popular Categories</h1>
+          <div className="h-[38px] flex rounded-md overflow-hidden self-end sm:self-auto">
+            <button
+              onClick={() => setSelectedType("Products")}
+              className={`px-3 sm:px-4 py-2 ${
+                selectedType === "Products"
+                  ? "bg-[#4CAF50] text-white"
+                  : "bg-white text-black"
+              } rounded-l-lg text-sm sm:text-base`}
+            >
+              Products
+            </button>
+            <button
+              onClick={() => setSelectedType("Services")}
+              className={`px-3 sm:px-4 py-2 ${
+                selectedType === "Services"
+                  ? "bg-[#4CAF50] text-white"
+                  : "bg-white text-black"
+              } rounded-r-lg border-t border-b border-r text-sm sm:text-base`}
+            >
+              Services
+            </button>
+          </div>
+        </div>
+
+        <div 
+          className="mt-4 sm:mt-6 md:mt-7 overflow-x-auto hidden-scrollbar" 
+          ref={scrollRef}
+        >
+          <div className="flex space-x-3 sm:space-x-4 md:space-x-5 min-w-full">
+            {extendedItems.map((item, index) => (
+              <div
+                key={`${item.name}-${index}`}
+                className="flex flex-col items-center flex-shrink-0"
+              >
                 <LazyLoadImage
-                  src={item.image[currentIndex]}
-                  alt={`${item.name} ${currentIndex + 1}`}
-                  className="w-24 h-24 lg:w-64 lg:h-64 rounded-lg"
+                  src={item.image}
+                  alt={item.name}
+                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-cover rounded-lg sm:rounded-xl"
                   effect="blur"
-                  wrapperProps={{
-                    // If you need to, you can tweak the effect transition using the wrapper style.
-                    style: { transitionDelay: "1s" },
-                  }}
                 />
-                <h4 className="text-center mt-2">{item.name}</h4>
+                <h4 className="text-center mt-1 sm:mt-2 text-xs sm:text-sm">
+                  {item.name}
+                </h4>
               </div>
             ))}
           </div>
