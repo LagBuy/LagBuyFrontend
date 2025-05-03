@@ -84,7 +84,7 @@ const Service = () => {
 
   return (
     <section
-      className="container mx-auto py-14 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26"
+      className="mx-auto py-14 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26"
       style={{ marginTop: "-60px" }}
     >
       <div className="mt-4">

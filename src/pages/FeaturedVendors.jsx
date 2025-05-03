@@ -53,7 +53,7 @@ const vendors = [
 
 const FeaturedVendors = () => {
   return (
-    <section className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16" 
+    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16" 
     style={{ marginTop: "-40px" }}
     >
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0">

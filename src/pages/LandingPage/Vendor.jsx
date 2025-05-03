@@ -83,7 +83,7 @@ const Vendor = () => {
   }, [displayedItems]);
 
   return (
-    <section className="container mx-auto py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-20">
+    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
       <div className="mt-2 sm:mt-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
           <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">Popular Categories</h1>

@@ -5,7 +5,7 @@ import logo from "../../assets/LandingPageImg/logo.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const menuRef = useRef(null);
+  const menuContentRef = useRef(null);
   const buttonRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -14,19 +14,19 @@ const Navbar = () => {
   // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // adjust this value to control when transparency kicks in
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
+  // Detect click outside menu content to close it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
+        menuContentRef.current &&
+        !menuContentRef.current.contains(event.target) &&
         !buttonRef.current.contains(event.target)
       ) {
         closeMenu();
@@ -45,9 +45,9 @@ const Navbar = () => {
   }, [menuOpen]);
 
   const mobileMenuVariants = {
-    hidden: { opacity: 0, y: -30 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 },
   };
 
   return (
@@ -95,13 +95,18 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" onClick={closeMenu} className="hover:text-[#4CAF50] transition-colors">
+                  <a href="#Vendor" onClick={closeMenu} className="hover:text-[#4CAF50] transition-colors">
                     About Us
                   </a>
                 </li>
                 <li>
                   <a href="#About-Us" onClick={closeMenu} className="hover:text-[#4CAF50] transition-colors">
                     Company
+                  </a>
+                </li>
+                <li>
+                  <a href="/#" onClick={closeMenu} className="hover:text-[#4CAF50] transition-colors">
+                    FAQs
                   </a>
                 </li>
                 <li>
@@ -118,34 +123,39 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
-              key="mobileMenu"
-              ref={menuRef}
+              key="mobileOverlay"
               initial="hidden"
               animate="visible"
               exit="exit"
               variants={mobileMenuVariants}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-20 right-4 w-72 bg-white shadow-lg rounded-lg px-7 py-5 z-40 text-lg font-semibold"
+              transition={{ duration: 0.3 }}
+              className="md:hidden fixed inset-0 z-40 bg-[#0A1A13] flex items-start justify-center pt-20"
             >
-              <nav>
-                <ul className="flex flex-col space-y-2">
-                  <li><a href="#About-Us" onClick={closeMenu} className="hover:text-green-500">About Us</a></li>
-                  <li><a href="#Contact-Us" onClick={closeMenu} className="hover:text-green-500">Contact Us</a></li>
-                  <li><a href="#" onClick={closeMenu} className="hover:text-green-500">Terms of Use</a></li>
-                  <li><a href="#" onClick={closeMenu} className="hover:text-green-500">Privacy Policy</a></li>
-                  <li className="border-gray-200 border-[0.5px]"></li>
-                  <li><a href="#" onClick={closeMenu} className="hover:text-green-500">Vendor Registration</a></li>
-                  <li><a href="#" onClick={closeMenu} className="hover:text-green-500">Vendor Login</a></li>
-                  <li className="border-gray-200 border-[0.5px]"></li>
-                  <li><a href="#" onClick={closeMenu} className="hover:text-green-500">Logistic Registration</a></li>
-                  <li><a href="#" onClick={closeMenu} className="hover:text-green-500">Logistic Login</a></li>
-                  <li><button onClick={closeMenu} className="text-gray-600 hover:text-green-500">Sign Up</button></li>
-                </ul>
-              </nav>
+              <div
+                ref={menuContentRef}
+                className="w-[90%] max-w-sm text-white"
+              >
+                <nav>
+                  <ul className="flex flex-col space-y-6 text-center text-lg font-medium">
+                    <li><a href="#About-Us" onClick={closeMenu} className="hover:text-green-400">About Us</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Terms of Use</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Privacy Policy</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Vendor Registration</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Vendor Login</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Logistic Registration</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Logistic Login</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Service Provider Registration</a></li>
+                    <li><a href="#" onClick={closeMenu} className="hover:text-green-400">Service Provider Login</a></li>
+                    <li><button onClick={closeMenu} className="hover:text-green-400">Sign Up</button></li>
+                    <li><button onClick={closeMenu} className="hover:text-green-400">FAQs</button></li> 
+                    <li><button onClick={closeMenu} className="hover:text-green-400">Contact</button></li>
+                  </ul>
+                </nav>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

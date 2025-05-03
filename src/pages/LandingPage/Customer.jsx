@@ -56,7 +56,7 @@ const Customer = () => {
   };
 
   return (
-    <section className="container mx-auto px-5 py-10 text-center max-w-3xl" 
+    <section className="mx-auto px-5 py-10 text-center max-w-3xl" 
     style={{ marginTop: '-60px' }} // Reduced gap by applying negative margin-top
     >
       <p className="text-green-600 font-semibold mb-2">Testimonials</p>

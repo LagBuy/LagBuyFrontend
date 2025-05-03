@@ -38,7 +38,7 @@ const todos = [
 
 const WhatToDoWithLagbuySection = () => {
   return (
-    <section className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-12" style={{ marginTop: "-40px" }}>
+    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-12" style={{ marginTop: "-40px" }}>
       <div className="text-center max-w-3xl mx-auto mb-10">
         <h2 className="text-3xl font-bold mb-3">What You Can Do On Lagbuy</h2>
         <p className="text-gray-500 text-lg leading-relaxed">

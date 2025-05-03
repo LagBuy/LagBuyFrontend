@@ -19,7 +19,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-[#1A362B] font-Montserrat container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
+    <footer className="bg-[#1A362B] font-Montserrat mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
       <div className="container mx-auto flex flex-col">
         {/* Subscription and Apps Section */}
         <div className="flex flex-row justify-center items-center ">
@@ -150,13 +150,13 @@ const Footer = () => {
           <img src={logo} alt="LagBuy Logo" className="hidden lg:block w-48" />
 
           <div className="flex gap-6">
-            <a href="#" className="text-white hover:text-[#FCE600]">
-              <FaInstagramSquare size={30} />
-            </a>
+           <a href="https://www.instagram.com/lagbuy_official?igsh=MXFhMWs0MGJqZHFncA%3D%3D&utm_source=qr" className="text-white hover:text-[#FCE600]">
+           <FaInstagramSquare size={30} />
+           </a>
             <a href="#" className="text-white hover:text-[#FCE600]">
               <FaTwitterSquare size={30} />
             </a>
-            <a href="#" className="text-white hover:text-[#FCE600]">
+            <a href="https://t.me/+GvfwUvSETlphMWFk" className="text-white hover:text-[#FCE600]">
               <FaTelegram size={30} />
             </a>
             <a href="#" className="text-white hover:text-[#FCE600]">

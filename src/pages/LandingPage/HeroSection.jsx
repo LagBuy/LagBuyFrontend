@@ -10,7 +10,6 @@ import heroImg6 from "../../assets/LandingPageImg/hero-circle (6).png";
 import heroImg7 from "../../assets/LandingPageImg/hero-circle (7).png";
 import { TypeAnimation } from "react-type-animation";
 
-
 import { FooterModal } from "./Modal";
 import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
@@ -42,7 +41,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="bg-[#1A362B] relative h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-hidden ">
+    <section className="bg-[#1A362B] relative min-h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-x-hidden">
       <div className="absolute bottom-0 bg-hero-bg bg-no-repeat bg-cover h-1/5 lg:h-1/2 w-full"></div>
 
       <div className="w-full lg:w-[85vw] mx-auto py-8 lg:py-4 px-4 z-20 lg:pt-16 flex flex-col lg:flex-row">
@@ -60,10 +59,14 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Bridging the gap{" "}
+         
+         Making it easy for you to find <span className="text-[#2ecc71]">top-notch products and trusted services</span>, all in one place.         
+
+             {/* Bridging the gap{" "}
               <span className="text-[#2ecc71]">between buyers And sellers</span>
               <br />
-              for a Seamless shopping experience.
+              for a Seamless shopping experience. */}
+              
             </motion.h1>
 
             <motion.div
@@ -72,39 +75,36 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-           <TypeAnimation
-  sequence={[
-    "Hey, is this bag available?",
-    2000,  
-    "Yes! I can have it delivered today.",
-    2000,  
-    "Delivery en route notification pops up",
-    2000,  
-    "Your manicure appointment is scheduled for today at 3 PM.",
-    2000,  
-    "Your lash extension appointment is confirmed for today at 2 PM.",
-    2000,  
-    "See you soon for your service! We can’t wait to pamper you.",
-    2000,  
-    "LagBuy has everything you need! Join today and experience convenience.",
-    2000,  
-  ]}
-  repeat={Infinity}
-  className="bg-gradient-to-r from-green-400 to-lime-300 text-lg text-black font-semibold p-1 rounded-lg shadow-md  mt-6"
-  style={{ 
-    wordBreak: 'break-word', 
-    display: 'inline-block', 
-    whiteSpace: 'normal'  
-  }}
-  typingSpeed={150} // Speed of typing (in ms)
-  deleteSpeed={0}  // Set delete speed to 0 to avoid deleting each character
-  delay={1000}  
-  cursor={false} 
-  clearAll={true}
-/>
-
-
-
+              <TypeAnimation
+                sequence={[
+                  "Hey, is this bag available?",
+                  2000,
+                  "Yes! I can have it delivered today.",
+                  2000,
+                  "Delivery en route notification pops up",
+                  2000,
+                  "Your manicure appointment is scheduled for today at 3 PM.",
+                  2000,
+                  "Your lash extension appointment is confirmed for today at 2 PM.",
+                  2000,
+                  "See you soon for your service! We can’t wait to pamper you.",
+                  2000,
+                  "LagBuy has everything you need! Join today and experience convenience.",
+                  2000,
+                ]}
+                repeat={Infinity}
+                className="bg-gradient-to-r from-green-400 to-lime-300 text-lg text-black font-semibold p-1 rounded-lg shadow-md  mt-6"
+                style={{
+                  wordBreak: "break-word",
+                  display: "inline-block",
+                  whiteSpace: "normal",
+                }}
+                typingSpeed={150} // Speed of typing (in ms)
+                deleteSpeed={0} // Set delete speed to 0 to avoid deleting each character
+                delay={1000}
+                cursor={false}
+                clearAll={true}
+              />
             </motion.div>
 
             <motion.div
@@ -205,7 +205,7 @@ const HeroSection = () => {
             src={phone}
             alt="phone"
             className="lg:h-[35rem] md:h-[26rem] w-auto"
-          /> 
+          />
         </motion.div>
       </div>
     </section>
