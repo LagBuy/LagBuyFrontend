@@ -3,28 +3,23 @@ import logo from "../../assets/logo.png";
 // import { FooterModal } from "../../pages/LandingPage/Modal";
 import {
   FaInstagramSquare,
-  FaTwitterSquare,
   FaTelegram,
   FaFacebook,
-
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"; // NEW X logo
 import { CiMail } from "react-icons/ci";
 import { MdEmail } from "react-icons/md";
-import {
-  IoLogoWhatsapp,
-} from "react-icons/io5";
+import { IoLogoWhatsapp } from "react-icons/io5";
 import { TiContacts } from "react-icons/ti";
 
 const Footer = () => {
-
-
   return (
     <footer className="bg-[#1A362B] font-Montserrat mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
       <div className="container mx-auto flex flex-col">
         {/* Subscription and Apps Section */}
-        <div className="flex flex-row justify-center items-center ">
+        <div className="flex flex-row justify-center items-center">
           {/* Subscription Section */}
-          <div className="flex flex-col gap-y-5  text-center  ">
+          <div className="flex flex-col gap-y-5 text-center">
             <img
               src={logo}
               alt="LagBuy Logo"
@@ -40,7 +35,7 @@ const Footer = () => {
                 <div className="relative">
                   <CiMail
                     size={20}
-                    color="#ffff "
+                    color="#ffff"
                     className="absolute top-4 left-2"
                   />
                   <input
@@ -52,7 +47,7 @@ const Footer = () => {
                 </div>
                 <button
                   type="submit"
-                  className="text-[#ffff] px-4 py-2 rounded-lg text-lg bg-[#4CAF50]  "
+                  className="text-[#ffff] px-4 py-2 rounded-lg text-lg bg-[#4CAF50]"
                 >
                   send
                 </button>
@@ -150,13 +145,19 @@ const Footer = () => {
           <img src={logo} alt="LagBuy Logo" className="hidden lg:block w-48" />
 
           <div className="flex gap-6">
-           <a href="https://www.instagram.com/lagbuy_official?igsh=MXFhMWs0MGJqZHFncA%3D%3D&utm_source=qr" className="text-white hover:text-[#FCE600]">
-           <FaInstagramSquare size={30} />
-           </a>
-            <a href="#" className="text-white hover:text-[#FCE600]">
-              <FaTwitterSquare size={30} />
+            <a
+              href="https://www.instagram.com/lagbuy_official?igsh=MXFhMWs0MGJqZHFncA%3D%3D&utm_source=qr"
+              className="text-white hover:text-[#FCE600]"
+            >
+              <FaInstagramSquare size={30} />
             </a>
-            <a href="https://t.me/+GvfwUvSETlphMWFk" className="text-white hover:text-[#FCE600]">
+            <a href="#" className="text-white hover:text-[#FCE600]">
+              <FaXTwitter size={30} /> {/* Replaced Twitter with X */}
+            </a>
+            <a
+              href="https://t.me/+GvfwUvSETlphMWFk"
+              className="text-white hover:text-[#FCE600]"
+            >
               <FaTelegram size={30} />
             </a>
             <a href="#" className="text-white hover:text-[#FCE600]">
