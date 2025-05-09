@@ -30,7 +30,9 @@ const benefits = [
 
 const BenefitSection = () => {
   return (
-    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
+    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16"
+    style={{ marginTop: '-60px' }} // Reduced gap by applying negative margin-top
+    >
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0">
         <h2 className="text-3xl font-bold leading-tight max-w-md">
           People That Benefit <br />

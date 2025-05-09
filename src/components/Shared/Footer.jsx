@@ -133,9 +133,9 @@ const Footer = () => {
               "Wallet",
               "Verve",
               "Mastercard",
-              "Crypto",
+              "Bank transfer",
               "Visa",
-              "Gift cards",
+              "Payment on delivery",
             ]}
           />
         </div>

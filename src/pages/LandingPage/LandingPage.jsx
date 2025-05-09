@@ -22,14 +22,14 @@ const LandingPage = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <Vendor />
       <AboutUs />
+      <Vendor />
       <Service />
       <FeaturedVendors/>
       <Explore />
-      <Customer />
       <WhatToDoWithLadbuySection />
       <BenefitSection/>
+      <Customer />
       {/* <Process />
       <TermAndCondition /> */}
       {/* <ContactUs />

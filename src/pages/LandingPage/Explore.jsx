@@ -8,7 +8,7 @@ const AboutUs = () => {
     <section
       className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16"
       id="About-Us"
-      style={{ marginTop: '-40px' }} // Reduced gap by applying negative margin-top
+      style={{ marginTop: '-60px' }} // Reduced gap by applying negative margin-top
 
     >
       <div className="flex flex-col lg:flex-row w-full h-auto rounded-xl overflow-hidden"> {/* Border radius applied here */}

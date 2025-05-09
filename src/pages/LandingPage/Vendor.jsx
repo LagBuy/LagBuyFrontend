@@ -83,7 +83,9 @@ const Vendor = () => {
   }, [displayedItems]);
 
   return (
-    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
+    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16"
+    style={{ marginTop: '-60px' }} // Reduced gap by applying negative margin-top
+    >
       <div className="mt-2 sm:mt-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
           <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">Popular Categories</h1>

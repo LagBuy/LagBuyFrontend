@@ -171,26 +171,6 @@ const HeroSection = () => {
             <p className="text-sm md:text-xl">
               Join our website to enjoy seamless order
             </p>
-
-            <form action="" className="flex flex-col lg:flex-row gap-5">
-              <div>
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={handleInputChange}
-                  placeholder="Enter your email"
-                  className="py-2 px-4 text-base lg:text-xl w-full lg:w-96 border text-black placeholder:text-black rounded-full focus:outline-none focus:ring-2 focus:ring-[#343434]"
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="bg-[#4CAF50] px-4 py-2 rounded-full text-lg w-52"
-                >
-                  Get started
-                </button>
-              </div>
-            </form>
           </div>
         </motion.div>
 
