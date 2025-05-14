@@ -9,6 +9,7 @@ const todos = [
     bgColor: "bg-[rgba(49,159,67,0.08)]",
     textColor: "text-black",
     btn: "Buy Now",
+    link: "https://shop.lagbuy.com", // We’ll handle this with window.location.href
   },
   {
     icon: <FiShoppingCart size={48} className="text-green-700 mb-6" />,
@@ -47,22 +48,26 @@ const WhatToDoWithLagbuySection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        {todos.map(({ icon, title, text, bgColor, textColor, btn }, index) => (
+        {todos.map(({ icon, title, text, bgColor, textColor, btn, link }, index) => (
           <div
             key={index}
             className={`${bgColor} ${textColor} rounded-xl p-8 flex flex-col items-center text-center min-h-[320px]`}
           >
-            <div>
-              {icon}
-            </div>
+            <div>{icon}</div>
             <h3 className="text-xl font-semibold mb-2">{title}</h3>
             <p className="text-base mb-6">{text}</p>
+
             <button
+              onClick={() => {
+                if (link) {
+                  window.location.href = link;
+                }
+              }}
               className={`mt-auto px-6 py-2 rounded-full font-semibold transition 
-                ${ index === 3
+                ${index === 3
                   ? "bg-white text-green-900 hover:bg-green-800 hover:text-white"
-                  : "bg-green-900 text-white hover:bg-green-800"}
-              `}
+                  : "bg-green-900 text-white hover:bg-green-800"
+                }`}
             >
               {btn}
             </button>

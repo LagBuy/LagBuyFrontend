@@ -49,7 +49,7 @@ const Navbar = () => {
     exit: { opacity: 0 },
   };
 
-  // New Dropdown
+  // Dropdown for stage
   const StageDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedStage, setSelectedStage] = useState("");
@@ -58,6 +58,10 @@ const Navbar = () => {
     const handleSelect = (stage) => {
       setSelectedStage(stage);
       setIsOpen(false);
+
+      if (stage === "Customers") {
+        window.location.href = "https://shop.lagbuy.com";
+      }
     };
 
     useEffect(() => {
@@ -112,7 +116,7 @@ const Navbar = () => {
         }`}
       >
         <div className="w-full lg:w-[90vw] mx-auto px-4 py-4 flex items-center justify-between relative">
-          {/* Left: Logo */}
+          {/* Logo */}
           <div className="w-40 h-12 lg:w-44 lg:h-14 bg-[#4CAF50] rounded-full flex items-center justify-center">
             <img src={logo} alt="Logo" className="h-8" />
           </div>
@@ -129,12 +133,12 @@ const Navbar = () => {
             </nav>
           </div>
 
-          {/* Right: Dropdown */}
+          {/* Right Dropdown */}
           <div className="hidden md:flex">
             <StageDropdown />
           </div>
 
-          {/* Hamburger Button (mobile) */}
+          {/* Mobile Hamburger */}
           <button onClick={toggleMenu} className="md:hidden z-50" ref={buttonRef}>
             <div className="space-y-1.5">
               <motion.span
@@ -188,7 +192,7 @@ const Navbar = () => {
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-users text-teal-400"></i>
-                      <a href="#" onClick={closeMenu} className="hover:text-teal-400">Customers</a>
+                      <a href="https://shop.lagbuy.com" onClick={closeMenu} className="hover:text-teal-400">Customers</a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
