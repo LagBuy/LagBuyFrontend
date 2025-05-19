@@ -41,11 +41,13 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="bg-[#1A362B] relative min-h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-x-hidden">
+    <section className="bg-[#1A362B] relative min-h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-x-hidden"
+ 
+    >
       <div className="absolute bottom-0 bg-hero-bg bg-no-repeat bg-cover h-1/5 lg:h-1/2 w-full"></div>
 
-      <div className="w-full lg:w-[85vw] mx-auto py-8 lg:py-4 px-4 z-20 lg:pt-16 flex flex-col lg:flex-row">
-        {/* Left section - Wider */}
+      <div className="w-full mx-auto py-8 lg:py-4 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 z-20 lg:pt-16 flex flex-col lg:flex-row">
+        {/* Left section */}
         <motion.div
           className="text-white w-full lg:w-3/5 space-y-5 md:space-y-3 lg:space-y-6 text-base md:text-4xl"
           initial={{ opacity: 0, y: 40 }}
@@ -59,14 +61,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-         
-         Making it easy for you to find <span className="text-[#2ecc71]">top-notch products and trusted services</span>, all in one place.         
-
-             {/* Bridging the gap{" "}
-              <span className="text-[#2ecc71]">between buyers And sellers</span>
-              <br />
-              for a Seamless shopping experience. */}
-              
+              Making it easy for you to find{" "}
+              <span className="text-[#2ecc71]">
+                top-notch products and trusted services
+              </span>, all in one place.
             </motion.h1>
 
             <motion.div
@@ -93,14 +91,14 @@ const HeroSection = () => {
                   2000,
                 ]}
                 repeat={Infinity}
-                className="bg-gradient-to-r from-green-400 to-lime-300 text-lg text-black font-semibold p-1 rounded-lg shadow-md  mt-6"
+                className="bg-gradient-to-r from-green-400 to-lime-300 text-lg text-black font-semibold p-1 rounded-lg shadow-md mt-6"
                 style={{
                   wordBreak: "break-word",
                   display: "inline-block",
                   whiteSpace: "normal",
                 }}
-                typingSpeed={150} // Speed of typing (in ms)
-                deleteSpeed={0} // Set delete speed to 0 to avoid deleting each character
+                typingSpeed={150}
+                deleteSpeed={0}
                 delay={1000}
                 cursor={false}
                 clearAll={true}

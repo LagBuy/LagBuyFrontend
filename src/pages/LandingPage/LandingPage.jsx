@@ -14,6 +14,7 @@ import Footer from '../../components/Shared/Footer'
 import Navbar from '../../components/Shared/Navbar'
 import FeaturedVendors from '../FeaturedVendors'
 import BenefitSection from './BenefitSection'
+import FAQs from './FAQs'
 
 
 
@@ -29,6 +30,7 @@ const LandingPage = () => {
       <Explore />
       <WhatToDoWithLadbuySection />
       <BenefitSection/>
+      <FAQs/>
       <Customer />
       {/* <Process />
       <TermAndCondition /> */}

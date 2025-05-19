@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/LandingPageImg/logo.png";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,7 +62,10 @@ const Navbar = () => {
       setIsOpen(false);
 
       if (stage === "Customers") {
-        window.location.href = "https://shop.lagbuy.com";
+        window.location.href = "https://shop.lagbuy.com/login";
+      }
+      if (stage === "Vendors") {
+        window.location.href = "https://vendors.lagbuy.com/login";
       }
     };
 
@@ -118,16 +123,18 @@ const Navbar = () => {
         <div className="w-full lg:w-[90vw] mx-auto px-4 py-4 flex items-center justify-between relative">
           {/* Logo */}
           <div className="w-40 h-12 lg:w-44 lg:h-14 bg-[#4CAF50] rounded-full flex items-center justify-center">
-            <img src={logo} alt="Logo" className="h-8" />
+            <Link to="/">
+               <img src={logo} alt="Logo" className="h-8" />
+            </Link>
           </div>
 
           {/* Center Nav */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
             <nav className="bg-white px-6 py-3 rounded-full shadow-md h-14 flex items-center">
               <ul className="flex gap-x-8 text-sm lg:text-base text-[#1A362B] font-medium">
-                <li><a href="#" onClick={closeMenu} className="hover:text-[#4CAF50]">Home</a></li>
+                <li><a href="/" onClick={closeMenu} className="hover:text-[#4CAF50]">Home</a></li>
                 <li><a href="#Vendor" onClick={closeMenu} className="hover:text-[#4CAF50]">Company</a></li>
-                <li><a href="/#" onClick={closeMenu} className="hover:text-[#4CAF50]">FAQs</a></li>
+                <li><a href="#FAQs" onClick={closeMenu} className="hover:text-[#4CAF50]">FAQs</a></li>
                 <li><a href="#Contact-Us" onClick={closeMenu} className="hover:text-[#4CAF50]">Contact</a></li>
               </ul>
             </nav>
@@ -180,7 +187,7 @@ const Navbar = () => {
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-cogs text-blue-400"></i>
-                      <a href="#" onClick={closeMenu} className="hover:text-blue-400">Vendors</a>
+                      <a href="https://vendors.lagbuy.com/login" onClick={closeMenu} className="hover:text-blue-400">Vendors</a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
@@ -192,7 +199,7 @@ const Navbar = () => {
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-users text-teal-400"></i>
-                      <a href="https://shop.lagbuy.com" onClick={closeMenu} className="hover:text-teal-400">Customers</a>
+                      <a href="https://shop.lagbuy.com/login" onClick={closeMenu} className="hover:text-teal-400">Customers</a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 

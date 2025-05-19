@@ -61,7 +61,7 @@ const FeaturedVendors = () => {
           Featured <span className="text-green-600">Vendors</span>
         </h2>
         <button className="text-gray-700 text-sm flex items-center space-x-1">
-          <span>See others</span>
+        <a href="https://shop.lagbuy.com/login" >See others</a>
           <svg
             className="w-4 h-4 ml-1"
             fill="none"

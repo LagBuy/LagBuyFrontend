@@ -9,7 +9,7 @@ const todos = [
     bgColor: "bg-[rgba(49,159,67,0.08)]",
     textColor: "text-black",
     btn: "Buy Now",
-    link: "https://shop.lagbuy.com", // We’ll handle this with window.location.href
+    link: "https://shop.lagbuy.com/login", // We’ll handle this with window.location.href
   },
   {
     icon: <FiShoppingCart size={48} className="text-green-700 mb-6" />,
@@ -18,6 +18,7 @@ const todos = [
     bgColor: "bg-[rgba(49,159,67,0.08)]",
     textColor: "text-black",
     btn: "Sell Now",
+    link: "https://vendors.lagbuy.com/login",
   },
   {
     icon: <FiTruck size={48} className="text-green-700 mb-6" />,
@@ -31,7 +32,7 @@ const todos = [
     icon: <FiUsers size={48} className="text-white mb-6" />,
     title: "Service Providers",
     text: "Offer your services on LagBuy and connect with customers looking for reliable help.",
-    bgColor: "bg-green-900",
+    bgColor: "bg-[#1A362B]",
     textColor: "text-white",
     btn: "Get Started",
   },
