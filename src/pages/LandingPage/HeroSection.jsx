@@ -44,7 +44,7 @@ const HeroSection = () => {
     <section className="bg-[#1A362B] relative min-h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-x-hidden"
  
     >
-      <div className="absolute bottom-0 bg-hero-bg bg-no-repeat bg-cover h-1/5 lg:h-1/2 w-full"></div>
+      <div className="absolute bottom-0 bg-hero-bg bg-no-repeat bg-cover h-100 lg:h-1/2 w-full"></div>
 
       <div className="w-full mx-auto py-8 lg:py-4 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 z-20 lg:pt-16 flex flex-col lg:flex-row">
         {/* Left section */}

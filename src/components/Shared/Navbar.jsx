@@ -135,7 +135,7 @@ const Navbar = () => {
                 <li><a href="/" onClick={closeMenu} className="hover:text-[#4CAF50]">Home</a></li>
                 <li><a href="#Vendor" onClick={closeMenu} className="hover:text-[#4CAF50]">Company</a></li>
                 <li><a href="#FAQs" onClick={closeMenu} className="hover:text-[#4CAF50]">FAQs</a></li>
-                <li><a href="#Contact-Us" onClick={closeMenu} className="hover:text-[#4CAF50]">Contact</a></li>
+                <li><a href="#ContactUs" onClick={closeMenu} className="hover:text-[#4CAF50]">Contact</a></li>
               </ul>
             </nav>
           </div>
