@@ -211,7 +211,7 @@ const Navbar = () => {
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-envelope text-orange-400"></i>
-                      <a href="#" onClick={closeMenu} className="hover:text-orange-400">Contact</a>
+                      <a href="#ContactUs" onClick={closeMenu} className="hover:text-orange-400">Contact</a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
