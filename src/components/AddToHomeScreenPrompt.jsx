@@ -51,7 +51,7 @@ export default function AddToHomeScreenPrompt() {
 
       const initial = setTimeout(() => {
         showToastNow();
-        const interval = setInterval(showToastNow, 7 * 60 * 1000);
+        const interval = setInterval(showToastNow, 4 * 60 * 1000);
         return () => clearInterval(interval);
       }, 60 * 1000); // Show after 1 min
 
