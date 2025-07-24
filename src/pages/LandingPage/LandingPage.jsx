@@ -2,7 +2,7 @@ import React from 'react'
 import HeroSection from './HeroSection'
 import WhatToDoWithLadbuySection from './WhatToDoWithLadbuySection'
 import AboutUs from './AboutUs'
-import Service from './Service'
+// import Service from './Service'
 import Explore from './Explore'
 import Customer from './Customer'
 import Vendor from './Vendor'
@@ -22,7 +22,7 @@ const LandingPage = () => {
       <HeroSection />
       <AboutUs />
       <Vendor />
-      <Service />
+      {/* <Service /> */}
       <FeaturedVendors/>
       <Explore />
       <WhatToDoWithLadbuySection />

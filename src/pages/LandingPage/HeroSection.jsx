@@ -55,17 +55,19 @@ const HeroSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <div className="space-y-5 md:auto-y-3 lg:space-y-6 text-base md:text-4xl">
-            <motion.h1
-              className="text-2xl capitalize"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              Making it easy for you to find{" "}
-              <span className="text-[#2ecc71]">
-                top-notch products and trusted services
-              </span>, all in one place.
-            </motion.h1>
+          <motion.h1
+  className="text-2xl capitalize"
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{
+    duration: 1,
+    ease: "easeOut",
+    delay: 0.3,
+  }}
+>
+Bringing you <span className="text-[#2ecc71]">the best products</span> from trusted vendors fast, simple, and reliable.
+</motion.h1>
+
 
             <motion.div
               className="text-sm md:text-base mt-6 text-gray-200 leading-relaxed tracking-wide"
@@ -80,12 +82,6 @@ const HeroSection = () => {
                   "Yes! I can have it delivered today.",
                   2000,
                   "Delivery en route notification pops up",
-                  2000,
-                  "Your manicure appointment is scheduled for today at 3 PM.",
-                  2000,
-                  "Your lash extension appointment is confirmed for today at 2 PM.",
-                  2000,
-                  "See you soon for your service! We can’t wait to pamper you.",
                   2000,
                   "LagBuy has everything you need! Join today and experience convenience.",
                   2000,

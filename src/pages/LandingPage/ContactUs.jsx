@@ -15,9 +15,9 @@ function ContactUs() {
 
   const options = [
     { value: "Delivery / My Order" },
-    { value: "Product / Services" },
+    { value: "Product " },
     { value: "Partnerships / Marketing / Business" },
-    { value: "Operations / Riders / Vendors / Service Providers" },
+    { value: "Operations / Riders / Vendors " },
     { value: "General Enquiries" },
   ];
 

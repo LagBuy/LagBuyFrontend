@@ -6,20 +6,20 @@ const faqs = [
     answer: 'LagBuy is a platform that connects buyers, sellers, service providers, and riders for a seamless shopping and service experience.',
   },
   {
-    question: 'How do I sign up as a vendor or service provider on LagBuy?',
-    answer: 'To sign up as a vendor or service provider on LagBuy, simply download the LagBuy app or visit our website. Navigate to the "Join as a Vendor/Service Provider" section, fill out your business details, upload any required documents, and submit your application. Once approved, you can start listing your products or services and connect with customers instantly.',
+    question: 'How do I sign up as a vendor  on LagBuy?',
+    answer: 'To sign up as a vendor on LagBuy, simply download the LagBuy app or visit our website. Navigate to the "Join as a Vendor" section, fill out your business details, upload any required documents, and submit your application. Once approved, you can start listing your products  and connect with customers instantly.',
   },
   {
     question: 'How do I create an account on LagBuy?',
-    answer: 'To create an account on LagBuy, visit our website or download the LagBuy app. Click on "Sign Up", choose your account type Buyer, Vendor, Service Provider, or Rider—then fill in your details and verify your phone number or email. Once registered, you can start using LagBuy to shop, sell, offer services, or deliver with ease.',
+    answer: 'To create an account on LagBuy, visit our website or download the LagBuy app. Click on "Sign Up", choose your account type Buyer, Vendor, or Rider then fill in your details and verify your phone number or email. Once registered, you can start using LagBuy to shop, sell, or deliver with ease.',
   },
   {
     question: 'What is the service fee?',
-    answer: 'The service fee is a small percentage LagBuy charges on each successful transaction. It helps us maintain the platform, provide customer support, and ensure smooth operations for buyers, vendors, service providers, and riders. The exact fee may vary depending on the type of service or product offered.',
+    answer: 'The service fee is a small percentage LagBuy charges on each successful transaction. It helps us maintain the platform, provide customer support, and ensure smooth operations for buyers, vendors, and riders. The exact fee may vary depending on the type of product offered.',
   },
   {
     question: 'How do I update my profile?',
-    answer: 'To update your profile on LagBuy, log in to your account and go to the "Profile" or "Account Settings" section. From there, you can edit your personal details, contact information, business info (if you’re a vendor or service provider), and upload a new profile picture. Don’t forget to save your changes.',
+    answer: 'To update your profile on LagBuy, log in to your account and go to the "Profile" or "Account Settings" section. From there, you can edit your personal details, contact information, business info (if you’re a vendor), and upload a new profile picture. Don’t forget to save your changes.',
   },
   {
     question: 'How do I delete a saved card?',
@@ -45,29 +45,29 @@ const faqs = [
     question: 'What is the return policy?',
     answer: 'Our return policy allows returns within 3 days of delivery. Items must be unused and in their original packaging.',
   },
-  {
-    question: 'How do service providers offer their services on LagBuy?',
-    answer: 'Service providers can sign up on LagBuy by downloading the app or visiting our website. After completing the registration and approval process, they can list their services, manage bookings, and connect directly with customers through the platform.',
-  },
-  {
-    question: 'Can I be both a vendor and a service provider on LagBuy?',
-    answer: 'Yes! LagBuy allows you to register as both a vendor and a service provider. This way, you can sell products and offer services simultaneously, reaching a wider customer base.',
-  },
+  // {
+  //   question: 'How do service providers offer their services on LagBuy?',
+  //   answer: 'Service providers can sign up on LagBuy by downloading the app or visiting our website. After completing the registration and approval process, they can list their services, manage bookings, and connect directly with customers through the platform.',
+  // },
+  // {
+  //   question: 'Can I be both a vendor and a service provider on LagBuy?',
+  //   answer: 'Yes! LagBuy allows you to register as both a vendor and a service provider. This way, you can sell products and offer services simultaneously, reaching a wider customer base.',
+  // },
   {
     question: 'How do riders work on LagBuy?',
     answer: 'Riders on LagBuy are responsible for delivering products and services to customers. They receive delivery requests through the app, pick up items from vendors or service providers, and ensure timely delivery to customers’ locations.',
   },
   {
-    question: 'What support is available for vendors and service providers?',
-    answer: 'LagBuy offers dedicated customer support for vendors and service providers, including onboarding assistance, help with listings, payment queries, and technical support to ensure smooth operations.',
+    question: 'What support is available for vendors?',
+    answer: 'LagBuy offers dedicated customer support for vendors , including onboarding assistance, help with listings, payment queries, and technical support to ensure smooth operations.',
   },
   {
-    question: 'How do I update my product or service listings?',
-    answer: 'To update your listings, log in to your LagBuy vendor or service provider account, go to the "My Products" or "My Services" section, and edit or add details as needed. Remember to save your changes.',
+    question: 'How do I update my product ?',
+    answer: 'To update your listings, log in to your LagBuy vendor account, go to the "My Products" , and edit or add details as needed. Remember to save your changes.',
   },
   {
-    question: 'What happens if there is an issue with my order or service?',
-    answer: 'If you experience any issues with an order or service, you can contact LagBuy customer support through the app or website. We help resolve disputes, process refunds, or arrange re-delivery when necessary.',
+    question: 'What happens if there is an issue with my order ?',
+    answer: 'If you experience any issues with an order , you can contact LagBuy customer support through the app or website. We help resolve disputes, process refunds, or arrange re-delivery when necessary.',
   },
   {
     question: 'Are there fees for riders?',
@@ -81,21 +81,21 @@ const faqs = [
     question: 'How do I reset my password?',
     answer: 'To reset your password, go to the login page and click on "Forgot Password". Enter your registered email or phone number, and follow the instructions sent to you to create a new password.',
   },
+  // {
+  //   question: 'Can I schedule a delivery or service?',
+  //   answer: 'Yes, LagBuy allows you to schedule deliveries and services in advance. During checkout or booking, select your preferred delivery date and time to fit your schedule.',
+  // },
   {
-    question: 'Can I schedule a delivery or service?',
-    answer: 'Yes, LagBuy allows you to schedule deliveries and services in advance. During checkout or booking, select your preferred delivery date and time to fit your schedule.',
-  },
-  {
-    question: 'Do you offer business accounts for vendors and service providers?',
-    answer: 'LagBuy provides business accounts that offer additional features such as detailed sales reports, promotional tools, and priority support to help vendors and service providers grow their businesses.',
+    question: 'Do you offer business accounts for vendors  ?',
+    answer: 'LagBuy provides business accounts that offer additional features such as detailed sales reports, promotional tools, and priority support to help vendors grow their businesses.',
   },
   {
     question: 'How do refunds work on LagBuy?',
-    answer: 'Refunds on LagBuy are processed based on our return and cancellation policies. Buyers can request refunds within the allowed period, and vendors or service providers must comply with the terms. Our support team assists in handling refund requests fairly and promptly.',
+    answer: 'Refunds on LagBuy are processed based on our return and cancellation policies. Buyers can request refunds within the allowed period, and vendors must comply with the terms. Our support team assists in handling refund requests fairly and promptly.',
   },
   {
-    question: 'Can I offer discounts or promotions as a vendor or service provider?',
-    answer: 'Yes! Vendors and service providers can create discounts and promotions through their LagBuy dashboard to attract more customers and boost sales.',
+    question: 'Can I offer discounts or promotions as a vendor?',
+    answer: 'Yes! Vendors can create discounts and promotions through their LagBuy dashboard to attract more customers and boost sales.',
   },
   {
     question: 'How do I become a rider on LagBuy?',

@@ -9,14 +9,14 @@ const todos = [
     bgColor: "bg-[rgba(49,159,67,0.08)]",
     textColor: "text-black",
     btn: "Buy Now",
-    link: "https://shop.lagbuy.com/login", // We’ll handle this with window.location.href
+    link: "https://shop.lagbuy.com/login",
   },
   {
-    icon: <FiShoppingCart size={48} className="text-green-700 mb-6" />,
+    icon: <FiShoppingCart size={48} className="text-white mb-6" />,
     title: "Sell An Item",
     text: "Elevate your business! Sell on LagBuy, reach a large audience, list products, set prices, and grow sales!",
-    bgColor: "bg-[rgba(49,159,67,0.08)]",
-    textColor: "text-black",
+    bgColor: "bg-[#1A362B]", // Deep green
+    textColor: "text-white",
     btn: "Sell Now",
     link: "https://vendors.lagbuy.com/login",
   },
@@ -27,15 +27,18 @@ const todos = [
     bgColor: "bg-[rgba(49,159,67,0.08)]",
     textColor: "text-black",
     btn: "Join Now",
+    link: "https://riders.lagbuy.com",
   },
-  {
-    icon: <FiUsers size={48} className="text-white mb-6" />,
-    title: "Service Providers",
-    text: "Offer your services on LagBuy and connect with customers looking for reliable help.",
-    bgColor: "bg-[#1A362B]",
-    textColor: "text-white",
-    btn: "Get Started",
-  },
+
+  // 🚫 Temporarily hide Service Providers card
+  // {
+  //   icon: <FiUsers size={48} className="text-white mb-6" />,
+  //   title: "Service Providers",
+  //   text: "Offer your services on LagBuy and connect with customers looking for reliable help.",
+  //   bgColor: "bg-[#1A362B]",
+  //   textColor: "text-white",
+  //   btn: "Get Started",
+  // },
 ];
 
 const WhatToDoWithLagbuySection = () => {
@@ -48,7 +51,7 @@ const WhatToDoWithLagbuySection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {todos.map(({ icon, title, text, bgColor, textColor, btn, link }, index) => (
           <div
             key={index}
@@ -65,7 +68,7 @@ const WhatToDoWithLagbuySection = () => {
                 }
               }}
               className={`mt-auto px-6 py-2 rounded-full font-semibold transition 
-                ${index === 3
+                ${textColor === "text-white"
                   ? "bg-white text-green-900 hover:bg-green-800 hover:text-white"
                   : "bg-green-900 text-white hover:bg-green-800"
                 }`}

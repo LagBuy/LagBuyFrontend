@@ -16,7 +16,7 @@ const AboutUs = () => {
         <div className="w-full lg:w-1/2 bg-[rgba(49,159,67,0.2)] flex flex-col items-start justify-center p-8 space-y-6">
           <h1 className="text-2xl font-semibold mb-2">Unlock a world of <br /> convenience!</h1>
           <p className="text-base text-[#828282]">
-          LagBuy connects buyers, sellers, service providers, and riders for a seamless shopping and service experience. Discover the difference!          </p>
+          LagBuy connects buyers, sellers, and riders for a seamless shopping experience. Discover the difference!          </p>
           <button className="bg-[#319F43] text-white font-semibold py-2 px-6 rounded-3xl mt-4 lg:mt-8">
             Get Started
           </button>

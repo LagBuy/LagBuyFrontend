@@ -67,6 +67,9 @@ const Navbar = () => {
       if (stage === "Vendors") {
         window.location.href = "https://vendors.lagbuy.com/login";
       }
+          if (stage === "Riders") {
+        window.location.href = "https://riders.lagbuy.com";
+      }
     };
 
     useEffect(() => {
@@ -80,7 +83,7 @@ const Navbar = () => {
       return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const stageOptions = ["Customers", "Vendors", "Service Providers", "Riders"];
+    const stageOptions = ["Customers", "Vendors",  "Riders"];
 
     return (
       <div className="relative" ref={dropdownRef}>
@@ -193,7 +196,7 @@ const Navbar = () => {
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-bicycle text-red-400"></i>
-                      <a href="#" onClick={closeMenu} className="hover:text-red-400">Riders</a>
+                      <a href="https://riders.lagbuy.com" onClick={closeMenu} className="hover:text-red-400">Riders</a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
@@ -201,12 +204,12 @@ const Navbar = () => {
                       <i className="fa fa-users text-teal-400"></i>
                       <a href="https://shop.lagbuy.com/login" onClick={closeMenu} className="hover:text-teal-400">Customers</a>
                     </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
+                    {/* <div className="border-t border-gray-800 mt-4"></div> */}
 
-                    <li className="flex items-center space-x-3">
+                    {/* <li className="flex items-center space-x-3">
                       <i className="fa fa-hands-helping text-purple-400"></i>
                       <a href="#" onClick={closeMenu} className="hover:text-purple-400">Service provider</a>
-                    </li>
+                    </li> */}
                     <div className="border-t border-gray-800 mt-4"></div>
 
                     <li className="flex items-center space-x-3">

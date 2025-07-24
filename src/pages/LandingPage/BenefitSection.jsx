@@ -1,9 +1,8 @@
 import React from "react";
 import Buyer from "../../assets/LandingPageImg/Buyer.png";
 import Seller from "../../assets/LandingPageImg/Seller.png";
-import Service from "../../assets/LandingPageImg/Service.png";
-import Rider  from "../../assets/LandingPageImg/Rider.png";
-
+// import Service from "../../assets/LandingPageImg/Service.png";
+import Rider from "../../assets/LandingPageImg/Rider.png";
 
 const benefits = [
   {
@@ -12,17 +11,17 @@ const benefits = [
     desc: "Schools, Colleges, Universities, and everyday Shoppers",
   },
   {
-    img:  Seller,
+    img: Seller,
     title: "Sellers / Vendors",
     desc: "SMEs And Large Enterprises.",
   },
+  // {
+  //   img: Service,
+  //   title: "Service Providers",
+  //   desc: "Flexible Digital Solutions For Emerging Businesses.",
+  // },
   {
-    img:  Service,
-    title: "Service Providers",
-    desc: "Flexible Digital Solutions For Emerging Businesses.",
-  },
-  {
-    img:  Rider,
+    img: Rider,
     title: "Riders",
     desc: "Streamlined Administration And Data Management.",
   },
@@ -30,24 +29,28 @@ const benefits = [
 
 const BenefitSection = () => {
   return (
-    <section className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16"
-    style={{ marginTop: '-60px' }} // Reduced gap by applying negative margin-top
+    <section
+      className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16"
+      style={{ marginTop: "-60px" }}
     >
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 md:gap-0">
-        <h2 className="text-3xl font-bold leading-tight max-w-md">
+      <div className="flex flex-col items-center text-center mb-12">
+        <h2 className="text-3xl font-bold leading-tight mb-4">
           People That Benefit <br />
           From <span className="text-green-600">Lagbuy</span>
         </h2>
-        <p className="text-gray-500 max-w-sm text-sm">
-          Designed With Real People In Mind, ASTRA Adapts To The Way You Work.
-          Empower Teams Across Departments To Automate, Align, And Accelerate
-          Results.
+        <p className="text-gray-500 max-w-md text-sm">
+          Designed With Real People In Mind, LagBuy adapts to the way you live
+          and shop. Empower users and partners with reliable and seamless
+          experience.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
         {benefits.map(({ img, title, desc }, idx) => (
-          <div key={idx} className="flex flex-col items-start space-y-3">
+          <div
+            key={idx}
+            className="flex flex-col items-center text-center space-y-3 w-full max-w-xs"
+          >
             <img
               src={img}
               alt={title}
