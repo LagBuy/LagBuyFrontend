@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/LandingPageImg/logo.png";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebook, FaTelegram, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,7 +68,7 @@ const Navbar = () => {
       if (stage === "Vendors") {
         window.location.href = "https://vendors.lagbuy.com/login";
       }
-          if (stage === "Riders") {
+      if (stage === "Riders") {
         window.location.href = "https://riders.lagbuy.com";
       }
     };
@@ -83,7 +84,7 @@ const Navbar = () => {
       return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const stageOptions = ["Customers", "Vendors",  "Riders"];
+    const stageOptions = ["Customers", "Vendors", "Riders"];
 
     return (
       <div className="relative" ref={dropdownRef}>
@@ -104,7 +105,9 @@ const Navbar = () => {
                 key={stage}
                 onClick={() => handleSelect(stage)}
                 className={`block w-full text-left px-4 py-2 text-sm ${
-                  selectedStage === stage ? "text-[#4CAF50] font-semibold" : "text-[#1A362B]"
+                  selectedStage === stage
+                    ? "text-[#4CAF50] font-semibold"
+                    : "text-[#1A362B]"
                 } hover:bg-gray-100`}
               >
                 {stage}
@@ -127,7 +130,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="w-40 h-12 lg:w-44 lg:h-14 bg-[#4CAF50] rounded-full flex items-center justify-center">
             <Link to="/">
-               <img src={logo} alt="Logo" className="h-8" />
+              <img src={logo} alt="Logo" className="h-8" />
             </Link>
           </div>
 
@@ -135,10 +138,42 @@ const Navbar = () => {
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
             <nav className="bg-white px-6 py-3 rounded-full shadow-md h-14 flex items-center">
               <ul className="flex gap-x-8 text-sm lg:text-base text-[#1A362B] font-medium">
-                <li><a href="/" onClick={closeMenu} className="hover:text-[#4CAF50]">Home</a></li>
-                <li><a href="#Vendor" onClick={closeMenu} className="hover:text-[#4CAF50]">Company</a></li>
-                <li><a href="#FAQs" onClick={closeMenu} className="hover:text-[#4CAF50]">FAQs</a></li>
-                <li><a href="#ContactUs" onClick={closeMenu} className="hover:text-[#4CAF50]">Contact</a></li>
+                <li>
+                  <a
+                    href="#HeroSection"
+                    onClick={closeMenu}
+                    className="hover:text-[#4CAF50]"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#Company"
+                    onClick={closeMenu}
+                    className="hover:text-[#4CAF50]"
+                  >
+                    Company
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#FAQs"
+                    onClick={closeMenu}
+                    className="hover:text-[#4CAF50]"
+                  >
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#ContactUs"
+                    onClick={closeMenu}
+                    className="hover:text-[#4CAF50]"
+                  >
+                    Contact
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -149,7 +184,11 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Hamburger */}
-          <button onClick={toggleMenu} className="md:hidden z-50" ref={buttonRef}>
+          <button
+            onClick={toggleMenu}
+            className="md:hidden z-50"
+            ref={buttonRef}
+          >
             <div className="space-y-1.5">
               <motion.span
                 animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 8 : 0 }}
@@ -184,59 +223,121 @@ const Navbar = () => {
                   <ul className="flex flex-col space-y-6 text-start text-lg font-medium">
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-building text-yellow-400"></i>
-                      <a href="#About-Us" onClick={closeMenu} className="hover:text-yellow-400">Company</a>
+                      <a
+                        href="#About-Us"
+                        onClick={closeMenu}
+                        className="hover:text-yellow-400"
+                      >
+                        Company
+                      </a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-cogs text-blue-400"></i>
-                      <a href="https://vendors.lagbuy.com/login" onClick={closeMenu} className="hover:text-blue-400">Vendors</a>
+                      <a
+                        href="https://vendors.lagbuy.com/login"
+                        onClick={closeMenu}
+                        className="hover:text-blue-400"
+                      >
+                        Vendors
+                      </a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-bicycle text-red-400"></i>
-                      <a href="https://riders.lagbuy.com" onClick={closeMenu} className="hover:text-red-400">Riders</a>
+                      <a
+                        href="https://riders.lagbuy.com"
+                        onClick={closeMenu}
+                        className="hover:text-red-400"
+                      >
+                        Riders
+                      </a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-users text-teal-400"></i>
-                      <a href="https://shop.lagbuy.com/login" onClick={closeMenu} className="hover:text-teal-400">Customers</a>
+                      <a
+                        href="https://shop.lagbuy.com/login"
+                        onClick={closeMenu}
+                        className="hover:text-teal-400"
+                      >
+                        Customers
+                      </a>
                     </li>
-                    {/* <div className="border-t border-gray-800 mt-4"></div> */}
-
-                    {/* <li className="flex items-center space-x-3">
-                      <i className="fa fa-hands-helping text-purple-400"></i>
-                      <a href="#" onClick={closeMenu} className="hover:text-purple-400">Service provider</a>
-                    </li> */}
                     <div className="border-t border-gray-800 mt-4"></div>
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-envelope text-orange-400"></i>
-                      <a href="#ContactUs" onClick={closeMenu} className="hover:text-orange-400">Contact</a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fab fa-instagram text-pink-500"></i>
-                      <a href="https://www.instagram.com/lagbuy_official" onClick={closeMenu} className="hover:text-pink-500">Instagram</a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fab fa-telegram-plane text-teal-500"></i>
-                      <a href="https://t.me/+GvfwUvSETlphMWFk" onClick={closeMenu} className="hover:text-teal-500">Telegram</a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fab fa-facebook-f text-blue-600"></i>
-                      <a href="#" onClick={closeMenu} className="hover:text-blue-600">Facebook</a>
+                      <a
+                        href="#ContactUs"
+                        onClick={closeMenu}
+                        className="hover:text-orange-400"
+                      >
+                        Contact
+                      </a>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
                   </ul>
                 </nav>
+
+                {/* Social Icons */}
+                <div className="flex gap-6 mt-6">
+                  {/* Instagram */}
+                  <a
+                    href="https://www.instagram.com/lagbuy_official"
+                    className="transition-transform transform hover:scale-110"
+                  >
+                    <div className="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1 rounded-lg">
+                      <FaInstagram size={22} className="text-white" />
+                    </div>
+                  </a>
+
+                  {/* Telegram */}
+                  <a
+                    href="https://t.me/+GvfwUvSETlphMWFk"
+                    className="transition-transform transform hover:scale-110"
+                  >
+                    <FaTelegram size={22} className="text-[#0088cc]" />
+                  </a>
+
+                  {/* Facebook */}
+                  <a
+                    href="#"
+                    className="transition-transform transform hover:scale-110"
+                  >
+                    <FaFacebook size={22} className="text-[#1877F2]" />
+                  </a>
+
+                  
+                  {/* X / Twitter */}
+                <a
+                   href="https://x.com/lagbuy_official?s=21"
+                    className="transition-transform transform hover:scale-110"
+                       >
+                      <FaXTwitter size={22} className="text-white" />
+                  </a>
+
+                  {/* TikTok */}
+                  <a
+                    href="https://www.tiktok.com/@lagbuy_official?_t=ZS-8zdVH8JdHCa&_r=1"
+                    className="transition-transform transform hover:scale-110"
+                  >
+                    <div className="relative w-6 h-6 flex items-center justify-center">
+                      <FaTiktok
+                        size={22}
+                        className="absolute text-[#69C9D0] -translate-x-0.5 translate-y-0.5"
+                      />
+                      <FaTiktok
+                        size={22}
+                        className="absolute text-[#EE1D52] translate-x-0.5 -translate-y-0.5"
+                      />
+                      <FaTiktok size={22} className="text-white relative" />
+                    </div>
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}

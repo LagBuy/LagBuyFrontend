@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <section
       className="mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16"
-      id="About-Us"
+      id="Company"
       style={{ marginTop: '-60px' }} // Reduced gap by applying negative margin-top
 
     >

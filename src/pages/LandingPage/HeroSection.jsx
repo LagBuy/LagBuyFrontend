@@ -18,17 +18,10 @@ const HeroSection = () => {
   const [inputValue, setInputValue] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
 
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+  const handleInputChange = (event) => setInputValue(event.target.value);
 
   const images = [
     { img: heroImg1 },
@@ -41,8 +34,9 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="bg-[#1A362B] relative min-h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-x-hidden"
- 
+    <section
+      className="bg-[#1A362B] relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex flex-col lg:flex-row text-center lg:text-start overflow-x-hidden"
+      id="HeroSection"
     >
       <div className="absolute bottom-0 bg-hero-bg bg-no-repeat bg-cover h-100 lg:h-1/2 w-full"></div>
 
@@ -55,19 +49,18 @@ const HeroSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <div className="space-y-5 md:auto-y-3 lg:space-y-6 text-base md:text-4xl">
-          <motion.h1
-  className="text-2xl capitalize"
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{
-    duration: 1,
-    ease: "easeOut",
-    delay: 0.3,
-  }}
->
-Bringing you <span className="text-[#2ecc71]">the best products</span> from trusted vendors fast, simple, and reliable.
-</motion.h1>
-
+            <motion.h1
+              className="text-2xl capitalize"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+                delay: 0.3,
+              }}
+            >
+              Bringing you <span className="text-[#2ecc71]">the best products</span> from trusted vendors, fast, simple, and reliable.
+            </motion.h1>
 
             <motion.div
               className="text-sm md:text-base mt-6 text-gray-200 leading-relaxed tracking-wide"
@@ -77,17 +70,17 @@ Bringing you <span className="text-[#2ecc71]">the best products</span> from trus
             >
               <TypeAnimation
                 sequence={[
-                  "Hey, is this bag available?",
-                  2000,
-                  "Yes! I can have it delivered today.",
-                  2000,
-                  "Delivery en route notification pops up",
-                  2000,
-                  "LagBuy has everything you need! Join today and experience convenience.",
-                  2000,
+                  "Looking for the perfect Product? We've got it ready for you!",
+                  2500,
+                  "Need it delivered today? No problem, LagBuy got your back.",
+                  2500,
+                  "From groceries to gadgets, our vendors have everything you need.",
+                  2500,
+                  "Join thousands of happy customers enjoying fast, reliable deliveries.",
+                  2500,
                 ]}
                 repeat={Infinity}
-                className="bg-gradient-to-r from-green-400 to-lime-300 text-lg text-black font-semibold p-1 rounded-lg shadow-md mt-6"
+                className="bg-gradient-to-r from-green-400 to-lime-300 text-lg text-black font-semibold p-1 rounded-lg shadow-md mt-6 inline-block"
                 style={{
                   wordBreak: "break-word",
                   display: "inline-block",
@@ -109,8 +102,7 @@ Bringing you <span className="text-[#2ecc71]">the best products</span> from trus
             >
               <div className="flex flex-col lg:flex-row gap-5">
                 <div
-                  className="flex items-center gap-3 bg-black text-white px-5 py-4 w-60 md:w-auto rounded-xl cursor-pointer 
-                           hover:scale-105 hover:shadow-xl transition-all duration-300 border border-neutral-700"
+                  className="flex items-center gap-3 bg-black text-white px-5 py-4 w-60 md:w-auto rounded-xl cursor-pointer hover:scale-105 hover:shadow-xl transition-all duration-300 border border-neutral-700"
                   onClick={openModal}
                 >
                   <FaApple size={40} className="text-white" />
@@ -121,8 +113,7 @@ Bringing you <span className="text-[#2ecc71]">the best products</span> from trus
                 </div>
 
                 <div
-                  className="flex items-center gap-3 bg-black text-white px-5 py-4 w-60 md:w-auto rounded-xl cursor-pointer 
-                           hover:scale-105 hover:shadow-xl transition-all duration-300 border border-neutral-700"
+                  className="flex items-center gap-3 bg-black text-white px-5 py-4 w-60 md:w-auto rounded-xl cursor-pointer hover:scale-105 hover:shadow-xl transition-all duration-300 border border-neutral-700"
                   onClick={openModal}
                 >
                   <IoLogoGooglePlaystore size={40} className="text-green-400" />

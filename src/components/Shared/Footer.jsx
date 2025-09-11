@@ -1,197 +1,127 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-// import { FooterModal } from "../../pages/LandingPage/Modal";
-import {
-  FaInstagramSquare,
-  FaTelegram,
-  FaFacebook,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6"; // NEW X logo
-import { CiMail } from "react-icons/ci";
-import { MdEmail } from "react-icons/md";
-import { IoLogoWhatsapp } from "react-icons/io5";
-import { TiContacts } from "react-icons/ti";
+import { FaInstagram, FaFacebook, FaTelegram, FaTiktok, FaApple } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FooterModal } from "../../pages/LandingPage/Modal";
+  
 
 const Footer = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
   return (
-    <footer className="bg-[#1A362B] font-Montserrat mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-26 py-8 lg:py-16">
-      <div className="container mx-auto flex flex-col">
-        {/* Subscription and Apps Section */}
-        <div className="flex flex-row justify-center items-center">
-          {/* Subscription Section */}
-          <div className="flex flex-col gap-y-5 text-center">
-            <img
-              src={logo}
-              alt="LagBuy Logo"
-              className="block lg:hidden w-56 place-self-center"
-            />
-            <h3 className="text-white text-xl font-semibold">NEW TO LAGBUY?</h3>
-            <p className="text-white">
-              Subscribe to our newsletter to get updates of our latest deals!
-            </p>
-            <form>
-              <div className="flex flex-col lg:flex-row gap-5">
-                {/* Email Input */}
-                <div className="relative">
-                  <CiMail
-                    size={20}
-                    color="#ffff"
-                    className="absolute top-4 left-2"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Email Address"
-                    aria-label="Email Address"
-                    className="bg-[#1A362B] border border-white placeholder:text-[#ffff] px-8 py-3 w-full lg:w-[20rem]"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="text-[#ffff] px-4 py-2 rounded-lg text-lg bg-[#4CAF50]"
-                >
-                  send
-                </button>
-              </div>
-              {/* Agreement Checkbox */}
-              <div className="mt-5 flex items-center gap-2 text-start">
-                <input
-                  type="checkbox"
-                  name="agreement"
-                  id="agreement"
-                  className="bg-[#1A362B]"
-                />
-                <label htmlFor="agreement" className="text-white text-sm">
-                  I agree to LagBuy’s privacy and cookie policy. You can always
-                  unsubscribe anytime.
-                </label>
-              </div>
-            </form>
-          </div>
+    <footer className="bg-[#1A362B] text-white font-Montserrat px-6 md:px-16 lg:px-24 pt-10 pb-6">
+      {/* Gradient Divider */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#94BD0A] via-[#FCE67A] to-[#94BD0A] rounded-full mb-8"></div>
+
+      {/* Newsletter Section */}
+      <div className="text-center mb-10">
+        <h3 className="text-lg md:text-xl font-semibold mb-2 text-[#FCE67A]">
+          Be the First to Get LagBuy Updates!
+        </h3>
+        <p className="text-gray-300 text-sm md:text-base mb-4">
+          Get the latest deals, vendor highlights, and shopping tips straight to your inbox.
+        </p>
+        <form className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-lg mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="px-4 py-2 rounded-lg w-full sm:w-72 text-gray-800 focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="bg-[#94BD0A] hover:bg-[#7da307] text-white px-5 py-2 rounded-lg"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <div className="border-t border-gray-600 pt-8 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
+        {/* About */}
+        <div>
+          <img src={logo} alt="LagBuy Logo" className="w-40 mb-4" />
+          <p className="text-gray-300 text-sm leading-relaxed">
+            LagBuy connects buyers, vendors, and riders, for a
+            seamless shopping and delivery experience across Lagos.
+          </p>
         </div>
 
-        <div className="border mt-5"></div>
-
-        {/* Support Section */}
-        <div className="flex flex-col md:flex-row items-center lg:justify-center gap-14 lg:gap-24 text-white mt-6">
-          <SupportItem
-            icon={<MdEmail size={50} />}
-            title="Email Support"
-            contact="help@lagbuy.com"
-          />
-          <SupportItem
-            icon={<TiContacts size={50} />}
-            title="Phone Support"
-            contact="+234 999-9099-999"
-          />
-          <SupportItem
-            icon={<IoLogoWhatsapp size={50} />}
-            title="WhatsApp Support"
-            contact="+234 787-8989-954"
-          />
+        {/* Company Links */}
+        <div>
+          <h4 className="text-[#FCE67A] font-semibold mb-3">Company</h4>
+          <ul className="space-y-2 text-gray-300 text-sm">
+            <li><a href="#AboutUs">About Us</a></li>
+            <li><a href="#ContactUs">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
         </div>
 
-        <div className="border block lg:hidden mt-5"></div>
-
-        {/* Footer Navigation */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-8 justify-between text-white mt-14">
-          <FooterLinks
-            title="ABOUT US"
-            links={[
-              "Contact us",
-              "About us",
-              "Career",
-              "Our Blog",
-              "Forum",
-              "Terms and Condition",
-            ]}
-          />
-          <FooterLinks
-            title="BUY FROM LAGBUY"
-            links={[
-              "Buy safety center",
-              "Delivery",
-              "FAQs",
-              "Lagbuy return policy",
-              "Digital Services",
-              "Bulk purchases",
-            ]}
-          />
-          <FooterLinks
-            title="MAKE MONEY FROM LAGBUY"
-            links={[
-              "Sales consultants",
-              "Affiliate",
-              "Vendor Hub",
-              "Drop Shipper",
-              "Sell on Lagbuy",
-              "Referral Program",
-            ]}
-          />
-          <FooterLinks
-            title="PAYMENT SUPPORT"
-            links={[
-              "Wallet",
-              "Verve",
-              "Mastercard",
-              "Bank transfer",
-              "Visa",
-              "Payment on delivery",
-            ]}
-          />
-        </div>
-
-        {/* Footer Bottom Social Section */}
-        <div className="mt-16 flex items-center justify-between">
-          <img src={logo} alt="LagBuy Logo" className="hidden lg:block w-48" />
-
-          <div className="flex gap-6">
-            <a
-              href="https://www.instagram.com/lagbuy_official?igsh=MXFhMWs0MGJqZHFncA%3D%3D&utm_source=qr"
-              className="text-white hover:text-[#FCE600]"
-            >
-              <FaInstagramSquare size={30} />
+        {/* Socials & Apps */}
+        <div>
+          <h4 className="text-[#FCE67A] font-semibold mb-3">Connect With Us</h4>
+          <div className="flex gap-5 mb-5">
+            <a href="https://www.instagram.com/lagbuy_official" className="hover:text-[#FCE67A] transition-transform transform hover:scale-110">
+              <FaInstagram size={22} />
             </a>
-            <a href="#" className="text-white hover:text-[#FCE600]">
-              <FaXTwitter size={30} /> {/* Replaced Twitter with X */}
+            <a href="https://x.com/lagbuy_official?s=21" className="hover:text-[#FCE67A] transition-transform transform hover:scale-110">
+              <FaXTwitter size={22} />
             </a>
-            <a
-              href="https://t.me/+GvfwUvSETlphMWFk"
-              className="text-white hover:text-[#FCE600]"
-            >
-              <FaTelegram size={30} />
+            <a href="https://t.me/+GvfwUvSETlphMWFk" className="hover:text-[#FCE67A] transition-transform transform hover:scale-110">
+              <FaTelegram size={22} />
             </a>
-            <a href="#" className="text-white hover:text-[#FCE600]">
-              <FaFacebook size={30} />
+            <a href="#" className="hover:text-[#FCE67A] transition-transform transform hover:scale-110">
+              <FaFacebook size={22} />
+            </a>
+            <a href="https://www.tiktok.com/@lagbuy_official?_t=ZS-8zdVH8JdHCa&_r=1" className="hover:text-[#FCE67A] transition-transform transform hover:scale-110">
+              <FaTiktok size={22} />
             </a>
           </div>
+
+          <h4 className="text-[#FCE67A] font-semibold mb-2">Download Our App</h4>
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* App Store */}
+            <div
+              className="flex items-center gap-3 bg-black text-white px-5 py-3 w-60 md:w-auto rounded-xl cursor-pointer 
+                         hover:scale-105 hover:shadow-xl transition-all duration-300 border border-neutral-700"
+              onClick={openModal}
+            >
+              <FaApple size={28} className="text-white" />
+              <p className="text-sm md:text-base">
+                Download on the{" "}
+                <span className="font-bold text-white">App Store</span>
+              </p>
+            </div>
+
+            {/* Google Play */}
+            <div
+              className="flex items-center gap-3 bg-black text-white px-5 py-3 w-60 md:w-auto rounded-xl cursor-pointer 
+                         hover:scale-105 hover:shadow-xl transition-all duration-300 border border-neutral-700"
+              onClick={openModal}
+            >
+              <IoLogoGooglePlaystore size={28} className="text-green-400" />
+              <p className="text-sm md:text-base">
+                Download on the{" "}
+                <span className="font-bold text-green-400">Google Play</span>
+              </p>
+            </div>
+          </div>
+
+          
+          <FooterModal isOpen={modalIsOpen} onClose={closeModal} />
         </div>
       </div>
-      {/* <FooterModal isOpen={modalIsOpen} onClose={closeModal} /> */}
+
+      {/* Bottom */}
+      <div className="text-center text-gray-400 text-xs mt-10 border-t border-gray-700 pt-4">
+        © {new Date().getFullYear()} LagBuy. All rights reserved. | Lagos, Nigeria
+      </div>
     </footer>
   );
 };
-
-// SupportItem Component
-const SupportItem = ({ icon, title, contact }) => (
-  <div className="flex flex-col items-center gap-3 text-center">
-    {icon}
-    <h4 className="font-bold text-lg">{title}</h4>
-    <p>{contact}</p>
-  </div>
-);
-
-// FooterLinks Component
-const FooterLinks = ({ title, links }) => (
-  <div>
-    <h3 className="text-[#FCE600] text-lg">{title}</h3>
-    <ul className="mt-4 flex flex-col gap-2">
-      {links.map((link, index) => (
-        <li key={index} className="hover:text-[#FCE600]">
-          {link}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
 
 export default Footer;
