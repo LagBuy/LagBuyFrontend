@@ -117,7 +117,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="text-center text-gray-400 text-xs mt-10 border-t border-gray-700 pt-4">
+      <div className="text-center text-gray-400 text-xs mt-10 border-t border-gray-701 pt-4">
         © {new Date().getFullYear()} LagBuy. All rights reserved. | Lagos, Nigeria
       </div>
     </footer>
