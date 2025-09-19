@@ -3,7 +3,7 @@ import { MapPin, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 import Vendor1 from "../assets/LandingPageImg/Supa.jpg";
-import Vendor2 from "../assets/LandingPageImg/shopJoses.jpg";
+import Vendor2 from "../assets/LandingPageImg/ShopJoses.jpg";
 import Vendor3 from "../assets/LandingPageImg/everyday_essentials.jpg";
 import Vendor4 from "../assets/LandingPageImg/electronics.png";
 import Vendor5 from "../assets/LandingPageImg/minimart.jpg";
