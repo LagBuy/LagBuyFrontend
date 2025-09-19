@@ -4,13 +4,29 @@ import { FaInstagram, FaFacebook, FaTelegram, FaTiktok, FaApple } from "react-ic
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FooterModal } from "../../pages/LandingPage/Modal";
-  
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+
+  // same smooth-scroll logic as Navbar
+  const handleScrollTo = (id) => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="bg-[#1A362B] text-white font-Montserrat px-6 md:px-16 lg:px-24 pt-10 pb-6">
@@ -54,10 +70,31 @@ const Footer = () => {
         <div>
           <h4 className="text-[#FCE67A] font-semibold mb-3">Company</h4>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li><a href="#AboutUs">About Us</a></li>
-            <li><a href="#ContactUs">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li className="hover:text-[#FCE67A]">
+              <button onClick={() => handleScrollTo("AboutUs")}>About Us</button>
+            </li>
+            <li className="hover:text-[#FCE67A]">
+              <button onClick={() => handleScrollTo("ContactUs")}>Contact</button>
+            </li>
+            <li className="hover:text-[#FCE67A]">
+              <button onClick={() => handleScrollTo("FAQs")}>FAQs</button>
+            </li>
+            <li className="hover:text-[#FCE67A]">
+              <Link
+                to="/TermsOfUse"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Terms of Use
+              </Link>
+            </li>
+            <li className="hover:text-[#FCE67A]">
+              <Link
+                to="/PrivacyPolicy"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -111,7 +148,6 @@ const Footer = () => {
             </div>
           </div>
 
-          
           <FooterModal isOpen={modalIsOpen} onClose={closeModal} />
         </div>
       </div>

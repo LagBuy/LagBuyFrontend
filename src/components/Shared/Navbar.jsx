@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/LandingPageImg/logo.png";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaTelegram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -11,6 +11,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const menuContentRef = useRef(null);
   const buttonRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -50,6 +52,21 @@ const Navbar = () => {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
     exit: { opacity: 0 },
+  };
+
+  // Smooth scroll handler for hash links
+  const handleScrollTo = (id) => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100); // slight delay for navigation
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+    closeMenu();
   };
 
   // Dropdown for stage
@@ -123,56 +140,32 @@ const Navbar = () => {
     <>
       <header
         className={`w-full font-Capriola sticky top-0 z-50 shadow-md transition-colors duration-300 ${
-          isScrolled ? "bg-transparent/" : "bg-[#1A362B]"
+          isScrolled ? "bg-transparent" : "bg-[#1A362B]"
         }`}
       >
         <div className="w-full lg:w-[90vw] mx-auto px-4 py-4 flex items-center justify-between relative">
           {/* Logo */}
           <div className="w-40 h-12 lg:w-44 lg:h-14 bg-[#4CAF50] rounded-full flex items-center justify-center">
-            <Link to="/">
+            <button onClick={() => handleScrollTo("HeroSection")}>
               <img src={logo} alt="Logo" className="h-8" />
-            </Link>
+            </button>
           </div>
 
-          {/* Center Nav */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
             <nav className="bg-white px-6 py-3 rounded-full shadow-md h-14 flex items-center">
               <ul className="flex gap-x-8 text-sm lg:text-base text-[#1A362B] font-medium">
                 <li>
-                  <a
-                    href="#HeroSection"
-                    onClick={closeMenu}
-                    className="hover:text-[#4CAF50]"
-                  >
-                    Home
-                  </a>
+                  <button onClick={() => handleScrollTo("HeroSection")} className="hover:text-[#4CAF50]">Home</button>
                 </li>
                 <li>
-                  <a
-                    href="#Company"
-                    onClick={closeMenu}
-                    className="hover:text-[#4CAF50]"
-                  >
-                    Company
-                  </a>
+                  <button onClick={() => handleScrollTo("AboutUs")} className="hover:text-[#4CAF50]">About Us</button>
                 </li>
                 <li>
-                  <a
-                    href="#FAQs"
-                    onClick={closeMenu}
-                    className="hover:text-[#4CAF50]"
-                  >
-                    FAQs
-                  </a>
+                  <button onClick={() => handleScrollTo("FAQs")} className="hover:text-[#4CAF50]">FAQs</button>
                 </li>
                 <li>
-                  <a
-                    href="#ContactUs"
-                    onClick={closeMenu}
-                    className="hover:text-[#4CAF50]"
-                  >
-                    Contact
-                  </a>
+                  <button onClick={() => handleScrollTo("ContactUs")} className="hover:text-[#4CAF50]">Contact</button>
                 </li>
               </ul>
             </nav>
