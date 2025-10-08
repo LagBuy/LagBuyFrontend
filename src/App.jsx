@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import AddToHomeScreenPrompt from "./components/AddToHomeScreenPrompt";
-import TermsOfUse from "./pages/LandingPage/TermsOfUse";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import PrivacyPolicy from "./pages/LandingPage/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 function App() {
   return (

@@ -129,7 +129,7 @@ const Footer = () => {
             >
               <FaApple size={28} className="text-white" />
               <p className="text-sm md:text-base">
-                Download on the{" "}
+                Download on the
                 <span className="font-bold text-white">App Store</span>
               </p>
             </div>
@@ -142,7 +142,7 @@ const Footer = () => {
             >
               <IoLogoGooglePlaystore size={28} className="text-green-400" />
               <p className="text-sm md:text-base">
-                Download on the{" "}
+                Download on the
                 <span className="font-bold text-green-400">Google Play</span>
               </p>
             </div>
