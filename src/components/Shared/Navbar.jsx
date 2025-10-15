@@ -9,6 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false); // 👈🏽 new state
   const menuContentRef = useRef(null);
   const buttonRef = useRef(null);
   const navigate = useNavigate();
@@ -16,6 +17,12 @@ const Navbar = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
+
+  // Show popup for a few seconds
+  const handleComingSoon = () => {
+    setShowComingSoon(true);
+    setTimeout(() => setShowComingSoon(false), 2500);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +68,7 @@ const Navbar = () => {
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 100); // slight delay for navigation
+      }, 100);
     } else {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -86,7 +93,7 @@ const Navbar = () => {
         window.location.href = "https://vendors.lagbuy.com/login";
       }
       if (stage === "Riders") {
-        window.location.href = "https://riders.lagbuy.com";
+        handleComingSoon(); // 👈🏽 Show popup instead of navigating
       }
     };
 
@@ -240,13 +247,15 @@ const Navbar = () => {
 
                     <li className="flex items-center space-x-3">
                       <i className="fa fa-bicycle text-red-400"></i>
-                      <a
-                        href="https://riders.lagbuy.com"
-                        onClick={closeMenu}
-                        className="hover:text-red-400"
+                      <button
+                        onClick={() => {
+                          closeMenu();
+                          handleComingSoon(); // 👈🏽 show popup on mobile
+                        }}
+                        className="hover:text-red-400 text-left"
                       >
                         Riders
-                      </a>
+                      </button>
                     </li>
                     <div className="border-t border-gray-800 mt-4"></div>
 
@@ -278,7 +287,6 @@ const Navbar = () => {
 
                 {/* Social Icons */}
                 <div className="flex gap-6 mt-6">
-                  {/* Instagram */}
                   <a
                     href="https://www.instagram.com/lagbuy_official"
                     className="transition-transform transform hover:scale-110"
@@ -288,7 +296,6 @@ const Navbar = () => {
                     </div>
                   </a>
 
-                  {/* Telegram */}
                   <a
                     href="https://t.me/+GvfwUvSETlphMWFk"
                     className="transition-transform transform hover:scale-110"
@@ -296,7 +303,6 @@ const Navbar = () => {
                     <FaTelegram size={22} className="text-[#0088cc]" />
                   </a>
 
-                  {/* Facebook */}
                   <a
                     href="#"
                     className="transition-transform transform hover:scale-110"
@@ -304,16 +310,13 @@ const Navbar = () => {
                     <FaFacebook size={22} className="text-[#1877F2]" />
                   </a>
 
-                  
-                  {/* X / Twitter */}
-                <a
-                   href="https://x.com/lagbuy_official?s=21"
+                  <a
+                    href="https://x.com/lagbuy_official?s=21"
                     className="transition-transform transform hover:scale-110"
-                       >
-                      <FaXTwitter size={22} className="text-white" />
+                  >
+                    <FaXTwitter size={22} className="text-white" />
                   </a>
 
-                  {/* TikTok */}
                   <a
                     href="https://www.tiktok.com/@lagbuy_official?_t=ZS-8zdVH8JdHCa&_r=1"
                     className="transition-transform transform hover:scale-110"
@@ -336,6 +339,21 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </header>
+
+      {/* 👇🏽 Coming Soon Popup */}
+      <AnimatePresence>
+        {showComingSoon && (
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 40 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-[#1A362B] text-white px-6 py-3 rounded-full shadow-lg z-[9999] font-medium"
+          >
+            🚴‍♂️ Riders Page Coming Soon
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

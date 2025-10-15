@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import logo from "../../assets/logo.png";
 import { FaInstagram, FaFacebook, FaTelegram, FaTiktok, FaApple } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";

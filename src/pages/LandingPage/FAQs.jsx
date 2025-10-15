@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     question: 'What is the return policy?',
-    answer: 'Our return policy allows returns within 3 days of delivery. Items must be unused and in their original packaging.',
+    answer: 'Our return policy allows returns within 7 days of delivery. Items must be unused and in their original packaging.',
   },
   // {
   //   question: 'How do service providers offer their services on LagBuy?',
@@ -55,7 +55,7 @@ const faqs = [
   // },
   {
     question: 'How do riders work on LagBuy?',
-    answer: 'Riders on LagBuy are responsible for delivering products and services to customers. They receive delivery requests through the app, pick up items from vendors or service providers, and ensure timely delivery to customers’ locations.',
+    answer: 'Riders on LagBuy are responsible for delivering products and services to customers. They receive delivery requests through the app, pick up items from vendors, and ensure timely delivery to customers’ locations.',
   },
   {
     question: 'What support is available for vendors?',
