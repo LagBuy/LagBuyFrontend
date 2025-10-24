@@ -266,7 +266,7 @@ const DeliveryServices = () => {
           >
             <span className="font-bold text-sm flex items-center gap-2">
               <Users className="w-4 h-4" />
-              500+ Riders
+              20+ Riders
             </span>
           </motion.div>
 
