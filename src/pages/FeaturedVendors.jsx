@@ -17,7 +17,7 @@ const vendors = [
   { img: Vendor3, name: "Kemist Pharmacy", location: "Chemist, Lagos", category: "Pharmacy", rating: 5, delivery: "10 min" },
   { img: Vendor4, name: "Haier Thermocool", location: "Bariga, Lagos", category: "Electronics", rating: 5, delivery: "25 min" },
   { img: Vendor5, name: "Yem Yem", location: "Unilag, Lagos", category: "Groceries", rating: 5, delivery: "12 min" },
-  { img: Vendor6, name: "Lusi Lixetical Collection", location: "Unilag, Lagos", category: "Fashion", rating: 5, delivery: "18 min" },
+  { img: Vendor6, name: "Lusi Lixetica Collection", location: "Unilag, Lagos", category: "Fashion", rating: 5, delivery: "18 min" },
   { img: Vendor7, name: "ORRIS & OAK", location: "Unilag, Lagos", category: "Fashion", rating: 5, delivery: "22 min" },
   { img: Vendor8, name: "Standard Fashion", location: "Yaba, Lagos", category: "Clothing", rating: 5, delivery: "16 min" },
 ];
