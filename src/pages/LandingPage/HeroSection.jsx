@@ -88,7 +88,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/30 to-yellow-500/30 backdrop-blur-md border border-white/20 rounded-full px-6 py-3"
           >
             <Sparkles className="w-5 h-5 text-yellow-400" />
-            <span className="text-sm font-semibold text-white">Will soon exceed 500,000+ happy customers</span>
+            <span className="text-sm font-semibold text-white">Almost 500,000+ happy customers</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -98,7 +98,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <span className="text-white">Stop Shopping,</span>
+            <span className="text-white block mb-4">Don't Just Shop,</span>
             <motion.span
               animate={{ 
                 backgroundPosition: ['0%', '100%', '0%'],
@@ -110,7 +110,7 @@ const HeroSection = () => {
               }}
               className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-yellow-400 to-green-500 bg-[length:200%_auto]"
             >
-              Start Experiencing
+              Feel the Difference!
             </motion.span>
           </motion.h1>
 

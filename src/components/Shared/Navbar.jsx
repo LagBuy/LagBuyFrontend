@@ -94,7 +94,7 @@ const Navbar = () => {
         window.location.href = "https://vendors.lagbuy.com/login";
       }
       if (stage === "Riders") {
-        handleComingSoon();
+        window.location.href = "https://forms.gle/Y5CfpyMEgz5qti7V9";
       }
     };
 
@@ -216,7 +216,7 @@ const Navbar = () => {
             <StageDropdown />
           </div>
 
-          {/* Enhanced Mobile Hamburger */}
+          {/* Enhanced Mobile Hamburger - More Professional */}
           <motion.button
             onClick={toggleMenu}
             className="md:hidden z-50 relative"
@@ -228,25 +228,25 @@ const Navbar = () => {
               <motion.span
                 animate={{ 
                   rotate: menuOpen ? 45 : 0, 
-                  y: menuOpen ? 8 : 0,
+                  y: menuOpen ? 6 : 0,
                   backgroundColor: menuOpen ? "#F59E0B" : "#10B981"
                 }}
-                className="block w-8 h-1 rounded-full origin-left shadow-lg"
+                className="block w-6 h-0.5 rounded-full origin-left shadow-sm transition-colors duration-300"
               />
               <motion.span
                 animate={{ 
                   opacity: menuOpen ? 0 : 1,
                   backgroundColor: menuOpen ? "#F59E0B" : "#10B981"
                 }}
-                className="block w-6 h-1 rounded-full shadow-lg"
+                className="block w-5 h-0.5 rounded-full shadow-sm transition-colors duration-300"
               />
               <motion.span
                 animate={{ 
                   rotate: menuOpen ? -45 : 0, 
-                  y: menuOpen ? -8 : 0,
+                  y: menuOpen ? -6 : 0,
                   backgroundColor: menuOpen ? "#F59E0B" : "#10B981"
                 }}
-                className="block w-8 h-1 rounded-full origin-left shadow-lg"
+                className="block w-6 h-0.5 rounded-full origin-left shadow-sm transition-colors duration-300"
               />
             </div>
           </motion.button>
@@ -262,25 +262,25 @@ const Navbar = () => {
               exit="exit"
               variants={mobileMenuVariants}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="md:hidden fixed inset-y-0 right-0 z-40 w-80 bg-gradient-to-b from-black via-green-900 to-black shadow-2xl border-l-2 border-green-500/30"
+              className="md:hidden fixed inset-y-0 right-0 z-40 w-80 bg-gradient-to-b from-black via-green-900 to-black shadow-2xl border-l-2 border-green-500/30 backdrop-blur-md"
             >
               <div ref={menuContentRef} className="w-full h-full p-8 pt-24">
-                {/* Close Button */}
+                {/* Enhanced Close Button */}
                 <motion.button
                   onClick={closeMenu}
-                  className="absolute top-6 right-6 text-white bg-gradient-to-r from-green-500 to-yellow-500 w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
-                  whileHover={{ scale: 1.1 }}
+                  className="absolute top-6 right-6 text-white bg-gradient-to-r from-green-500 to-yellow-500 w-8 h-8 rounded-xl flex items-center justify-center shadow-lg border border-white/20"
+                  whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  ✕
+                  <span className="text-sm font-bold">✕</span>
                 </motion.button>
 
                 <nav>
-                  <ul className="flex flex-col space-y-6 text-start text-xl font-bold">
+                  <ul className="flex flex-col space-y-4 text-start text-lg font-semibold">
                     {[
                       { name: "Company", icon: "🏢", color: "text-yellow-400", id: "About-Us" },
                       { name: "Vendors", icon: "🏪", color: "text-green-400", href: "https://vendors.lagbuy.com/login" },
-                      { name: "Riders", icon: "🚴", color: "text-yellow-300", action: handleComingSoon },
+                      { name: "Riders", icon: "🚴", color: "text-yellow-300", href: "https://forms.gle/Y5CfpyMEgz5qti7V9" },
                       { name: "Customers", icon: "👥", color: "text-green-300", href: "https://shop.lagbuy.com/login" },
                       { name: "Contact", icon: "📞", color: "text-yellow-200", id: "ContactUs" }
                     ].map((item, index) => (
@@ -289,31 +289,23 @@ const Navbar = () => {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-center space-x-4 p-3 rounded-2xl bg-gradient-to-r from-green-500/10 to-yellow-500/10 hover:from-green-500/20 hover:to-yellow-500/20 transition-all duration-300 border border-white/10"
+                        className="flex items-center space-x-3 p-3 rounded-xl bg-gradient-to-r from-green-500/10 to-yellow-500/10 hover:from-green-500/20 hover:to-yellow-500/20 transition-all duration-300 border border-white/10"
                       >
-                        <span className={`text-2xl ${item.color}`}>{item.icon}</span>
+                        <span className={`text-xl ${item.color}`}>{item.icon}</span>
                         {item.href ? (
                           <a
                             href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={closeMenu}
-                            className="text-white hover:text-yellow-400 transition-colors"
+                            className="text-white hover:text-yellow-400 transition-colors flex-1"
                           >
                             {item.name}
                           </a>
-                        ) : item.action ? (
-                          <button
-                            onClick={() => {
-                              closeMenu();
-                              item.action();
-                            }}
-                            className="text-white hover:text-yellow-400 transition-colors text-left"
-                          >
-                            {item.name}
-                          </button>
                         ) : (
                           <button
                             onClick={() => handleScrollTo(item.id)}
-                            className="text-white hover:text-yellow-400 transition-colors text-left"
+                            className="text-white hover:text-yellow-400 transition-colors text-left flex-1"
                           >
                             {item.name}
                           </button>
@@ -325,7 +317,7 @@ const Navbar = () => {
 
                 {/* Enhanced Social Icons */}
                 <motion.div 
-                  className="flex gap-4 mt-12 justify-center"
+                  className="flex gap-3 mt-12 justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
@@ -340,29 +332,31 @@ const Navbar = () => {
                     <motion.a
                       key={index}
                       href={social.href}
-                      className="transition-transform transform hover:scale-110"
-                      whileHover={{ scale: 1.2, y: -2 }}
-                      whileTap={{ scale: 0.9 }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-transform transform"
+                      whileHover={{ scale: 1.15, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       {social.special ? (
-                        <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-r from-green-500 to-yellow-500 rounded-xl p-2">
+                        <div className="relative w-8 h-8 flex items-center justify-center bg-gradient-to-r from-green-500 to-yellow-500 rounded-lg p-1.5">
                           <FaTiktok
-                            size={20}
+                            size={16}
                             className="absolute text-[#69C9D0] -translate-x-0.5 translate-y-0.5"
                           />
                           <FaTiktok
-                            size={20}
+                            size={16}
                             className="absolute text-[#EE1D52] translate-x-0.5 -translate-y-0.5"
                           />
-                          <FaTiktok size={20} className="text-white relative" />
+                          <FaTiktok size={16} className="text-white relative" />
                         </div>
                       ) : social.gradient ? (
-                        <div className={`bg-gradient-to-tr ${social.gradient} p-2 rounded-xl w-10 h-10 flex items-center justify-center`}>
-                          <social.Icon size={20} className="text-white" />
+                        <div className={`bg-gradient-to-tr ${social.gradient} p-1.5 rounded-lg w-8 h-8 flex items-center justify-center`}>
+                          <social.Icon size={16} className="text-white" />
                         </div>
                       ) : (
-                        <div className="bg-gradient-to-r from-green-500 to-yellow-500 p-2 rounded-xl w-10 h-10 flex items-center justify-center">
-                          <social.Icon size={20} className={social.color} />
+                        <div className="bg-gradient-to-r from-green-500 to-yellow-500 p-1.5 rounded-lg w-8 h-8 flex items-center justify-center">
+                          <social.Icon size={16} className={social.color} />
                         </div>
                       )}
                     </motion.a>

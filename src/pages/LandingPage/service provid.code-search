@@ -1,0 +1,9 @@
+# Query: service provid
+# ContextLines: 1
+
+1 result - 1 file
+
+src\pages\LandingPage\FAQs.jsx:
+  7      question: 'What is LagBuy?',
+  8:     answer: 'LagBuy is a platform that connects buyers, sellers and riders for a seamless shopping and service experience.',
+  9    },

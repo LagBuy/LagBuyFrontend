@@ -136,7 +136,10 @@ const AboutUs = () => {
           </motion.div>
 
           {/* CTA Button */}
-          <motion.button
+          <motion.a
+            href="https://vendors.lagbuy.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ 
@@ -147,14 +150,14 @@ const AboutUs = () => {
             whileTap={{ scale: 0.95 }}
             transition={{ delay: 0.8, duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-green-500 to-yellow-500 text-black font-bold py-4 px-8 rounded-2xl mt-6 shadow-2xl shadow-green-500/25 border-2 border-white/20 relative overflow-hidden group"
+            className="bg-gradient-to-r from-green-500 to-yellow-500 text-black font-bold py-4 px-8 rounded-2xl mt-6 shadow-2xl shadow-green-500/25 border-2 border-white/20 relative overflow-hidden group cursor-pointer"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative flex items-center gap-2">
               <Zap className="w-5 h-5" />
-              Get Started Now - It's Free!
+              Get Started Now - onboarding is free!
             </span>
-          </motion.button>
+          </motion.a>
 
           {/* Social Proof */}
           <motion.div

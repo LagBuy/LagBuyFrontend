@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, Search, HelpCircle, Zap } from 'lucide-react';
 const faqs = [
   {
     question: 'What is LagBuy?',
-    answer: 'LagBuy is a platform that connects buyers, sellers, service providers, and riders for a seamless shopping and service experience.',
+    answer: 'LagBuy is a platform that connects buyers, sellers and riders for a seamless shopping and service experience.',
   },
   {
     question: 'How do I sign up as a vendor on LagBuy?',

@@ -32,8 +32,8 @@ const todos = [
     text: "Join the ride! Become a LagBuy delivery partner, and start earning today with flexible hours.",
     bgColor: "bg-gradient-to-br from-black via-green-900 to-black",
     textColor: "text-white",
-    btn: "Join as Rider",
-    link: "https://riders.lagbuy.com",
+    btn: "Become a rider",
+    link: "https://forms.gle/Y5CfpyMEgz5qti7V9",
     accent: "from-green-400 to-yellow-400",
     stats: "15min Avg Delivery"
   },

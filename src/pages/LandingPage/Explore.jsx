@@ -7,10 +7,10 @@ import { Truck, Clock, Shield, MapPin, Zap, Users, Star } from "lucide-react";
 
 const DeliveryServices = () => {
   const features = [
-    { icon: Clock, text: "Same-day, fast Delivery", color: "text-yellow-400", bg: "from-yellow-400/20 to-yellow-500/20" },
+    { icon: Clock, text: "Fast Delivery", color: "text-yellow-400", bg: "from-yellow-400/20 to-yellow-500/20" },
     { icon: Shield, text: "Secure & Reliable", color: "text-green-400", bg: "from-green-400/20 to-green-500/20" },
     { icon: MapPin, text: "Real-time Tracking", color: "text-blue-400", bg: "from-blue-400/20 to-blue-500/20" },
-    { icon: Truck, text: "Professional Riders", color: "text-green-400", bg: "from-green-400/20 to-green-500/20" }
+    { icon: Truck, text: "Trusted Riders", color: "text-green-400", bg: "from-green-400/20 to-green-500/20" }
   ];
 
   return (
@@ -232,12 +232,12 @@ const DeliveryServices = () => {
             wrapperClassName="w-full h-full"
           />
 
-          {/* Floating Badges */}
+          {/* Floating Badges - Fixed for mobile */}
           <motion.div
-            className="absolute top-6 left-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-3 rounded-2xl shadow-2xl z-20 backdrop-blur-sm"
+            className="absolute top-2 left-2 md:top-6 md:left-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-2xl z-20 backdrop-blur-sm"
             animate={{ 
-              y: [-10, 10, -10],
-              rotate: [-5, 5, -5]
+              y: [-5, 5, -5],
+              rotate: [-3, 3, -3]
             }}
             transition={{ 
               duration: 4, 
@@ -245,17 +245,17 @@ const DeliveryServices = () => {
               ease: "easeInOut" 
             }}
           >
-            <span className="font-bold text-sm flex items-center gap-2">
-              <Zap className="w-4 h-4" />
+            <span className="font-bold text-xs md:text-sm flex items-center gap-1 md:gap-2">
+              <Zap className="w-3 h-3 md:w-4 md:h-4" />
               Fast Delivery
             </span>
           </motion.div>
 
           <motion.div
-            className="absolute bottom-6 right-6 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-4 py-3 rounded-2xl shadow-2xl z-20 backdrop-blur-sm"
+            className="absolute bottom-2 right-2 md:bottom-6 md:right-6 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-2xl z-20 backdrop-blur-sm"
             animate={{ 
-              y: [10, -10, 10],
-              rotate: [5, -5, 5]
+              y: [5, -5, 5],
+              rotate: [3, -3, 3]
             }}
             transition={{ 
               duration: 5, 
@@ -264,8 +264,8 @@ const DeliveryServices = () => {
               delay: 1
             }}
           >
-            <span className="font-bold text-sm flex items-center gap-2">
-              <Users className="w-4 h-4" />
+            <span className="font-bold text-xs md:text-sm flex items-center gap-1 md:gap-2">
+              <Users className="w-3 h-3 md:w-4 md:h-4" />
               20+ Riders
             </span>
           </motion.div>
