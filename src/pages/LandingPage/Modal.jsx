@@ -258,7 +258,7 @@ export const FooterModal = ({ isOpen, onClose }) => {
               className="flex justify-center"
             >
               <div className="p-4 bg-gradient-to-r from-green-500/10 to-yellow-500/10 rounded-2xl border border-yellow-500/20">
-                <ComingSoon className="w-12 h-12 text-yellow-400" />
+                <Clock className="w-12 h-12 text-yellow-400" />
               </div>
             </motion.div>
 
