@@ -9,7 +9,8 @@ import { FaXTwitter } from "react-icons/fa6";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showComingSoon, setShowComingSoon] = useState(false); // 👈🏽 new state
+  const [showComingSoon, setShowComingSoon] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const menuContentRef = useRef(null);
   const buttonRef = useRef(null);
   const navigate = useNavigate();
@@ -18,10 +19,10 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  // Show popup for a few seconds
+  // Enhanced popup with better animation
   const handleComingSoon = () => {
     setShowComingSoon(true);
-    setTimeout(() => setShowComingSoon(false), 2500);
+    setTimeout(() => setShowComingSoon(false), 3000);
   };
 
   useEffect(() => {
@@ -56,9 +57,9 @@ const Navbar = () => {
   }, [menuOpen]);
 
   const mobileMenuVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    exit: { opacity: 0 },
+    hidden: { opacity: 0, x: 300 },
+    visible: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 300 },
   };
 
   // Smooth scroll handler for hash links
@@ -76,7 +77,7 @@ const Navbar = () => {
     closeMenu();
   };
 
-  // Dropdown for stage
+  // Enhanced Dropdown for stage
   const StageDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedStage, setSelectedStage] = useState("");
@@ -93,7 +94,7 @@ const Navbar = () => {
         window.location.href = "https://vendors.lagbuy.com/login";
       }
       if (stage === "Riders") {
-        handleComingSoon(); // 👈🏽 Show popup instead of navigating
+        handleComingSoon();
       }
     };
 
@@ -108,37 +109,56 @@ const Navbar = () => {
       return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const stageOptions = ["Customers", "Vendors", "Riders"];
+    const stageOptions = [
+      { name: "Customers", icon: "👥", color: "from-green-500 to-green-600" },
+      { name: "Vendors", icon: "🏪", color: "from-yellow-500 to-yellow-600" },
+      { name: "Riders", icon: "🚴", color: "from-green-400 to-yellow-400" }
+    ];
 
     return (
       <div className="relative" ref={dropdownRef}>
-        <button
+        <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-white h-14 px-6 rounded-full shadow-md text-[#1A362B] font-medium flex items-center gap-2 hover:text-[#4CAF50] transition-all"
+          className="bg-gradient-to-r from-green-500 to-yellow-500 h-14 px-8 rounded-2xl shadow-2xl text-black font-bold flex items-center gap-3 hover:from-green-400 hover:to-yellow-400 transition-all duration-300 border-2 border-white/20"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          {selectedStage || "Sign In"}
-          <span className="text-xl">
+          <span className="text-lg">🚀</span>
+          {selectedStage || "Get Started"}
+          <motion.span
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-lg"
+          >
             {isOpen ? <FaChevronUp /> : <FaChevronDown />}
-          </span>
-        </button>
+          </motion.span>
+        </motion.button>
 
-        {isOpen && (
-          <div className="absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-lg py-2 z-50">
-            {stageOptions.map((stage) => (
-              <button
-                key={stage}
-                onClick={() => handleSelect(stage)}
-                className={`block w-full text-left px-4 py-2 text-sm ${
-                  selectedStage === stage
-                    ? "text-[#4CAF50] font-semibold"
-                    : "text-[#1A362B]"
-                } hover:bg-gray-100`}
-              >
-                {stage}
-              </button>
-            ))}
-          </div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="absolute right-0 mt-3 w-60 bg-gradient-to-br from-black to-gray-900 rounded-2xl shadow-2xl py-3 z-50 border-2 border-green-500/30 backdrop-blur-md"
+            >
+              {stageOptions.map((stage, index) => (
+                <motion.button
+                  key={stage.name}
+                  onClick={() => handleSelect(stage.name)}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`block w-full text-left px-5 py-3 text-sm font-semibold m-2 rounded-xl bg-gradient-to-r ${stage.color} text-black hover:scale-105 transition-all duration-300 border-2 border-white/30`}
+                >
+                  <span className="text-lg mr-3">{stage.icon}</span>
+                  {stage.name}
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   };
@@ -146,67 +166,93 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`w-full font-Capriola sticky top-0 z-50 shadow-md transition-colors duration-300 ${
-          isScrolled ? "bg-transparent" : "bg-[#1A362B]"
+        className={`w-full font-Capriola sticky top-0 z-50 transition-all duration-500 ${
+          isScrolled 
+            ? "bg-gradient-to-r from-black via-green-900 to-black shadow-2xl py-2" 
+            : "bg-gradient-to-r from-black via-[#1A362B] to-black py-4"
         }`}
       >
-        <div className="w-full lg:w-[90vw] mx-auto px-4 py-4 flex items-center justify-between relative">
-          {/* Logo */}
-          <div className="w-40 h-12 lg:w-44 lg:h-14 bg-[#4CAF50] rounded-full flex items-center justify-center">
-            <button onClick={() => handleScrollTo("HeroSection")}>
-              <img src={logo} alt="Logo" className="h-8" />
-            </button>
-          </div>
+        <div className="w-full lg:w-[90vw] mx-auto px-4 flex items-center justify-between relative">
+          {/* Enhanced Logo */}
+          <motion.div 
+            className="relative"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <div className="w-44 h-14 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/20">
+              <button onClick={() => handleScrollTo("HeroSection")}>
+                <img src={logo} alt="Logo" className="h-8 drop-shadow-lg" />
+              </button>
+            </div>
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl blur-lg opacity-50 -z-10 animate-pulse" />
+          </motion.div>
 
-          {/* Desktop Nav */}
+          {/* Enhanced Desktop Nav */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
-            <nav className="bg-white px-6 py-3 rounded-full shadow-md h-14 flex items-center">
-              <ul className="flex gap-x-8 text-sm lg:text-base text-[#1A362B] font-medium">
-                <li>
-                  <button onClick={() => handleScrollTo("HeroSection")} className="hover:text-[#4CAF50]">Home</button>
-                </li>
-                <li>
-                  <button onClick={() => handleScrollTo("AboutUs")} className="hover:text-[#4CAF50]">About Us</button>
-                </li>
-                <li>
-                  <button onClick={() => handleScrollTo("FAQs")} className="hover:text-[#4CAF50]">FAQs</button>
-                </li>
-                <li>
-                  <button onClick={() => handleScrollTo("ContactUs")} className="hover:text-[#4CAF50]">Contact</button>
-                </li>
+            <nav className="bg-gradient-to-r from-green-500/20 to-yellow-500/20 backdrop-blur-md px-8 py-3 rounded-2xl shadow-2xl h-14 flex items-center border-2 border-white/10">
+              <ul className="flex gap-x-10 text-base font-bold">
+                {[
+                  { name: "Home", id: "HeroSection" },
+                  { name: "About Us", id: "AboutUs" },
+                  { name: "FAQs", id: "FAQs" },
+                  { name: "Contact", id: "ContactUs" }
+                ].map((item) => (
+                  <motion.li key={item.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                    <button 
+                      onClick={() => handleScrollTo(item.id)} 
+                      className="text-white hover:text-yellow-400 transition-all duration-300 drop-shadow-lg"
+                    >
+                      {item.name}
+                    </button>
+                  </motion.li>
+                ))}
               </ul>
             </nav>
           </div>
 
-          {/* Right Dropdown */}
+          {/* Enhanced Right Dropdown */}
           <div className="hidden md:flex">
             <StageDropdown />
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
+          {/* Enhanced Mobile Hamburger */}
+          <motion.button
             onClick={toggleMenu}
-            className="md:hidden z-50"
+            className="md:hidden z-50 relative"
             ref={buttonRef}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <div className="space-y-1.5">
               <motion.span
-                animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 8 : 0 }}
-                className="block w-8 h-1 bg-[#4CAF50] rounded origin-left"
+                animate={{ 
+                  rotate: menuOpen ? 45 : 0, 
+                  y: menuOpen ? 8 : 0,
+                  backgroundColor: menuOpen ? "#F59E0B" : "#10B981"
+                }}
+                className="block w-8 h-1 rounded-full origin-left shadow-lg"
               />
               <motion.span
-                animate={{ opacity: menuOpen ? 0 : 1 }}
-                className="block w-6 h-1 bg-[#4CAF50] rounded"
+                animate={{ 
+                  opacity: menuOpen ? 0 : 1,
+                  backgroundColor: menuOpen ? "#F59E0B" : "#10B981"
+                }}
+                className="block w-6 h-1 rounded-full shadow-lg"
               />
               <motion.span
-                animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -8 : 0 }}
-                className="block w-8 h-1 bg-[#4CAF50] rounded origin-left"
+                animate={{ 
+                  rotate: menuOpen ? -45 : 0, 
+                  y: menuOpen ? -8 : 0,
+                  backgroundColor: menuOpen ? "#F59E0B" : "#10B981"
+                }}
+                className="block w-8 h-1 rounded-full origin-left shadow-lg"
               />
             </div>
-          </button>
+          </motion.button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Enhanced Mobile Menu */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -215,142 +261,156 @@ const Navbar = () => {
               animate="visible"
               exit="exit"
               variants={mobileMenuVariants}
-              transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 z-40 bg-[#000000] flex items-start justify-center pl-8 pt-20"
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="md:hidden fixed inset-y-0 right-0 z-40 w-80 bg-gradient-to-b from-black via-green-900 to-black shadow-2xl border-l-2 border-green-500/30"
             >
-              <div ref={menuContentRef} className="w-[90%] max-w-sm text-white">
+              <div ref={menuContentRef} className="w-full h-full p-8 pt-24">
+                {/* Close Button */}
+                <motion.button
+                  onClick={closeMenu}
+                  className="absolute top-6 right-6 text-white bg-gradient-to-r from-green-500 to-yellow-500 w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  ✕
+                </motion.button>
+
                 <nav>
-                  <ul className="flex flex-col space-y-6 text-start text-lg font-medium">
-                    <li className="flex items-center space-x-3">
-                      <i className="fa fa-building text-yellow-400"></i>
-                      <a
-                        href="#About-Us"
-                        onClick={closeMenu}
-                        className="hover:text-yellow-400"
+                  <ul className="flex flex-col space-y-6 text-start text-xl font-bold">
+                    {[
+                      { name: "Company", icon: "🏢", color: "text-yellow-400", id: "About-Us" },
+                      { name: "Vendors", icon: "🏪", color: "text-green-400", href: "https://vendors.lagbuy.com/login" },
+                      { name: "Riders", icon: "🚴", color: "text-yellow-300", action: handleComingSoon },
+                      { name: "Customers", icon: "👥", color: "text-green-300", href: "https://shop.lagbuy.com/login" },
+                      { name: "Contact", icon: "📞", color: "text-yellow-200", id: "ContactUs" }
+                    ].map((item, index) => (
+                      <motion.li 
+                        key={item.name}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex items-center space-x-4 p-3 rounded-2xl bg-gradient-to-r from-green-500/10 to-yellow-500/10 hover:from-green-500/20 hover:to-yellow-500/20 transition-all duration-300 border border-white/10"
                       >
-                        Company
-                      </a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fa fa-cogs text-blue-400"></i>
-                      <a
-                        href="https://vendors.lagbuy.com/login"
-                        onClick={closeMenu}
-                        className="hover:text-blue-400"
-                      >
-                        Vendors
-                      </a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fa fa-bicycle text-red-400"></i>
-                      <button
-                        onClick={() => {
-                          closeMenu();
-                          handleComingSoon(); // 👈🏽 show popup on mobile
-                        }}
-                        className="hover:text-red-400 text-left"
-                      >
-                        Riders
-                      </button>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fa fa-users text-teal-400"></i>
-                      <a
-                        href="https://shop.lagbuy.com/login"
-                        onClick={closeMenu}
-                        className="hover:text-teal-400"
-                      >
-                        Customers
-                      </a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
-
-                    <li className="flex items-center space-x-3">
-                      <i className="fa fa-envelope text-orange-400"></i>
-                      <a
-                        href="#ContactUs"
-                        onClick={closeMenu}
-                        className="hover:text-orange-400"
-                      >
-                        Contact
-                      </a>
-                    </li>
-                    <div className="border-t border-gray-800 mt-4"></div>
+                        <span className={`text-2xl ${item.color}`}>{item.icon}</span>
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            onClick={closeMenu}
+                            className="text-white hover:text-yellow-400 transition-colors"
+                          >
+                            {item.name}
+                          </a>
+                        ) : item.action ? (
+                          <button
+                            onClick={() => {
+                              closeMenu();
+                              item.action();
+                            }}
+                            className="text-white hover:text-yellow-400 transition-colors text-left"
+                          >
+                            {item.name}
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handleScrollTo(item.id)}
+                            className="text-white hover:text-yellow-400 transition-colors text-left"
+                          >
+                            {item.name}
+                          </button>
+                        )}
+                      </motion.li>
+                    ))}
                   </ul>
                 </nav>
 
-                {/* Social Icons */}
-                <div className="flex gap-6 mt-6">
-                  <a
-                    href="https://www.instagram.com/lagbuy_official"
-                    className="transition-transform transform hover:scale-110"
-                  >
-                    <div className="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1 rounded-lg">
-                      <FaInstagram size={22} className="text-white" />
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://t.me/+GvfwUvSETlphMWFk"
-                    className="transition-transform transform hover:scale-110"
-                  >
-                    <FaTelegram size={22} className="text-[#0088cc]" />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="transition-transform transform hover:scale-110"
-                  >
-                    <FaFacebook size={22} className="text-[#1877F2]" />
-                  </a>
-
-                  <a
-                    href="https://x.com/lagbuy_official?s=21"
-                    className="transition-transform transform hover:scale-110"
-                  >
-                    <FaXTwitter size={22} className="text-white" />
-                  </a>
-
-                  <a
-                    href="https://www.tiktok.com/@lagbuy_official?_t=ZS-8zdVH8JdHCa&_r=1"
-                    className="transition-transform transform hover:scale-110"
-                  >
-                    <div className="relative w-6 h-6 flex items-center justify-center">
-                      <FaTiktok
-                        size={22}
-                        className="absolute text-[#69C9D0] -translate-x-0.5 translate-y-0.5"
-                      />
-                      <FaTiktok
-                        size={22}
-                        className="absolute text-[#EE1D52] translate-x-0.5 -translate-y-0.5"
-                      />
-                      <FaTiktok size={22} className="text-white relative" />
-                    </div>
-                  </a>
-                </div>
+                {/* Enhanced Social Icons */}
+                <motion.div 
+                  className="flex gap-4 mt-12 justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  {[
+                    { Icon: FaInstagram, href: "https://www.instagram.com/lagbuy_official", gradient: "from-yellow-400 via-pink-500 to-purple-600" },
+                    { Icon: FaTelegram, href: "https://t.me/+GvfwUvSETlphMWFk", color: "text-[#0088cc]" },
+                    { Icon: FaFacebook, href: "#", color: "text-[#1877F2]" },
+                    { Icon: FaXTwitter, href: "https://x.com/lagbuy_official?s=21", color: "text-white" },
+                    { Icon: FaTiktok, href: "https://www.tiktok.com/@lagbuy_official?_t=ZS-8zdVH8JdHCa&_r=1", special: true }
+                  ].map((social, index) => (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      className="transition-transform transform hover:scale-110"
+                      whileHover={{ scale: 1.2, y: -2 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      {social.special ? (
+                        <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-r from-green-500 to-yellow-500 rounded-xl p-2">
+                          <FaTiktok
+                            size={20}
+                            className="absolute text-[#69C9D0] -translate-x-0.5 translate-y-0.5"
+                          />
+                          <FaTiktok
+                            size={20}
+                            className="absolute text-[#EE1D52] translate-x-0.5 -translate-y-0.5"
+                          />
+                          <FaTiktok size={20} className="text-white relative" />
+                        </div>
+                      ) : social.gradient ? (
+                        <div className={`bg-gradient-to-tr ${social.gradient} p-2 rounded-xl w-10 h-10 flex items-center justify-center`}>
+                          <social.Icon size={20} className="text-white" />
+                        </div>
+                      ) : (
+                        <div className="bg-gradient-to-r from-green-500 to-yellow-500 p-2 rounded-xl w-10 h-10 flex items-center justify-center">
+                          <social.Icon size={20} className={social.color} />
+                        </div>
+                      )}
+                    </motion.a>
+                  ))}
+                </motion.div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
 
-      {/* 👇🏽 Coming Soon Popup */}
+      {/* Enhanced Coming Soon Popup */}
       <AnimatePresence>
         {showComingSoon && (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 40 }}
-            transition={{ duration: 0.3 }}
-            className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-[#1A362B] text-white px-6 py-3 rounded-full shadow-lg z-[9999] font-medium"
+            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 100, scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-yellow-500 text-black px-8 py-4 rounded-2xl shadow-2xl z-[9999] font-bold text-lg border-2 border-white/30 backdrop-blur-md"
           >
-            🚴‍♂️ Riders Page Coming Soon
+            <div className="flex items-center gap-3">
+              <motion.span
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                className="text-2xl"
+              >
+                🚴
+              </motion.span>
+              <span>Riders Platform Coming Soon!</span>
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="text-2xl"
+              >
+                ⚡
+              </motion.span>
+            </div>
+            
+            {/* Progress bar */}
+            <motion.div 
+              className="h-1 bg-black/20 rounded-full mt-2 overflow-hidden"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 3, ease: "linear" }}
+            >
+              <div className="h-full bg-black rounded-full" />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
