@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroSection from './HeroSection'
 import WhatToDoWithLadbuySection from './WhatToDoWithLadbuySection'
 import AboutUs from './AboutUs'

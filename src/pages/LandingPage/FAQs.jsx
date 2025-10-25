@@ -1,31 +1,70 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, Search, HelpCircle, Zap } from 'lucide-react';
+import { ChevronDown, Search, HelpCircle, Zap, ChevronRight, ChevronUp } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'What is LagBuy?',
-    answer: 'LagBuy is a platform that connects buyers, sellers and riders for a seamless shopping and service experience.',
+    question: 'What is LAGBUY?',
+    answer: 'LAGBUY is a smart online market place that connects buyers, verified vendors and riders IN LAGOS for easier, faster and smarter shopping experience. From clothes to gadgets to your daily essentials, just search, compare, list, buy, sell and get it delivered same day !!!',
   },
   {
-    question: 'How do I sign up as a vendor on LagBuy?',
-    answer: 'To sign up as a vendor on LagBuy, simply download the LagBuy app or visit our website. Navigate to the "Join as a Vendor" section, fill out your business details, upload any required documents, and submit your application. Once approved, you can start listing your products and connect with customers instantly.',
+    question: 'How does LAGBUY work?',
+    answer: 'You browse products and our intelligent system recommends vendors near-by, based on the type or nature of product. If you are a vendor, just signup and list your products at ₦0.00 cost. Once a purchase is made, our riders picks up the order and zoom off towards the buyer\'s address for delivery',
   },
   {
-    question: 'How do I create an account on LagBuy?',
-    answer: 'To create an account on LagBuy, visit our website or download the LagBuy app. Click on "Sign Up", choose your account type Buyer, Vendor, or Rider then fill in your details and verify your phone number or email. Once registered, you can start using LagBuy to shop, sell, or deliver with ease.',
+    question: 'How do I know if LAGBUY is safe?',
+    answer: 'Every vendor undergoes a thorough verification process to ensure legitimacy. Suspicious activity on a vendor\'s page leads to permanent removal from LAGBUY.',
   },
   {
-    question: 'What is the service fee?',
-    answer: 'The service fee is a small percentage LagBuy charges on each successful transaction. It helps us maintain the platform, provide customer support, and ensure smooth operations for buyers, vendors, and riders. The exact fee may vary depending on the type of product offered.',
+    question: 'Why should I join LAGBUY?',
+    answer: 'We integrated a find-a-vendor-nearby feature that helps customers find you easily depending on their location. This reduces the cost of delivery up to 80%. You get what you ordered between 30 minutes to 4/5 hours depending on your location in Lagos. Yep! Same day delivery! Visibility is key in business and as a business owner, you can never have enough! And this why LAGBUY exists.',
   },
-  // ... keep the rest of your FAQ items
+  {
+    question: 'How can I track my sales and payouts?',
+    answer: 'Every verified vendor has a dashboard that shows your entire business performance metrics. It lets you know how good or bad your business is performing. It also gives you tips on how to improve!!!',
+  },
+  {
+    question: 'When do I get paid?',
+    answer: 'Before 6:00PM daily. No excuses.',
+  },
+  {
+    question: 'What if my payment is delayed as a vendor?',
+    answer: 'Contact LAGBUY support immediately.',
+  },
+  {
+    question: 'Does LAGBUY charge monthly fee?',
+    answer: 'We only take 5% commission on every sale. So, if you sell an item for ₦1,000.00 only, we take ₦50. When listing your product as a vendor, it is wise to add an extra 5% to ensure balance.',
+  },
+  {
+    question: 'How do I change my bank account details?',
+    answer: 'Go to your Dashboard, Scroll down to Settings, Go to Payment Details, and update your account details.',
+  },
+  {
+    question: 'Can I cancel my order as a buyer?',
+    answer: 'Of course! But only if a vendor is yet to delivered it.',
+  },
+  {
+    question: 'What if I cancel it after it\'s been delivered or shipped due to the product being fake or damaged?',
+    answer: 'You would have to wait for 24/48 hours for the item/product to return to the vendor and you will be refunded if such product remains as it was delivered.',
+  },
+  {
+    question: 'Who pays for a returning product?',
+    answer: 'If the vendor sent the wrong or damaged item, LAGBUY covers for the cost of deliveries by taking extra from the vendor. But if a buyer damages an item, he/she cannot even return it.',
+  },
+  {
+    question: 'What if the buyer refuses to accept the order for whatever reason?',
+    answer: 'Such product will be returned, and such buyer covers for the cost of returning-delivery, IF & ONLY IF the product was not damaged or fake, but such buyer just decided to reject it, probably due to poor packaging.',
+  },
+  {
+    question: 'How do I report a problem with an order?',
+    answer: 'Use the "Report an Issue" button in your order history or contact support with the product details, pictures and immediately-recorded video.',
+  },
 ];
 
 const FAQs = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [openItems, setOpenItems] = useState({});
+  const [showAllFaqs, setShowAllFaqs] = useState(false);
 
   const toggleItem = (index) => {
     setOpenItems(prev => ({
@@ -38,6 +77,9 @@ const FAQs = () => {
     faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
     faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Display only first 4 FAQs initially, or all when showAllFaqs is true, or all when searching
+  const displayedFaqs = searchTerm ? filteredFaqs : (showAllFaqs ? filteredFaqs : filteredFaqs.slice(0, 4));
 
   return (
     <section
@@ -100,7 +142,7 @@ const FAQs = () => {
           viewport={{ once: true }}
           className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
         >
-          Find quick answers to common questions about LagBuy. Can't find what you're looking for? Contact our support team.
+          Find quick answers to common questions about LagBuy. Cannot find what you are looking for? Contact our support team.
         </motion.p>
       </motion.div>
 
@@ -133,7 +175,7 @@ const FAQs = () => {
         viewport={{ once: true }}
       >
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden backdrop-blur-sm">
-          {filteredFaqs.map((faq, index) => (
+          {displayedFaqs.map((faq, index) => (
             <motion.div
               key={index}
               className={`border-b border-gray-100 last:border-b-0 ${
@@ -186,7 +228,7 @@ const FAQs = () => {
           ))}
           
           {/* No Results */}
-          {filteredFaqs.length === 0 && (
+          {displayedFaqs.length === 0 && (
             <motion.div 
               className="text-center py-12"
               initial={{ opacity: 0 }}
@@ -199,6 +241,44 @@ const FAQs = () => {
             </motion.div>
           )}
         </div>
+
+        {/* Read More / Read Less Button - Only show when not searching and there are more than 4 FAQs */}
+        {!searchTerm && filteredFaqs.length > 4 && (
+          <motion.div 
+            className="flex justify-center mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.button
+              onClick={() => setShowAllFaqs(!showAllFaqs)}
+              className="bg-gradient-to-r from-green-500 to-yellow-500 text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-green-500/25 border-2 border-white/20 relative overflow-hidden group inline-flex items-center gap-3"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(16, 185, 129, 0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative flex items-center gap-2">
+                {showAllFaqs ? 'Read Less' : 'Read More FAQs'}
+                <motion.span
+                  animate={{ 
+                    rotate: showAllFaqs ? 180 : 0,
+                    y: showAllFaqs ? [0, -2, 0] : [0, 2, 0]
+                  }}
+                  transition={{ 
+                    duration: showAllFaqs ? 0.3 : 1.5,
+                    repeat: showAllFaqs ? 0 : Infinity
+                  }}
+                >
+                  {showAllFaqs ? <ChevronUp className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
+                </motion.span>
+              </span>
+            </motion.button>
+          </motion.div>
+        )}
       </motion.div>
 
       {/* Bottom CTA */}
@@ -210,7 +290,7 @@ const FAQs = () => {
         viewport={{ once: true }}
       >
         <div className="text-center">
-          <p className="text-gray-600 mb-6">Still have questions? We're here to help!</p>
+          <p className="text-gray-600 mb-6">Still have questions? We are here to help!</p>
           <motion.a
             href="#ContactUs"
             className="bg-gradient-to-r from-green-500 to-yellow-500 text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-green-500/25 border-2 border-white/20 relative overflow-hidden group inline-flex items-center gap-2"

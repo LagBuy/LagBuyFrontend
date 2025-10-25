@@ -1,37 +1,36 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Users, Store, Truck, Zap, ArrowRight } from "lucide-react";
-import Buyer from "../../assets/LandingPageImg/Buyer.png";
-import Seller from "../../assets/LandingPageImg/Seller.png";
-import Rider from "../../assets/LandingPageImg/Rider.png";
+import Buyer from "../../assets/LandingPageImg/shopper.jpg";
+import Seller from "../../assets/LandingPageImg/seller.jpg";
+import Rider from "../../assets/LandingPageImg/Rider.jpg";
 
 const benefits = [
   {
     img: Buyer,
     icon: Users,
-    title: "Buyers / Customers",
-    desc: "Schools, Colleges, Universities, and everyday Shoppers",
-    stats: "50,000+ Happy Customers",
+    title: "For Everyone Who Shops!",
+    desc: "Whether you’re a school, college, university, or an everyday shopper, LagBuy makes buying simpler, faster and smarter.",
+    stats: "Getting to 50,000+ Happy Customers",
     color: "from-green-500 to-yellow-500",
     link: "https://shop.lagbuy.com/login"
   },
   {
     img: Seller,
     icon: Store,
-    title: "Sellers / Vendors",
-    desc: "SMEs And Large Enterprises.",
-    stats: "500+ Active Vendors",
+    title: "Do You Sell Something legal?",
+    desc: "From small and medium-sized enterprises (SMEs) to large corporations, LagBuy empowers businesses of every scale to reach more customers and grow sales.",
+    stats: "Getting to 500+ Active Vendors",
     color: "from-yellow-500 to-green-500",
     link: "https://vendors.lagbuy.com/login"
   },
   {
     img: Rider,
     icon: Truck,
-    title: "Riders",
-    desc: "Streamlined Administration And Data Management.",
-    stats: "15min Avg Delivery",
+    title: "Are You Experienced In Deliveries?",
+    desc: "LagBuy gives delivery partners powerful tools for seamless administration, smart tracking, and efficient delivery management.",
+    stats: "30min Avg Delivery",
     color: "from-green-400 to-yellow-400",
-    link: "https://riders.lagbuy.com"
+    link: "https://forms.gle/Y5CfpyMEgz5qti7V9"
   },
 ];
 
@@ -78,7 +77,7 @@ const BenefitSection = () => {
           className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-yellow-500/20 backdrop-blur-md border border-green-500/30 rounded-full px-4 py-2 mb-6"
         >
           <Users className="w-4 h-4 text-yellow-400" />
-          <span className="text-green-400 text-sm font-semibold">Designed for Real People</span>
+          <span className="text-green-400 text-sm font-semibold">Intentionally made for YOU🫂</span>
         </motion.div>
 
         <motion.h2 
@@ -111,8 +110,7 @@ const BenefitSection = () => {
           transition={{ delay: 0.4, duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Designed With Real People In Mind, LagBuy adapts to the way you live and shop. 
-          Empower users and partners with reliable and seamless experience.
+          Why waste time on clunky, outdated experiences when you can unleash vibrant, rock-solid reliability that wows users and partners alike? Choose LagBuy, where seamless meets sensational!
         </motion.p>
       </motion.div>
 
@@ -199,7 +197,7 @@ const BenefitSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Learn More</span>
+                <span>Then Join Us</span>
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </motion.a>
             </div>

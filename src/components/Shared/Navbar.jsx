@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/LandingPageImg/logo.png";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
@@ -9,8 +9,6 @@ import { FaXTwitter } from "react-icons/fa6";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showComingSoon, setShowComingSoon] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   const menuContentRef = useRef(null);
   const buttonRef = useRef(null);
   const navigate = useNavigate();
@@ -18,12 +16,6 @@ const Navbar = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
-
-  // Enhanced popup with better animation
-  const handleComingSoon = () => {
-    setShowComingSoon(true);
-    setTimeout(() => setShowComingSoon(false), 3000);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -176,14 +168,23 @@ const Navbar = () => {
           {/* Enhanced Logo */}
           <motion.div 
             className="relative"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200 }}
           >
-            <div className="w-44 h-14 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/20">
+            {/* Full Logo - Hidden only on small screens */}
+            <div className="hidden sm:block w-45 h-14 bg-gradient-to-r from-green-500 to-yellow-500 rounded-xl items-center justify-center shadow-xl border-2 border-white/20">
               <button onClick={() => handleScrollTo("HeroSection")}>
-                <img src={logo} alt="Logo" className="h-8 drop-shadow-lg" />
+                <img src={logo} alt="Logo" className="h-10 drop-shadow-lg" />
               </button>
             </div>
+
+            {/* LB Text - Shown only on small screens */}
+            <div className="sm:hidden w-14 h-14 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/20">
+              <button onClick={() => handleScrollTo("HeroSection")}>
+                <span className="text-black font-black text-xl drop-shadow-lg">LB</span>
+              </button>
+            </div>
+
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl blur-lg opacity-50 -z-10 animate-pulse" />
           </motion.div>
@@ -310,6 +311,14 @@ const Navbar = () => {
                             {item.name}
                           </button>
                         )}
+                        {/* Professional Arrow Icon */}
+                        <motion.span 
+                          className="text-green-400 text-sm"
+                          whileHover={{ x: 3 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                        >
+                          →
+                        </motion.span>
                       </motion.li>
                     ))}
                   </ul>
@@ -367,47 +376,6 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </header>
-
-      {/* Enhanced Coming Soon Popup */}
-      <AnimatePresence>
-        {showComingSoon && (
-          <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-yellow-500 text-black px-8 py-4 rounded-2xl shadow-2xl z-[9999] font-bold text-lg border-2 border-white/30 backdrop-blur-md"
-          >
-            <div className="flex items-center gap-3">
-              <motion.span
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="text-2xl"
-              >
-                🚴
-              </motion.span>
-              <span>Riders Platform Coming Soon!</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-2xl"
-              >
-                ⚡
-              </motion.span>
-            </div>
-            
-            {/* Progress bar */}
-            <motion.div 
-              className="h-1 bg-black/20 rounded-full mt-2 overflow-hidden"
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 3, ease: "linear" }}
-            >
-              <div className="h-full bg-black rounded-full" />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 };

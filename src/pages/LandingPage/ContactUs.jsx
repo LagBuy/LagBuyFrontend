@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "emailjs-com";
 import { ChevronDown, Check, Mail, Phone, User, MessageCircle, Send } from "lucide-react";
@@ -139,7 +139,7 @@ function ContactUs() {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
-            Have questions or need support? We're here to help. Send us a message and we'll get back to you within 24 hours.
+            Have questions or need support? We are here to help. Send us a message and we wll get back to you within 24 hours.
           </motion.p>
         </motion.div>
 
@@ -298,32 +298,34 @@ function ContactUs() {
                 ></textarea>
               </motion.div>
 
-              {/* Submit Button */}
-              <motion.button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-gradient-to-r from-green-500 to-yellow-500 text-white font-bold py-5 px-8 rounded-2xl shadow-2xl shadow-green-500/25 border-2 border-white/20 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
-                whileHover={{ 
-                  scale: isLoading ? 1 : 1.05,
-                  boxShadow: isLoading ? "0 20px 40px rgba(16, 185, 129, 0.25)" : "0 25px 50px rgba(16, 185, 129, 0.4)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative flex items-center justify-center gap-3 text-lg">
-                  {isLoading ? (
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      className="w-6 h-6 border-2 border-white border-t-transparent rounded-full"
-                    />
-                  ) : (
-                    <Send className="w-6 h-6" />
-                  )}
-                  {isLoading ? "Sending..." : "Send Message"}
-                </span>
-              </motion.button>
+              {/* Submit Button - Now with proper width */}
+              <div className="flex justify-center">
+                <motion.button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-yellow-500 text-white font-bold py-5 px-12 rounded-2xl shadow-2xl shadow-green-500/25 border-2 border-white/20 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed min-w-[200px]"
+                  whileHover={{ 
+                    scale: isLoading ? 1 : 1.05,
+                    boxShadow: isLoading ? "0 20px 40px rgba(16, 185, 129, 0.25)" : "0 25px 50px rgba(16, 185, 129, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative flex items-center justify-center gap-3 text-lg">
+                    {isLoading ? (
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="w-6 h-6 border-2 border-white border-t-transparent rounded-full"
+                      />
+                    ) : (
+                      <Send className="w-6 h-6" />
+                    )}
+                    {isLoading ? "Sending..." : "Send Message"}
+                  </span>
+                </motion.button>
+              </div>
             </form>
           </div>
 

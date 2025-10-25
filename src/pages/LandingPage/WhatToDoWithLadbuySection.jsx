@@ -1,41 +1,46 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FiShoppingBag, FiShoppingCart, FiTruck, FiUsers } from "react-icons/fi";
-import { Zap, ArrowRight } from "lucide-react";
+import { 
+  Sparkles, 
+  TrendingUp, 
+  Bike, 
+  ArrowRight,
+  Store,
+  Users
+} from "lucide-react";
 
 const todos = [
   {
-    icon: <FiShoppingBag size={48} className="text-green-400" />,
-    title: "Buy An Item",
-    text: "Shop like an expert! Browse, compare, and buy confidently from premium vendors.",
+    icon: <Sparkles size={48} className="text-green-400" />,
+    title: "Elevate Your Experience",
+    text: "Explore high-quality products, compare with ease, and shop confidently from our network of premium vendors.",
     bgColor: "bg-gradient-to-br from-black via-green-900 to-black",
     textColor: "text-white",
-    btn: "Start Shopping",
+    btn: "Feel the Difference",
     link: "https://shop.lagbuy.com/login",
     accent: "from-green-500 to-yellow-500",
-    stats: "2M+ Products"
+    stats: "Getting to 100K+ Products"
   },
   {
-    icon: <FiShoppingCart size={48} className="text-yellow-400" />,
-    title: "Sell An Item",
-    text: "Elevate your business! Sell on LagBuy, reach a large audience, list products, and grow sales!",
+    icon: <TrendingUp size={48} className="text-yellow-400" />,
+    title: "Grow Your Business",
+    text: "List your products on LagBuy, connect with thousands of buyers, and watch your sales take off!",
     bgColor: "bg-gradient-to-br from-black via-green-900 to-black",
     textColor: "text-white",
-    btn: "Start Selling",
+    btn: "Become a vendor",
     link: "https://vendors.lagbuy.com/login",
     accent: "from-yellow-500 to-green-500",
-    stats: "500+ Vendors"
+    stats: "Getting to 500+ verified vendors"
   },
   {
-    icon: <FiTruck size={48} className="text-green-300" />,
-    title: "Deliver An Item",
+    icon: <Bike size={48} className="text-green-300" />,
+    title: "Start Earning on the Move",
     text: "Join the ride! Become a LagBuy delivery partner, and start earning today with flexible hours.",
     bgColor: "bg-gradient-to-br from-black via-green-900 to-black",
     textColor: "text-white",
     btn: "Become a rider",
     link: "https://forms.gle/Y5CfpyMEgz5qti7V9",
     accent: "from-green-400 to-yellow-400",
-    stats: "15min Avg Delivery"
+    stats: "30min Avg Delivery Time"
   },
 ];
 
@@ -78,7 +83,7 @@ const WhatToDoWithLagbuySection = () => {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-yellow-500/20 backdrop-blur-md border border-green-500/30 rounded-full px-4 py-2 mb-6"
         >
-          <Zap className="w-4 h-4 text-yellow-400" />
+          <Users className="w-4 h-4 text-yellow-400" />
           <span className="text-green-400 text-sm font-semibold">Multiple Ways to Engage</span>
         </motion.div>
 
@@ -219,7 +224,7 @@ const WhatToDoWithLagbuySection = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="relative flex items-center gap-2">
-            <Zap className="w-5 h-5" />
+            <Store className="w-5 h-5" />
             Start Your Journey Today
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </span>

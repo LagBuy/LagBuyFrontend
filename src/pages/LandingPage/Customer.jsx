@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, Zap, Users } from "lucide-react";
+import {  Quote, Users } from "lucide-react";
 
 import customer_img1 from "../../assets/LandingPageImg/me.jpg";
 import customer_img2 from "../../assets/LandingPageImg/customer2.jpg";
@@ -32,11 +32,11 @@ const Customers = [
     img: customer_img4,
     text: "I love how LagBuy connects me with vendors in my area. It feels personal and convenient, no stress at all.",
     name: "Balusi",
-    rating: 5,
+    rating: 4.8,
   },
   {
     img: customer_img5,
-    text: "As a student in Unilag, this app is a lifesaver. I can easily shop for essentials and get them delivered without leaving campus.",
+    text: "As a student in UNILAG, omo...this app is a lifesaver. I can easily shop for essentials and get them delivered without leaving campus.",
     name: "Orims",
     rating: 5,
   },
@@ -126,7 +126,7 @@ const Customer = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
         >
-          What Our{" "}
+          What Are{" "}
           <motion.span
             animate={{ 
               backgroundPosition: ['0%', '100%', '0%'],
@@ -138,7 +138,7 @@ const Customer = () => {
             }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-yellow-500 bg-[length:200%_auto]"
           >
-            Customers Say
+            People Really Saying?
           </motion.span>
         </motion.h1>
 
@@ -149,7 +149,7 @@ const Customer = () => {
           viewport={{ once: true }}
           className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
         >
-          Don't just take our word for it. Hear from thousands of satisfied customers who trust LagBuy for their shopping needs.
+         See What Others Are Saying ! A lot of happy customers trust LagBuy to make shopping simple, secure, and stress-free.
         </motion.p>
       </motion.div>
 
@@ -256,7 +256,7 @@ const Customer = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  "{Customers[current].text}"
+                {Customers[current].text}
                 </motion.blockquote>
 
                 <motion.div
@@ -316,13 +316,13 @@ const Customer = () => {
             </div>
             <div className="text-left">
               <p className="text-green-600 font-semibold text-sm">4.9/5 Stars</p>
-              <p className="text-gray-600 text-xs">from 10K+ reviews</p>
+              <p className="text-gray-600 text-xs">from 112+ reviews</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 text-gray-600">
             <Users className="w-5 h-5 text-green-500" />
-            <span className="text-sm font-medium">50,000+ Happy Customers</span>
+            <span className="text-sm font-medium">Getting to 50,000+ customers</span>
           </div>
         </motion.div>
       </div>
