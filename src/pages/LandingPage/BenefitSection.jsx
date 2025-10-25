@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Users, Store, Truck, Zap, ArrowRight } from "lucide-react";
 import Buyer from "../../assets/LandingPageImg/shopper.jpg";
 import Seller from "../../assets/LandingPageImg/seller.jpg";
-import Rider from "../../assets/LandingPageImg/Rider.jpg";
+import Rider from "../../assets/LandingPageImg/rider.jpg";
 
 const benefits = [
   {
