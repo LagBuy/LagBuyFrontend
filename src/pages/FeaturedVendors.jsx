@@ -8,8 +8,8 @@ import Vendor3 from "../assets/LandingPageImg/everyday_essentials.jpg";
 import Vendor4 from "../assets/LandingPageImg/electronics.png";
 import Vendor5 from "../assets/LandingPageImg/minimart.jpg";
 import Vendor6 from "../assets/LandingPageImg/LusiLiXetica.jpg";
-import Vendor7 from "../assets/LandingPageImg/orrisandoak.jpg";
-import Vendor8 from "../assets/LandingPageImg/clothestore.jpg";
+// import Vendor7 from "../assets/LandingPageImg/orrisandoak.jpg";
+// import Vendor8 from "../assets/LandingPageImg/clothestore.jpg";
 
 const vendors = [
   { img: Vendor1, name: "SuperMarket", location: "Yaba, Lagos", category: "Groceries", rating: 5, delivery: "15 min" },
@@ -18,8 +18,8 @@ const vendors = [
   { img: Vendor4, name: "Haier Thermocool", location: "Bariga, Lagos", category: "Electronics", rating: 5, delivery: "25 min" },
   { img: Vendor5, name: "Yem Yem", location: "Unilag, Lagos", category: "Groceries", rating: 5, delivery: "12 min" },
   { img: Vendor6, name: "Lusi Lixetica Collection", location: "Unilag, Lagos", category: "Fashion", rating: 5, delivery: "18 min" },
-  { img: Vendor7, name: "ORRIS & OAK", location: "Unilag, Lagos", category: "Fashion", rating: 5, delivery: "22 min" },
-  { img: Vendor8, name: "Standard Fashion", location: "Yaba, Lagos", category: "Clothing", rating: 5, delivery: "16 min" },
+  // { img: Vendor7, name: "ORRIS & OAK", location: "Unilag, Lagos", category: "Fashion", rating: 5, delivery: "22 min" },
+  // { img: Vendor8, name: "Standard Fashion", location: "Yaba, Lagos", category: "Clothing", rating: 5, delivery: "16 min" },
 ];
 
 const FeaturedVendors = () => {
