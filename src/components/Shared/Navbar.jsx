@@ -54,7 +54,6 @@ const Navbar = () => {
     exit: { opacity: 0, x: 300 },
   };
 
-  // Smooth scroll handler for hash links
   const handleScrollTo = (id) => {
     if (location.pathname !== "/") {
       navigate("/", { replace: false });
@@ -69,7 +68,6 @@ const Navbar = () => {
     closeMenu();
   };
 
-  // Enhanced Dropdown for stage
   const StageDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedStage, setSelectedStage] = useState("");
@@ -165,31 +163,24 @@ const Navbar = () => {
         }`}
       >
         <div className="w-full lg:w-[90vw] mx-auto px-4 flex items-center justify-between relative">
-          {/* Enhanced Logo */}
           <motion.div 
             className="relative"
             whileHover={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
-            {/* Full Logo - Hidden only on small screens */}
             <div className="hidden sm:block w-45 h-14 bg-gradient-to-r from-green-500 to-yellow-500 rounded-xl items-center justify-center shadow-xl border-2 border-white/20">
               <button onClick={() => handleScrollTo("HeroSection")}>
                 <img src={logo} alt="Logo" className="h-10 drop-shadow-lg" />
               </button>
             </div>
-
-            {/* LB Text - Shown only on small screens */}
             <div className="sm:hidden w-14 h-14 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/20">
               <button onClick={() => handleScrollTo("HeroSection")}>
                 <span className="text-black font-black text-xl drop-shadow-lg">LB</span>
               </button>
             </div>
-
-            {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-yellow-500 rounded-2xl blur-lg opacity-50 -z-10 animate-pulse" />
           </motion.div>
 
-          {/* Enhanced Desktop Nav */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
             <nav className="bg-gradient-to-r from-green-500/20 to-yellow-500/20 backdrop-blur-md px-8 py-3 rounded-2xl shadow-2xl h-14 flex items-center border-2 border-white/10">
               <ul className="flex gap-x-10 text-base font-bold">
@@ -212,12 +203,10 @@ const Navbar = () => {
             </nav>
           </div>
 
-          {/* Enhanced Right Dropdown */}
           <div className="hidden md:flex">
             <StageDropdown />
           </div>
 
-          {/* Enhanced Mobile Hamburger - More Professional */}
           <motion.button
             onClick={toggleMenu}
             className="md:hidden z-50 relative"
@@ -253,7 +242,6 @@ const Navbar = () => {
           </motion.button>
         </div>
 
-        {/* Enhanced Mobile Menu */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -266,16 +254,6 @@ const Navbar = () => {
               className="md:hidden fixed inset-y-0 right-0 z-40 w-80 bg-gradient-to-b from-black via-green-900 to-black shadow-2xl border-l-2 border-green-500/30 backdrop-blur-md"
             >
               <div ref={menuContentRef} className="w-full h-full p-8 pt-24">
-                {/* Enhanced Close Button */}
-                <motion.button
-                  onClick={closeMenu}
-                  className="absolute top-6 right-6 text-white bg-gradient-to-r from-green-500 to-yellow-500 w-8 h-8 rounded-xl flex items-center justify-center shadow-lg border border-white/20"
-                  whileHover={{ scale: 1.1, rotate: 90 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {/* <span className="text-sm font-bold">✕</span> */}
-                </motion.button>
-
                 <nav>
                   <ul className="flex flex-col space-y-4 text-start text-lg font-semibold">
                     {[
@@ -311,7 +289,6 @@ const Navbar = () => {
                             {item.name}
                           </button>
                         )}
-                        {/* Professional Arrow Icon */}
                         <motion.span 
                           className="text-green-400 text-sm"
                           whileHover={{ x: 3 }}
@@ -324,7 +301,6 @@ const Navbar = () => {
                   </ul>
                 </nav>
 
-                {/* Enhanced Social Icons */}
                 <motion.div 
                   className="flex gap-3 mt-12 justify-center"
                   initial={{ opacity: 0, y: 20 }}
