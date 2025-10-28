@@ -273,7 +273,7 @@ const Navbar = () => {
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <span className="text-sm font-bold">✕</span>
+                  {/* <span className="text-sm font-bold">✕</span> */}
                 </motion.button>
 
                 <nav>
