@@ -1,0 +1,17 @@
+{
+  "name": "LagBuy",
+  "short_name": "LagBuy",
+  "description": "Shop, sell, and get fast and same day delivery in Lagos — all on LagBuy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1A362B",
+  "icons": [
+    {
+      "src": "/lagbuylogo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
