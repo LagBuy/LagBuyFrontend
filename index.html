@@ -74,14 +74,33 @@
       color: white;
       z-index: 9999;
     ">
-      <img src="/lagbuylogo.png" alt="LagBuy Logo" style="width: 90px; height: 90px; margin-bottom: 1rem;">
-      <p style="font-size: 1.2rem;">Loading LagBuy...</p>
+      <img src="/lagbuylogo.png" alt="LagBuy Logo" id="splash-logo" style="
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #94BD0A;
+        margin-bottom: 1rem;
+      ">
+      <p style="font-size: 1.2rem; color: #FCE67A;">Loading LagBuy...</p>
     </div>
 
     <!-- React Root -->
     <div id="root"></div>
 
-    <!-- ✅ Hide Splash after 2 seconds -->
+    <!-- ✅ Logo Animation -->
+    <style>
+      @keyframes spinPulse {
+        0% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(180deg) scale(1.1); }
+        100% { transform: rotate(360deg) scale(1); }
+      }
+
+      #splash-logo {
+        animation: spinPulse 1.5s infinite ease-in-out;
+      }
+    </style>
+
+    <!-- ✅ Hide Splash after 1 second -->
     <script>
       window.addEventListener("load", () => {
         const splash = document.getElementById("splash-screen");
@@ -89,7 +108,7 @@
           splash.style.transition = "opacity 0.5s ease";
           splash.style.opacity = "0";
           setTimeout(() => splash.remove(), 500);
-        }, 2000);
+        }, 2000); // 1 second delay
       });
     </script>
 
