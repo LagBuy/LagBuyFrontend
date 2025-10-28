@@ -62,7 +62,37 @@
   </head>
 
   <body>
+    <!-- ✅ Splash Loading Screen -->
+    <div id="splash-screen" style="
+      position: fixed;
+      inset: 0;
+      background-color: #1A362B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      z-index: 9999;
+    ">
+      <img src="/lagbuylogo.png" alt="LagBuy Logo" style="width: 90px; height: 90px; margin-bottom: 1rem;">
+      <p style="font-size: 1.2rem;">Loading LagBuy...</p>
+    </div>
+
+    <!-- React Root -->
     <div id="root"></div>
+
+    <!-- ✅ Hide Splash after 2 seconds -->
+    <script>
+      window.addEventListener("load", () => {
+        const splash = document.getElementById("splash-screen");
+        setTimeout(() => {
+          splash.style.transition = "opacity 0.5s ease";
+          splash.style.opacity = "0";
+          setTimeout(() => splash.remove(), 500);
+        }, 2000);
+      });
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
